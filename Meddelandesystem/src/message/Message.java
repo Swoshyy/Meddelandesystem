@@ -3,10 +3,15 @@ package message;
 import java.io.Serializable;
 import javax.swing.ImageIcon;
 
+import user.User;
+
 public class Message implements Serializable
 {
 	private String message;
 	private ImageIcon image;
+	private User user;
+	
+	// Lägg till motagarlista
 
 	public Message(String inMessage)
 	{
