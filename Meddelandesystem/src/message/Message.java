@@ -7,15 +7,15 @@ import user.User;
 
 public class Message implements Serializable
 {
-	private String message;
+	private String text;
 	private ImageIcon image;
 	private User user;
 	
 	// Lägg till motagarlista
 
-	public Message(String inMessage)
+	public Message(String inText)
 	{
-		this.message = inMessage;
+		this.text = inText;
 	}
 
 	public Message(ImageIcon inImage)
@@ -23,15 +23,15 @@ public class Message implements Serializable
 		this.image = inImage;
 	}
 
-	public Message(String inMessage, ImageIcon inImage)
+	public Message(String inText, ImageIcon inImage)
 	{
-		this.message = inMessage;
+		this.text = inText;
 		this.image = inImage;
 	}
 	
-	public String getMessage()
+	public String getText()
 	{
-		return message;
+		return text;
 	}
 	
 	public ImageIcon getImage()

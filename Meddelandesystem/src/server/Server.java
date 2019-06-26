@@ -6,7 +6,6 @@ import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Date;
-import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -21,7 +20,7 @@ public class Server
 	{
 		try
 		{
-			ServerSocket serverSocket = new ServerSocket(1999);
+			ServerSocket serverSocket = new ServerSocket(2010);
 			Socket socket = serverSocket.accept();
 
 			Runnable task = new ClientHandler(socket);
@@ -42,20 +41,31 @@ public class Server
 		public ClientHandler(Socket inSocket)
 		{
 			this.clientSocket = inSocket;
+			try
+			{
+				ois = new ObjectInputStream(clientSocket.getInputStream());
+				oos = new ObjectOutputStream(clientSocket.getOutputStream());
+			} catch (IOException e)
+			{
+				e.printStackTrace();
+			}
 		}
 
 		public void run()
 		{
 			Message message = null;
-			try
+			while(true)
 			{
-				ois = new ObjectInputStream(clientSocket.getInputStream());
-				oos = new ObjectOutputStream(clientSocket.getOutputStream());
 
+				try
+			{
 				message = (Message) ois.readObject();
+				
+				System.out.println(message.getText() + "");
 
-				System.out.println(date.getTime() + ": " + message.getMessage() + " ");
-
+				oos.writeObject(message);
+				oos.flush();
+				
 				if (message.getImage() != null)
 				{
 					/* Append image to text area */
@@ -64,6 +74,7 @@ public class Server
 			} catch (IOException | ClassNotFoundException e)
 			{
 				e.printStackTrace();
+			}
 			}
 		}
 	}

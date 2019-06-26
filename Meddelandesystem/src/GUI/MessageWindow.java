@@ -1,21 +1,26 @@
 package GUI;
 
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.MatteBorder;
-import javax.swing.JScrollPane;
+
+import client.Client;
+import message.Message;
 
 public class MessageWindow
 {
-
+	private Client client;
+	
 	private JFrame frame;
 	private JTextField tfInput;
 	private JPanel pnlMessage;
@@ -23,30 +28,14 @@ public class MessageWindow
 	private JButton btnSend;
 	private JTextArea textArea;
 	
-	public static void main(String[] args)
-	{
-		EventQueue.invokeLater(new Runnable()
-		{
-			public void run()
-			{
-				try
-				{
-					MessageWindow window = new MessageWindow();
-					window.frame.setVisible(true);
-				} catch (Exception e)
-				{
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
 	/**
 	 * Create the application.
 	 */
-	public MessageWindow()
+	public MessageWindow(Client client)
 	{
+		this.client = client;
 		initialize();
+		frame.setVisible(true);
 	}
 
 	/**
@@ -82,6 +71,7 @@ public class MessageWindow
 		btnSend.setBackground(new Color(240, 248, 255));
 		btnSend.setFont(new Font("Georgia", Font.PLAIN, 11));
 		btnSend.setBounds(340, 431, 116, 23);
+		btnSend.addActionListener(new ButtonListener());
 		pnlMessage.add(btnSend);
 
 		JScrollPane scrollPane = new JScrollPane();
@@ -99,4 +89,25 @@ public class MessageWindow
 		pnlList.setBounds(0, 0, 200, 461);
 		frame.getContentPane().add(pnlList);
 	}
+	
+	public void append(String str)
+	{
+		textArea.append(str + "\n");
+	}
+
+	private class ButtonListener implements ActionListener
+	{
+
+		public void actionPerformed(ActionEvent e)
+		{
+			if(e.getSource() == btnSend)
+			{
+				client.sendMessage(new Message(tfInput.getText()));
+				tfInput.setText(null);
+				
+			}
+		}
+
+	}
+
 }
