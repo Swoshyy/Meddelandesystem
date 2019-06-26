@@ -5,6 +5,8 @@ import java.awt.Font;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -13,6 +15,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.MatteBorder;
+import javax.swing.text.DefaultCaret;
 
 import client.Client;
 import message.Message;
@@ -20,14 +23,14 @@ import message.Message;
 public class MessageWindow
 {
 	private Client client;
-	
+
 	private JFrame frame;
 	private JTextField tfInput;
 	private JPanel pnlMessage;
 	private JButton btnOpenImages;
 	private JButton btnSend;
 	private JTextArea textArea;
-	
+
 	/**
 	 * Create the application.
 	 */
@@ -55,10 +58,12 @@ public class MessageWindow
 		pnlMessage.setLayout(null);
 
 		tfInput = new JTextField();
+		tfInput.setCaretPosition(0);
 		tfInput.setFont(new Font("Georgia", Font.PLAIN, 12));
 		tfInput.setBackground(new Color(255, 250, 250));
 		tfInput.setBounds(10, 432, 320, 20);
 		pnlMessage.add(tfInput);
+		tfInput.addKeyListener(new ButtonListener());
 		tfInput.setColumns(10);
 
 		btnOpenImages = new JButton("Open Images");
@@ -79,9 +84,13 @@ public class MessageWindow
 		pnlMessage.add(scrollPane);
 
 		textArea = new JTextArea();
+		textArea.setEditable(false);
 		textArea.setMargin(new Insets(20, 20, 20, 20));
 		textArea.setBackground(new Color(255, 250, 250));
 		scrollPane.setViewportView(textArea);
+		
+		DefaultCaret caret = (DefaultCaret)textArea.getCaret();
+		caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
 
 		JPanel pnlList = new JPanel();
 		pnlList.setBackground(new Color(255, 250, 250));
@@ -89,23 +98,40 @@ public class MessageWindow
 		pnlList.setBounds(0, 0, 200, 461);
 		frame.getContentPane().add(pnlList);
 	}
-	
+
 	public void append(String str)
 	{
-		textArea.append(str + "\n");
+		textArea.append(str + "\n\n");
 	}
 
-	private class ButtonListener implements ActionListener
+	private class ButtonListener implements ActionListener, KeyListener
 	{
 
 		public void actionPerformed(ActionEvent e)
 		{
-			if(e.getSource() == btnSend)
+			if (e.getSource() == btnSend)
 			{
 				client.sendMessage(new Message(tfInput.getText()));
 				tfInput.setText(null);
-				
+
 			}
+		}
+
+		public void keyPressed(KeyEvent ee)
+		{
+			if(ee.getKeyCode() == KeyEvent.VK_ENTER)
+            {
+				client.sendMessage(new Message(tfInput.getText()));
+				tfInput.setText(null);
+			}
+		}
+
+		public void keyReleased(KeyEvent e)
+		{
+		}
+
+		public void keyTyped(KeyEvent e)
+		{
 		}
 
 	}
