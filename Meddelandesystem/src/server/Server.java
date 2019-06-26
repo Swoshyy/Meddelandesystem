@@ -54,27 +54,24 @@ public class Server
 		public void run()
 		{
 			Message message = null;
-			while(true)
+			while (true)
 			{
-
 				try
-			{
-				message = (Message) ois.readObject();
-				
-				System.out.println(message.getText() + "");
-
-				oos.writeObject(message);
-				oos.flush();
-				
-				if (message.getImage() != null)
 				{
-					/* Append image to text area */
-				}
+					message = (Message) ois.readObject();
 
-			} catch (IOException | ClassNotFoundException e)
-			{
-				e.printStackTrace();
-			}
+					oos.writeObject(message);
+					oos.flush();
+
+					if (message.getImage() != null)
+					{
+						/* Append image to text area */
+					}
+
+				} catch (IOException | ClassNotFoundException e)
+				{
+					e.printStackTrace();
+				}
 			}
 		}
 	}

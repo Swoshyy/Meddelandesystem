@@ -10,7 +10,6 @@ public class Message implements Serializable
 	private String text;
 	private ImageIcon image;
 	private User user;
-	
 	// Lägg till motagarlista
 
 	public Message(String inText)
