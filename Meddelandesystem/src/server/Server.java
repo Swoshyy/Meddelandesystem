@@ -1,5 +1,7 @@
 package server;
 
+import java.awt.image.ImagingOpException;
+import java.io.IOError;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -37,26 +39,36 @@ public class Server
 		private Socket clientSocket;
 		private ObjectInputStream ois;
 		private ObjectOutputStream oos;
+		private Boolean ShouldBeRunning;
 
 		public ClientHandler(Socket inSocket)
 		{
 			this.clientSocket = inSocket;
+			this.ShouldBeRunning = true;
 			try
 			{
 				ois = new ObjectInputStream(clientSocket.getInputStream());
 				oos = new ObjectOutputStream(clientSocket.getOutputStream());
 			} catch (IOException e)
 			{
-				e.printStackTrace();
+				try
+				{
+					disconnectClient();
+
+				} catch(ImagingOpException ee)
+				{
+					ee.printStackTrace();
+				}
 			}
 		}
 
 		public void run()
 		{
 			Message message = null;
-			while (true)
+
+			try
 			{
-				try
+				while (ShouldBeRunning)
 				{
 					message = (Message) ois.readObject();
 
@@ -67,11 +79,34 @@ public class Server
 					{
 						/* Append image to text area */
 					}
-
-				} catch (IOException | ClassNotFoundException e)
-				{
-					e.printStackTrace();
 				}
+			} catch (IOException | ClassNotFoundException e)
+			{
+				try
+				{
+					ShouldBeRunning = false;
+					disconnectClient();
+
+				} catch (Exception ee) {
+					ee.printStackTrace();
+				}
+			}
+		}
+
+		private void disconnectClient()
+		{
+			try
+			{
+				System.out.println("Kopplar ner klient");
+				oos.flush();
+				oos.close();
+				ois.close();
+				threadPool.shutdown();
+				clientSocket.close();
+
+			} catch (IOException e)
+			{
+				e.printStackTrace();
 			}
 		}
 	}
