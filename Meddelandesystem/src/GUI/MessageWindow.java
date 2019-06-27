@@ -87,6 +87,8 @@ public class MessageWindow
 		textArea.setEditable(false);
 		textArea.setMargin(new Insets(20, 20, 20, 20));
 		textArea.setBackground(new Color(255, 250, 250));
+		textArea.setLineWrap(true);
+        textArea.setWrapStyleWord(true);
 		scrollPane.setViewportView(textArea);
 		
 		DefaultCaret caret = (DefaultCaret)textArea.getCaret();
@@ -97,11 +99,13 @@ public class MessageWindow
 		pnlList.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		pnlList.setBounds(0, 0, 200, 461);
 		frame.getContentPane().add(pnlList);
+		
+		frame.setResizable(false);
 	}
 
 	public void append(String str)
 	{
-		textArea.append(str + "\n\n");
+		textArea.append(str + "\n\n");	
 	}
 
 	private class ButtonListener implements ActionListener, KeyListener
@@ -109,7 +113,7 @@ public class MessageWindow
 
 		public void actionPerformed(ActionEvent e)
 		{
-			if (e.getSource() == btnSend)
+			if (e.getSource() == btnSend && tfInput.getText().length()>0)
 			{
 				client.sendMessage(new Message(tfInput.getText()));
 				tfInput.setText(null);
@@ -119,7 +123,7 @@ public class MessageWindow
 
 		public void keyPressed(KeyEvent ee)
 		{
-			if(ee.getKeyCode() == KeyEvent.VK_ENTER)
+			if(ee.getKeyCode() == KeyEvent.VK_ENTER && tfInput.getText().length()>0)
             {
 				client.sendMessage(new Message(tfInput.getText()));
 				tfInput.setText(null);
