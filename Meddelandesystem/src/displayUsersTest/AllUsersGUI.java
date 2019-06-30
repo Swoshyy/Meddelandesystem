@@ -130,7 +130,6 @@ public class AllUsersGUI extends JPanel {
 		
 	}
 	
-	
 	public static void main(String [] args) {
 		AllUsersGUI testObject = new AllUsersGUI();
 	}

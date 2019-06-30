@@ -37,9 +37,4 @@ public class ImageUserRenderer extends JLabel implements ListCellRenderer<UserOb
 		
 		return this;
 	}
-
-	
-	
-	
-
 }
