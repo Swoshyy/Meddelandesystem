@@ -1,6 +1,8 @@
 package user;
 
 import java.awt.Image;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 import javax.swing.ImageIcon;
@@ -19,6 +21,9 @@ public class User implements Serializable {
 	private ImageIcon image;
 	private String name;
 	private String password;
+	
+	private ObjectInputStream ois;
+	private ObjectOutputStream oos;
 	
 	public User(ImageIcon image, String name, String password) {
 		this.image = image;
@@ -67,5 +72,20 @@ public class User implements Serializable {
 		
 	}
 	
+	public void setOos(ObjectOutputStream oos) {
+		this.oos = oos;
+	}
+	
+	public ObjectOutputStream getOos() {
+		return oos;
+	}
+	
+	public void setOis(ObjectInputStream ois) {
+		this.ois = ois;
+	}
+	
+	public ObjectInputStream getOis() {
+		return ois;
+	}
 	
 }

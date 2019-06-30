@@ -9,20 +9,27 @@ import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import javax.swing.JOptionPane;
 
+import client.Client;
 import message.Message;
+import user.User;
 
 public class Server
 {
 	private ExecutorService threadPool = Executors.newFixedThreadPool(10);
 	private Date date = new Date();
-
+	private LinkedList<User> userList = new LinkedList<>();
+	private User user;
+	
+//	public Server(User user)
 	public Server()
 	{
+		this.user = user;
 		try
 		{
 			ServerSocket serverSocket = new ServerSocket(2013);
@@ -52,6 +59,9 @@ public class Server
 			{
 				ois = new ObjectInputStream(clientSocket.getInputStream());
 				oos = new ObjectOutputStream(clientSocket.getOutputStream());
+				user.setOis(ois);
+				user.setOos(oos);
+				userList.add(user);
 			} catch (IOException e)
 			{
 				try
@@ -82,9 +92,12 @@ public class Server
 						
 					}
 					
-
-					oos.writeObject(message);
-					oos.flush();
+					for(int i=0; i<userList.size(); i++) {
+						user.getOos().writeObject(message);
+						user.getOos().flush();
+					}
+//					oos.writeObject(message);
+//					oos.flush();
 
 					
 				}
@@ -118,6 +131,27 @@ public class Server
 			}
 		}
 	}
+	
+//	private class ClientAddress {
+//		
+//		private Socket socket;
+//		private ObjectOutputStream oos;
+//		private ObjectInputStream ois;
+//		
+//		public ClientAddress(Socket socket) {
+//			try {
+//			this.socket = socket;
+//			oos = new ObjectOutputStream(socket.getOutputStream());
+//			ois = new ObjectInputStream(socket.getInputStream());
+//			
+//			user.setOos(oos);
+//			user.setOis(ois);
+//			
+//			}catch (IOException e ) {
+//				e.printStackTrace();
+//			}
+//			}
+//	}
 
 	public static void main(String[] args)
 	{
