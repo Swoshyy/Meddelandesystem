@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+
+import javax.swing.ImageIcon;
+
 import GUI.MessageWindow;
 import message.Message;
 
@@ -58,6 +61,12 @@ public class Client
 				{
 					message = (Message) ois.readObject();
 					msgWindow.append(message.getText() + "");
+					
+					if(message.getImage() != null)
+					{
+						msgWindow.showImage(message.getImage());
+					}
+					
 				}
 			} catch (IOException | ClassNotFoundException e)
 			{

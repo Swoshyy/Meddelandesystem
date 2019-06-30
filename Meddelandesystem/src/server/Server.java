@@ -1,5 +1,6 @@
 package server;
 
+import java.awt.Image;
 import java.awt.image.ImagingOpException;
 import java.io.IOError;
 import java.io.IOException;
@@ -71,14 +72,18 @@ public class Server
 				while (ShouldBeRunning)
 				{
 					message = (Message) ois.readObject();
+					
+					if (message.getImage() != null)
+					{
+						System.out.println("HEJ, jag fick en image");
+						
+					}
+					
 
 					oos.writeObject(message);
 					oos.flush();
 
-					if (message.getImage() != null)
-					{
-						/* Append image to text area */
-					}
+					
 				}
 			} catch (IOException | ClassNotFoundException e)
 			{
