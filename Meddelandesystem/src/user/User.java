@@ -1,43 +1,71 @@
 package user;
 
-import java.util.LinkedList;
+import java.awt.Image;
+import java.io.Serializable;
+
 import javax.swing.ImageIcon;
 
-public class User
-{
+/**
+ * Complete user class!
+ * @author sethoberg
+ *
+ */
+
+public class User implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2261378850231719569L;
+	private ImageIcon image;
 	private String name;
-	private ImageIcon imgProfilePicture;
-	private LinkedList<User> friends;
-
-	public User(String inName)
-	{
-		this.name = inName;
-	}
-
-	public User(String inName, ImageIcon inProfilePicture)
-	{
-		this.name = inName;
-		this.imgProfilePicture = inProfilePicture;
+	private String password;
+	
+	public User(ImageIcon image, String name, String password) {
+		this.image = image;
+		this.name = name;
+		this.password = password;
 	}
 	
-	public void addFriend(User inFriend)
-	{
-		friends.add(inFriend);
+	public User(ImageIcon image, String name) {
+		this.image = image;
+		this.name = name;
 	}
-
-	public String getName()
-	{
+	
+	public User(String name) {
+		image = new ImageIcon(new ImageIcon("images/defaultImage.jpg").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
+		this.name = name;
+	}
+	
+	public User(String name, String password) {
+		image = new ImageIcon(new ImageIcon("images/defaultImage.jpg").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
+		this.name = name;
+		this.password = password;
+	}
+	
+	
+	public String toString() {
 		return name;
 	}
-
-	public ImageIcon getImgProfilePicture()
-	{
-		return imgProfilePicture;
+	
+	public ImageIcon returnImageUrl() {
+		return image;
 	}
-
-	public LinkedList<User> getFriends()
-	{
-		return friends;
+	
+	public String getName() {
+		return this.name;
 	}
-
+	
+	
+	public int checkPassword(String name, String password) {
+		
+		if (this.name.equals(name) && this.password.equals(password)) {
+			return 1;
+		}
+		else {
+			return 0;
+		}
+		
+	}
+	
+	
 }
