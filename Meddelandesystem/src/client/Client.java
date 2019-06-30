@@ -4,8 +4,13 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
 import GUI.MessageWindow;
 import message.Message;
+import sethTest.TestSebbe;
 
 public class Client
 {
@@ -13,12 +18,13 @@ public class Client
 	private ObjectInputStream ois;
 	private ObjectOutputStream oos;
 	private MessageWindow msgWindow;
+	private TestSebbe ts = new TestSebbe();
 
 	public Client()
 	{
 		try
 		{
-			socket = new Socket("localhost", 2010);
+			socket = new Socket("localhost", 2013);
 			oos = new ObjectOutputStream(socket.getOutputStream());
 			ois = new ObjectInputStream(socket.getInputStream());
 			msgWindow = new MessageWindow(this);
@@ -58,6 +64,15 @@ public class Client
 				{
 					message = (Message) ois.readObject();
 					msgWindow.append(message.getText() + "");
+					
+					if(message.getImage() != null)
+					{
+//						msgWindow.showImage(message.getImage());
+						ts.drawImage(message.getImage());
+//						JOptionPane.showConfirmDialog(null, message.getImage());
+
+					}
+					
 				}
 			} catch (IOException | ClassNotFoundException e)
 			{

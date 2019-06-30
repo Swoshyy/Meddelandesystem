@@ -8,17 +8,22 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.MatteBorder;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.text.DefaultCaret;
 
 import client.Client;
 import message.Message;
+import sethTest.TestSebbe;
 
 public class MessageWindow
 {
@@ -30,6 +35,9 @@ public class MessageWindow
 	private JButton btnOpenImages;
 	private JButton btnSend;
 	private JTextArea textArea;
+
+	private TestSebbe imageChooser;
+	private ImageIcon img;
 
 	/**
 	 * Create the application.
@@ -88,10 +96,10 @@ public class MessageWindow
 		textArea.setMargin(new Insets(20, 20, 20, 20));
 		textArea.setBackground(new Color(255, 250, 250));
 		textArea.setLineWrap(true);
-        textArea.setWrapStyleWord(true);
+		textArea.setWrapStyleWord(true);
 		scrollPane.setViewportView(textArea);
-		
-		DefaultCaret caret = (DefaultCaret)textArea.getCaret();
+
+		DefaultCaret caret = (DefaultCaret) textArea.getCaret();
 		caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
 
 		JPanel pnlList = new JPanel();
@@ -99,32 +107,55 @@ public class MessageWindow
 		pnlList.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		pnlList.setBounds(0, 0, 200, 461);
 		frame.getContentPane().add(pnlList);
-		
+
+		btnOpenImages.addActionListener(new ButtonListener());
+
 		frame.setResizable(false);
 	}
 
 	public void append(String str)
 	{
-		textArea.append(str + "\n\n");	
+		textArea.append(str + "\n\n");
+	}
+	
+	public void showImage(ImageIcon icon)
+	{
 	}
 
 	private class ButtonListener implements ActionListener, KeyListener
 	{
-
+//		private ImageIcon img = null;
 		public void actionPerformed(ActionEvent e)
 		{
-			if (e.getSource() == btnSend && tfInput.getText().length()>0)
+			if (e.getSource() == btnSend && tfInput.getText().length() > 0)
 			{
-				client.sendMessage(new Message(tfInput.getText()));
+				client.sendMessage(new Message(tfInput.getText(), img));
 				tfInput.setText(null);
+
+			}
+
+			if (e.getSource() == btnOpenImages)
+			{
+				JFileChooser chooser = new JFileChooser();
+				FileNameExtensionFilter filter = new FileNameExtensionFilter("Images", "jpg", "png", "gif");
+				chooser.setFileFilter(filter);
+				int returnVal = chooser.showOpenDialog(chooser);
+
+				if (returnVal == JFileChooser.APPROVE_OPTION)
+				{
+					String imagename = chooser.getSelectedFile().getPath();
+					img = new ImageIcon(new ImageIcon(imagename).getImage());
+					
+//					JOptionPane.showConfirmDialog(null, img);
+				}
 
 			}
 		}
 
 		public void keyPressed(KeyEvent ee)
 		{
-			if(ee.getKeyCode() == KeyEvent.VK_ENTER && tfInput.getText().length()>0)
-            {
+			if (ee.getKeyCode() == KeyEvent.VK_ENTER && tfInput.getText().length() > 0)
+			{
 				client.sendMessage(new Message(tfInput.getText()));
 				tfInput.setText(null);
 			}

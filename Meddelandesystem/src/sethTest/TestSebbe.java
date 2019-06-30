@@ -23,7 +23,7 @@ public class TestSebbe {
 	private JButton btnChoose;
 	
 	public TestSebbe() {
-		start();
+//		start();
 	}
 	
 	public void start() {
@@ -59,6 +59,23 @@ public class TestSebbe {
 		}
 		JLabel lbl = new JLabel();
 		lbl.setIcon(new ImageIcon(img));
+		imgFrame.getContentPane().add(lbl, BorderLayout.CENTER);
+		imgFrame.pack();
+		imgFrame.setLocationRelativeTo(null);
+		imgFrame.setVisible(true);
+	}
+	
+	public void drawImage(ImageIcon filename) {
+		JFrame imgFrame = new JFrame();
+		imgFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		BufferedImage img = null;
+//		try {
+//			img = ImageIO.read(new File(filename));
+//		}catch (Exception e) {
+//			e.printStackTrace();
+//		}
+		JLabel lbl = new JLabel();
+		lbl.setIcon(filename);
 		imgFrame.getContentPane().add(lbl, BorderLayout.CENTER);
 		imgFrame.pack();
 		imgFrame.setLocationRelativeTo(null);

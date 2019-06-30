@@ -1,5 +1,6 @@
 package server;
 
+import java.awt.Image;
 import java.awt.image.ImagingOpException;
 import java.io.IOError;
 import java.io.IOException;
@@ -10,6 +11,8 @@ import java.net.Socket;
 import java.util.Date;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+
+import javax.swing.JOptionPane;
 
 import message.Message;
 
@@ -22,7 +25,7 @@ public class Server
 	{
 		try
 		{
-			ServerSocket serverSocket = new ServerSocket(2010);
+			ServerSocket serverSocket = new ServerSocket(2013);
 			Socket socket = serverSocket.accept();
 
 			Runnable task = new ClientHandler(socket);
@@ -71,14 +74,19 @@ public class Server
 				while (ShouldBeRunning)
 				{
 					message = (Message) ois.readObject();
+					
+					if (message.getImage() != null)
+					{
+						System.out.println("HEJ, jag fick en image");
+
+						
+					}
+					
 
 					oos.writeObject(message);
 					oos.flush();
 
-					if (message.getImage() != null)
-					{
-						/* Append image to text area */
-					}
+					
 				}
 			} catch (IOException | ClassNotFoundException e)
 			{
