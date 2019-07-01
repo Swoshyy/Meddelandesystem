@@ -3,6 +3,7 @@ package displayUsersTest;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
@@ -112,6 +113,21 @@ public class UsersGUI extends JPanel {
 			userScroll.repaint();
 		}
 		
+	}
+	
+	
+	/**
+	 * For adding multiple users when starting application 
+	 * for example adding all online users or all saved friends
+	 * @param userList
+	 */
+	public void addListOfUsers(LinkedList<User> userList) {
+
+		for(int i = 0; i < userList.size(); i++) {
+			listModel.addElement(userList.get(i));
+		}
+		listOfUsers.getModel();
+
 	}
 	
 	

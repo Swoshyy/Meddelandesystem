@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.LinkedList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -93,6 +94,22 @@ public class AllUsersGUI extends JPanel {
 		
 		add(buttonsPanel, BorderLayout.SOUTH);
 	}
+	
+	
+	
+	public void addListOfOnlineUsers(LinkedList<User> userList) {
+		
+		onlineUsers.addListOfUsers(userList);
+
+	}
+	
+	
+	public void addListOfSavedFriends(LinkedList<User> userList) {
+
+		friends.addListOfUsers(userList);
+
+	}
+	
 	
 	
 	private class ButtonListener implements ActionListener {
