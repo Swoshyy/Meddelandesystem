@@ -32,6 +32,13 @@ public class Client
 			
 		} catch (IOException e)
 		{
+			try
+			{
+				disconnectFromServer();
+			} catch(Exception ee)
+			{
+				ee.printStackTrace();
+			}
 			e.printStackTrace();
 		}
 	}
@@ -51,6 +58,21 @@ public class Client
 	public static void main(String[] args)
 	{
 		new Client();
+	}
+	
+	public void disconnectFromServer()
+	{
+		try
+		{
+			ois.close();
+			oos.flush();
+			oos.close();
+			socket.close();
+			
+		} catch (IOException e)
+		{
+			e.printStackTrace();
+		}
 	}
 
 	private class Read extends Thread
@@ -79,21 +101,6 @@ public class Client
 				e.printStackTrace();
 			}
 			disconnectFromServer();
-		}
-
-		private void disconnectFromServer()
-		{
-			try
-			{
-				ois.close();
-				oos.flush();
-				oos.close();
-				socket.close();
-				
-			} catch (IOException e)
-			{
-				e.printStackTrace();
-			}
 		}
 	}
 }

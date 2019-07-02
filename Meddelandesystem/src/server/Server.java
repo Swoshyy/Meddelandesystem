@@ -29,7 +29,6 @@ public class Server
 //	public Server(User user)
 	public Server()
 	{
-		this.user = user;
 		try
 		{
 			ServerSocket serverSocket = new ServerSocket(2013);
@@ -59,9 +58,10 @@ public class Server
 			{
 				ois = new ObjectInputStream(clientSocket.getInputStream());
 				oos = new ObjectOutputStream(clientSocket.getOutputStream());
-				user.setOis(ois);
-				user.setOos(oos);
-				userList.add(user);
+				
+//				user.setOis(ois);
+//				user.setOos(oos);
+//				userList.add(user);
 			} catch (IOException e)
 			{
 				try
@@ -88,16 +88,15 @@ public class Server
 					if (message.getImage() != null)
 					{
 						System.out.println("HEJ, jag fick en image");
-
 						
 					}
 					
-					for(int i=0; i<userList.size(); i++) {
-						user.getOos().writeObject(message);
-						user.getOos().flush();
-					}
-//					oos.writeObject(message);
-//					oos.flush();
+//					for(int i=0; i<userList.size(); i++) {
+//						user.getOos().writeObject(message);
+//						user.getOos().flush();
+//					}
+					oos.writeObject(message);
+					oos.flush();
 
 					
 				}
