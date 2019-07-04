@@ -13,10 +13,19 @@ import message.Message;
 public class Server
 {
 	private ServerController controller;
+	private ServerSocket serverSocket;
 
 	public Server(int inPort, ServerController inController)
 	{
 		this.controller = inController;
+		try
+		{
+			serverSocket = new ServerSocket(inPort);
+		} catch (IOException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		controller.registerServer(this);
 		new ClientListener(inPort);
 	}
@@ -36,12 +45,14 @@ public class Server
 			Socket socket = null;
 			try
 			{
-				ServerSocket serverSocket = new ServerSocket(port);
-				socket = serverSocket.accept();
-
-				new ClientHandler(socket);
-
-			} catch(IOException e)
+				while (true)
+				{
+					socket = serverSocket.accept();
+					System.out.println("new socket");
+					new ClientHandler(socket);
+					System.out.println("new created");
+				}
+			} catch (IOException e)
 			{
 				try
 				{
@@ -84,17 +95,19 @@ public class Server
 			{
 
 				Message message;
-				while(true)
+				while (true)
 				{
 
 					message = (Message) ois.readObject();
 					controller.newMessage(message);
-					/* We could call controller first to send to all
-					 * but thats a story for another day, which is now */
+					/*
+					 * We could call controller first to send to all but thats a story for another
+					 * day, which is now
+					 */
 
 				}
 
-			} catch(IOException | ClassNotFoundException e)
+			} catch (IOException | ClassNotFoundException e)
 			{
 				try
 				{
@@ -106,38 +119,37 @@ public class Server
 			}
 		}
 	}
-	
+
 	public void sendMessage(Message inMessage, ObjectOutputStream inOos)
 	{
 		new WriteMessage(inMessage, inOos);
 
 	}
-	
+
 	private class WriteMessage extends Thread
 	{
 		private Message message;
 		private ObjectOutputStream oos;
-		
+
 		public WriteMessage(Message message, ObjectOutputStream oos)
 		{
 			this.message = message;
 			this.oos = oos;
 			start();
 		}
-		
+
 		public void run()
 		{
 			try
 			{
 				oos.writeObject(message);
 				oos.flush();
-			} catch(IOException e)
+			} catch (IOException e)
 			{
 				e.printStackTrace();
 			}
 		}
-		
-		
+
 	}
 
 }

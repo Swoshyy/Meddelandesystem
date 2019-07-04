@@ -136,6 +136,7 @@ public class MessageWindow
 				System.out.println("Enter hit");
 				controller.sendMessage(new Message(tfInput.getText(), img));
 				tfInput.setText(null);
+				img = null;
 				System.out.println("Done entering");
 
 			}
@@ -160,10 +161,11 @@ public class MessageWindow
 
 		public void keyPressed(KeyEvent ee)
 		{
-			if (ee.getKeyCode() == KeyEvent.VK_ENTER && tfInput.getText().length() > 0)
+			if (ee.getKeyCode() == KeyEvent.VK_ENTER)
 			{
-				controller.sendMessage(new Message(tfInput.getText()));
+				controller.sendMessage(new Message(tfInput.getText(), img));
 				tfInput.setText(null);
+				img = null;
 			}
 		}
 
