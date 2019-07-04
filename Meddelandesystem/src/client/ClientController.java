@@ -10,7 +10,7 @@ public class ClientController
 	
 	public void newClient(Client inClient)
 	{
-		this.client = inClient;
+		this.client = inClient; 
 	}
 	
 	public void displayMessage(Message message)

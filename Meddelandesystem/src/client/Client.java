@@ -12,7 +12,7 @@ public class Client
 {
 	private Socket socket;
 	private String address;
-	private int port;
+	private int port; 
 	
 	private ObjectOutputStream oos;
 	

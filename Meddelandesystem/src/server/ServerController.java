@@ -15,7 +15,7 @@ public class ServerController
 
 	public void registerServer(Server inServer)
 	{
-		this.server = inServer;
+		this.server = inServer; 
 	}
 
 	public void newClient(ClientConnection cc)

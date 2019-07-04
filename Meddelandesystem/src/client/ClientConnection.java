@@ -10,7 +10,7 @@ public class ClientConnection
 
 	public ClientConnection(ObjectOutputStream oos, Socket socket)
 	{
-		this.oos = oos;
+		this.oos = oos; 
 		this.socket = socket;
 	}
 

@@ -6,6 +6,6 @@ public class ServerMain
 	{
 		ServerController controller = new ServerController();
 		new Server(2020, controller);
-	}
+	} 
 	
 }

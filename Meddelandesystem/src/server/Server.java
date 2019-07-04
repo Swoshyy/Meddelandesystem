@@ -17,7 +17,7 @@ public class Server
 
 	public Server(int inPort, ServerController inController)
 	{
-		this.controller = inController;
+		this.controller = inController; 
 		try
 		{
 			serverSocket = new ServerSocket(inPort);
