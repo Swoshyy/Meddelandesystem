@@ -15,7 +15,7 @@ public class ClientController
 	
 	public void displayMessage(Message message)
 	{
-		msgWindow.append(message.getText() + "");
+		msgWindow.append(message);
 	}
 	
 	public void sendMessage(Message message)

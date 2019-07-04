@@ -113,9 +113,13 @@ public class MessageWindow
 		frame.setResizable(false);
 	}
 
-	public void append(String str)
+	public void append(Message message)
 	{
-		textArea.append(str + "\n\n");
+		textArea.append(message.getText() + "\n\n");
+		if(message.getImage() != null)
+		{
+			JOptionPane.showMessageDialog(null, message.getImage());
+		}
 	}
 
 	public void showImage(ImageIcon icon)
@@ -130,7 +134,7 @@ public class MessageWindow
 			if (e.getSource() == btnSend)
 			{
 				System.out.println("Enter hit");
-				controller.sendMessage(new Message(tfInput.getText()));
+				controller.sendMessage(new Message(tfInput.getText(), img));
 				tfInput.setText(null);
 				System.out.println("Done entering");
 
