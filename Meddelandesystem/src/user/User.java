@@ -24,6 +24,8 @@ public class User implements Serializable {
 	
 	private ObjectInputStream ois;
 	private ObjectOutputStream oos;
+	private boolean isOnlione;
+	
 	
 	public User(ImageIcon image, String name, String password) {
 		this.image = image;
@@ -86,6 +88,14 @@ public class User implements Serializable {
 	
 	public ObjectInputStream getOis() {
 		return ois;
+	}
+
+	public boolean getIsOnlione() {
+		return isOnlione;
+	}
+
+	public void setIsOnlione(boolean isOnlione) {
+		this.isOnlione = isOnlione;
 	}
 	
 }

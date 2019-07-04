@@ -9,12 +9,27 @@ public class Message implements Serializable
 {
 	private String text;
 	private ImageIcon image;
-	private User user;
+	private User reciever;
+	private User sender;
 	// Lägg till motagarlista
+	
+	private SavedMessages savedMessages = new SavedMessages("files/savedMessages.txt");
 
-	public Message(String inText)
+	public Message(String inText, User sender, User reciever)
 	{
 		this.text = inText;
+		
+		this.sender = sender;
+		this.reciever = reciever;
+		
+		if (reciever.getIsOnlione()==false) {
+			
+			savedMessages.saveNewMessage(this);
+			
+		}
+		else {
+			//Skicka meddelande som vanligt
+		}
 	}
 
 	public Message(ImageIcon inImage)
@@ -36,6 +51,15 @@ public class Message implements Serializable
 	public ImageIcon getImage()
 	{
 		return image;
+	}
+	
+	
+	public User getSender() {
+		return sender;
+	}
+	
+	public User getReceiver() {
+		return reciever;
 	}
 	
 }
