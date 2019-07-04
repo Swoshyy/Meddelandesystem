@@ -22,12 +22,12 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.text.DefaultCaret;
 
 import client.Client;
+import client.ClientController;
 import message.Message;
-import sethTest.TestSebbe;
 
 public class MessageWindow
 {
-	private Client client;
+	private ClientController controller;
 
 	private JFrame frame;
 	private JTextField tfInput;
@@ -36,15 +36,15 @@ public class MessageWindow
 	private JButton btnSend;
 	private JTextArea textArea;
 
-	private TestSebbe imageChooser;
+	//	private TestSebbe imageChooser;
 	private ImageIcon img;
 
 	/**
 	 * Create the application.
 	 */
-	public MessageWindow(Client client)
+	public MessageWindow(ClientController controller)
 	{
-		this.client = client;
+		this.controller = controller;
 		initialize();
 		frame.setVisible(true);
 	}
@@ -117,20 +117,22 @@ public class MessageWindow
 	{
 		textArea.append(str + "\n\n");
 	}
-	
+
 	public void showImage(ImageIcon icon)
 	{
 	}
 
 	private class ButtonListener implements ActionListener, KeyListener
 	{
-//		private ImageIcon img = null;
+		//		private ImageIcon img = null;
 		public void actionPerformed(ActionEvent e)
 		{
-			if (e.getSource() == btnSend && tfInput.getText().length() > 0)
+			if (e.getSource() == btnSend)
 			{
-				client.sendMessage(new Message(tfInput.getText(), img));
+				System.out.println("Enter hit");
+				controller.sendMessage(new Message(tfInput.getText()));
 				tfInput.setText(null);
+				System.out.println("Done entering");
 
 			}
 
@@ -145,8 +147,8 @@ public class MessageWindow
 				{
 					String imagename = chooser.getSelectedFile().getPath();
 					img = new ImageIcon(new ImageIcon(imagename).getImage());
-					
-//					JOptionPane.showConfirmDialog(null, img);
+
+					//					JOptionPane.showConfirmDialog(null, img);
 				}
 
 			}
@@ -156,8 +158,10 @@ public class MessageWindow
 		{
 			if (ee.getKeyCode() == KeyEvent.VK_ENTER && tfInput.getText().length() > 0)
 			{
-				client.sendMessage(new Message(tfInput.getText()));
+				System.out.println("Enter hit");
+				controller.sendMessage(new Message(tfInput.getText()));
 				tfInput.setText(null);
+				System.out.println("Done entering");
 			}
 		}
 

@@ -1,160 +1,98 @@
 package server;
 
-import java.awt.Image;
-import java.awt.image.ImagingOpException;
-import java.io.IOError;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.Date;
-import java.util.LinkedList;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
-import javax.swing.JOptionPane;
-
-import client.Client;
 import message.Message;
-import user.User;
 
 public class Server
 {
-	private ExecutorService threadPool = Executors.newFixedThreadPool(10);
-	private Date date = new Date();
-	private LinkedList<User> userList = new LinkedList<>();
-	private User user;
-	
-//	public Server(User user)
-	public Server()
+	private ServerController controller;
+
+	public Server(int inPort, ServerController inController)
 	{
-		try
-		{
-			ServerSocket serverSocket = new ServerSocket(2013);
-			Socket socket = serverSocket.accept();
-
-			Runnable task = new ClientHandler(socket);
-			threadPool.submit(task);
-
-		} catch (IOException e)
-		{
-			e.printStackTrace();
-		}
+		this.controller = inController;
+		controller.registerServer(this);
+		new ClientListener(inPort);
 	}
 
-	private class ClientHandler implements Runnable
+	private class ClientListener extends Thread
 	{
-		private Socket clientSocket;
-		private ObjectInputStream ois;
-		private ObjectOutputStream oos;
-		private Boolean ShouldBeRunning;
+		private int port;
 
-		public ClientHandler(Socket inSocket)
+		public ClientListener(int inPort)
 		{
-			this.clientSocket = inSocket;
-			this.ShouldBeRunning = true;
-			try
-			{
-				ois = new ObjectInputStream(clientSocket.getInputStream());
-				oos = new ObjectOutputStream(clientSocket.getOutputStream());
-				
-//				user.setOis(ois);
-//				user.setOos(oos);
-//				userList.add(user);
-			} catch (IOException e)
-			{
-				try
-				{
-					disconnectClient();
-
-				} catch(ImagingOpException ee)
-				{
-					ee.printStackTrace();
-				}
-			}
+			this.port = inPort;
+			start();
 		}
 
 		public void run()
 		{
-			Message message = null;
-
+			Socket socket = null;
 			try
 			{
-				while (ShouldBeRunning)
-				{
-					message = (Message) ois.readObject();
-					
-					if (message.getImage() != null)
-					{
-						System.out.println("HEJ, jag fick en image");
-						
-					}
-					
-//					for(int i=0; i<userList.size(); i++) {
-//						user.getOos().writeObject(message);
-//						user.getOos().flush();
-//					}
-					oos.writeObject(message);
-					oos.flush();
+				ServerSocket serverSocket = new ServerSocket(port);
+				socket = serverSocket.accept();
 
-					
-				}
-			} catch (IOException | ClassNotFoundException e)
+				new ClientHandler(socket);
+
+			} catch(IOException e)
 			{
 				try
 				{
-					ShouldBeRunning = false;
-					disconnectClient();
-
-				} catch (Exception ee) {
-					ee.printStackTrace();
+					socket.close();
+				} catch (IOException e1)
+				{
+					e1.printStackTrace();
 				}
 			}
 		}
+	}
 
-		private void disconnectClient()
+	private class ClientHandler extends Thread
+	{
+		private Socket socket;
+		ObjectInputStream ois;
+		ObjectOutputStream oos;
+
+		public ClientHandler(Socket inSocket)
+		{
+			this.socket = inSocket;
+			start();
+		}
+
+		public void run()
 		{
 			try
 			{
-				System.out.println("Kopplar ner klient");
-				oos.flush();
-				oos.close();
-				ois.close();
-				threadPool.shutdown();
-				clientSocket.close();
+				ois = new ObjectInputStream(socket.getInputStream());
+				oos = new ObjectOutputStream(socket.getOutputStream());
 
-			} catch (IOException e)
+				Message message;
+				while(true)
+				{
+					message = (Message) ois.readObject();
+
+					/* We could call controller first to send to all
+					 * but thats a story for another day, which is now */
+					oos.writeObject(message);
+					oos.flush();
+				}
+
+			} catch(IOException | ClassNotFoundException e)
 			{
-				e.printStackTrace();
+				try
+				{
+					socket.close();
+				} catch (IOException e1)
+				{
+					e1.printStackTrace();
+				}
 			}
 		}
-	}
-	
-//	private class ClientAddress {
-//		
-//		private Socket socket;
-//		private ObjectOutputStream oos;
-//		private ObjectInputStream ois;
-//		
-//		public ClientAddress(Socket socket) {
-//			try {
-//			this.socket = socket;
-//			oos = new ObjectOutputStream(socket.getOutputStream());
-//			ois = new ObjectInputStream(socket.getInputStream());
-//			
-//			user.setOos(oos);
-//			user.setOis(ois);
-//			
-//			}catch (IOException e ) {
-//				e.printStackTrace();
-//			}
-//			}
-//	}
-
-	public static void main(String[] args)
-	{
-		new Server();
 	}
 
 }

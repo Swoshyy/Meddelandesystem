@@ -5,102 +5,119 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
-
-import GUI.MessageWindow;
 import message.Message;
-import sethTest.TestSebbe;
+import message.MessageQueue;
 
 public class Client
 {
 	private Socket socket;
-	private ObjectInputStream ois;
+	private String address;
+	private int port;
+	
 	private ObjectOutputStream oos;
-	private MessageWindow msgWindow;
-	private TestSebbe ts = new TestSebbe();
-
-	public Client()
+	
+	private ClientController controller;
+	private MessageWriter msgWriter;
+	private MessageReader msgReader;
+	
+	public Client(String inAddress, int inPort, ClientController inController)
+	{
+		this.address = inAddress;
+		this.port = inPort;
+		this.controller = inController;
+		
+		controller.newClient(this);
+	
+		connect();
+		
+	}
+	
+	public void connect()
 	{
 		try
 		{
-			socket = new Socket("localhost", 2013);
-			oos = new ObjectOutputStream(socket.getOutputStream());
-			ois = new ObjectInputStream(socket.getInputStream());
-			msgWindow = new MessageWindow(this);
-			new Read().start();
+			socket =  new Socket(address, port);
 			
+			oos = new ObjectOutputStream(socket.getOutputStream());
+
+			
+			msgWriter = new MessageWriter();
+			msgReader = new MessageReader();
+			msgReader.start();
 		} catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	public void sendMessage(Message message)
+	{
+		msgWriter.newMess(message);
+	}
+	
+	private class MessageWriter
+	{
+		private MessageQueue<Message> msgQueue;
+		private Message message;
+		
+		public MessageWriter()
+		{
+		}
+		
+		public void newMess(Message mess)
+		{
+			this.message = mess;
+			write();
+		}
+		
+		public void write()
 		{
 			try
 			{
-				disconnectFromServer();
-			} catch(Exception ee)
+//				while(true)
+//				{
+					oos.writeObject(message);
+					oos.flush();
+//				}
+			} catch (IOException e)
 			{
-				ee.printStackTrace();
+				try
+				{
+					socket.close();
+				} catch (IOException e1)
+				{
+					e1.printStackTrace();
+				}
+//				e.printStackTrace();
 			}
-			e.printStackTrace();
 		}
-	}
-
-	public void sendMessage(Message message)
-	{
-		try
-		{
-			oos.writeObject(message);
-			oos.flush();
-		} catch (Exception e)
-		{
-			e.printStackTrace();
-		}
-	}
-
-	public static void main(String[] args)
-	{
-		new Client();
+		
 	}
 	
-	public void disconnectFromServer()
-	{
-		try
-		{
-			ois.close();
-			oos.flush();
-			oos.close();
-			socket.close();
-			
-		} catch (IOException e)
-		{
-			e.printStackTrace();
-		}
-	}
-
-	private class Read extends Thread
+	private class MessageReader extends Thread
 	{
 		public void run()
 		{
-			Message message = null;
 			try
 			{
-				while (true)
+				ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
+				while(true)
 				{
-					message = (Message) ois.readObject();
-					msgWindow.append(message.getText() + "");
-					
-					if(message.getImage() != null)
-					{
-//						msgWindow.showImage(message.getImage());
-						ts.drawImage(message.getImage());
-//						JOptionPane.showConfirmDialog(null, message.getImage());
-
-					}
-					
+					Message message = (Message) ois.readObject();
+					controller.displayMessage(message);
 				}
-			} catch (IOException | ClassNotFoundException e)
+			} catch(IOException | ClassNotFoundException e)
 			{
-				e.printStackTrace();
+				try
+				{
+					socket.close();
+				} catch (IOException e1)
+				{
+					e1.printStackTrace();
+				}
+//				e.printStackTrace();
 			}
-			disconnectFromServer();
 		}
 	}
+	
 }
