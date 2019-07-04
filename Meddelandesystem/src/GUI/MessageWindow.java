@@ -162,10 +162,8 @@ public class MessageWindow
 		{
 			if (ee.getKeyCode() == KeyEvent.VK_ENTER && tfInput.getText().length() > 0)
 			{
-				System.out.println("Enter hit");
 				controller.sendMessage(new Message(tfInput.getText()));
 				tfInput.setText(null);
-				System.out.println("Done entering");
 			}
 		}
 

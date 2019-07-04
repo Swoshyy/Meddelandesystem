@@ -5,7 +5,9 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.LinkedList;
 
+import client.ClientConnection;
 import message.Message;
 
 public class Server
@@ -55,12 +57,24 @@ public class Server
 	private class ClientHandler extends Thread
 	{
 		private Socket socket;
-		ObjectInputStream ois;
-		ObjectOutputStream oos;
+		private ObjectInputStream ois;
+		private ObjectOutputStream oos;
 
 		public ClientHandler(Socket inSocket)
 		{
 			this.socket = inSocket;
+			try
+			{
+				ois = new ObjectInputStream(socket.getInputStream());
+				oos = new ObjectOutputStream(socket.getOutputStream());
+				controller.newClient(new ClientConnection(oos, socket));
+
+			} catch (IOException e)
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
 			start();
 		}
 
@@ -68,18 +82,16 @@ public class Server
 		{
 			try
 			{
-				ois = new ObjectInputStream(socket.getInputStream());
-				oos = new ObjectOutputStream(socket.getOutputStream());
 
 				Message message;
 				while(true)
 				{
-					message = (Message) ois.readObject();
 
+					message = (Message) ois.readObject();
+					controller.newMessage(message);
 					/* We could call controller first to send to all
 					 * but thats a story for another day, which is now */
-					oos.writeObject(message);
-					oos.flush();
+
 				}
 
 			} catch(IOException | ClassNotFoundException e)
@@ -93,6 +105,39 @@ public class Server
 				}
 			}
 		}
+	}
+	
+	public void sendMessage(Message inMessage, ObjectOutputStream inOos)
+	{
+		new WriteMessage(inMessage, inOos);
+
+	}
+	
+	private class WriteMessage extends Thread
+	{
+		private Message message;
+		private ObjectOutputStream oos;
+		
+		public WriteMessage(Message message, ObjectOutputStream oos)
+		{
+			this.message = message;
+			this.oos = oos;
+			start();
+		}
+		
+		public void run()
+		{
+			try
+			{
+				oos.writeObject(message);
+				oos.flush();
+			} catch(IOException e)
+			{
+				e.printStackTrace();
+			}
+		}
+		
+		
 	}
 
 }

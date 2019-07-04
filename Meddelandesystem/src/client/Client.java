@@ -104,6 +104,7 @@ public class Client
 				while(true)
 				{
 					Message message = (Message) ois.readObject();
+					System.out.println("MEssage read from client");
 					controller.displayMessage(message);
 				}
 			} catch(IOException | ClassNotFoundException e)
@@ -115,7 +116,6 @@ public class Client
 				{
 					e1.printStackTrace();
 				}
-//				e.printStackTrace();
 			}
 		}
 	}
