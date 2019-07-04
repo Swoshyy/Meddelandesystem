@@ -11,6 +11,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.LinkedList;
 
+import user.User;
+
 
 public class SavedFriends {
 	private String fileName; 

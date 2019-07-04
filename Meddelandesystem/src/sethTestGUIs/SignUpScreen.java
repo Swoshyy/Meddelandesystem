@@ -7,16 +7,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import javax.swing.JButton;
-import javax.swing.JFileChooser;
 
 import saveUsers.SaveObjects;
-import saveUsers.User;
+import user.User;
 
 /**
  * 

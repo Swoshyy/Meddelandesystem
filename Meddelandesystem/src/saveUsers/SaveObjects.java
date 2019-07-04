@@ -12,6 +12,8 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.LinkedList;
 
+import user.User;
+
 /**
  * 
  * @author sethoberg
