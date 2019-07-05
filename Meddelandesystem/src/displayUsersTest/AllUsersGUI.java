@@ -20,6 +20,9 @@ import user.User;
  * Gui showing a list of both all online users and a list of saved contacts/friends
  * The GUI also has buttons for adding or removing a user from their friendlist, sending a 
  * message to a selected user and logging out
+ * 
+ * !!! In main method is a test list of user which should later be removed!
+ * 
  * @author sethoberg
  *
  */
@@ -201,6 +204,9 @@ public class AllUsersGUI extends JPanel {
 	public static void main(String [] args) {
 		AllUsersGUI testObject = new AllUsersGUI();
 		
+		/*
+		 * Lista av användare för testning, tas bort när den inte behövs
+		 */
 		LinkedList<User> testUsers = new LinkedList<User>(); 
 		testUsers.add(new User(new ImageIcon(new ImageIcon("images/blue.jpg").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT)), "User1"));
 		testUsers.add(new User(new ImageIcon(new ImageIcon("images/orange.jpg").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT)), "User2"));

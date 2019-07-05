@@ -84,7 +84,6 @@ public class SavedFriends {
 				try {
 					
 					savedFriends = (LinkedList<User>) ois.readObject();
-					System.out.println("Något händer");
 					
 				} catch(EOFException e) {
 					notEmpty = false;
