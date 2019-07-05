@@ -2,38 +2,31 @@ package GUI;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Image;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.awt.event.MouseEvent;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.JTextPane;
 import javax.swing.border.MatteBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import javax.swing.text.BadLocationException;
 import javax.swing.text.DefaultCaret;
-import javax.swing.text.Document;
 
+import client.Client;
 import client.ClientController;
 import message.Message;
 
-public class MessageWindow {
+public class OldMessageWindow
+{
 	private ClientController controller;
 
 	private JFrame frame;
@@ -41,25 +34,26 @@ public class MessageWindow {
 	private JPanel pnlMessage;
 	private JButton btnOpenImages;
 	private JButton btnSend;
-	private JTextPane textPane;
-	private BufferedImage bimg;
+	private JTextArea textArea;
 
-	// private TestSebbe imageChooser;
+	//	private TestSebbe imageChooser;
 	private ImageIcon img;
 
 	/**
 	 * Create the application.
 	 */
-	public MessageWindow(ClientController controller) {
+	public OldMessageWindow(ClientController controller)
+	{
 		this.controller = controller;
 		initialize();
 		frame.setVisible(true);
 	}
 
 	/**
-	 * Initialise the contents of the frame.
+	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize()
+	{
 		frame = new JFrame("Messenger");
 		frame.setBounds(100, 100, 800, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -97,15 +91,15 @@ public class MessageWindow {
 		scrollPane.setBounds(10, 11, 564, 410);
 		pnlMessage.add(scrollPane);
 
-		textPane = new JTextPane();
-		textPane.setEditable(false);
-		textPane.setMargin(new Insets(20, 20, 20, 20));
-		textPane.setBackground(new Color(255, 250, 250));
-//		textArea.setLineWrap(true);
-//		textArea.setWrapStyleWord(true);
-		scrollPane.setViewportView(textPane);
+		textArea = new JTextArea();
+		textArea.setEditable(false);
+		textArea.setMargin(new Insets(20, 20, 20, 20));
+		textArea.setBackground(new Color(255, 250, 250));
+		textArea.setLineWrap(true);
+		textArea.setWrapStyleWord(true);
+		scrollPane.setViewportView(textArea);
 
-		DefaultCaret caret = (DefaultCaret) textPane.getCaret();
+		DefaultCaret caret = (DefaultCaret) textArea.getCaret();
 		caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
 
 		JPanel pnlList = new JPanel();
@@ -119,69 +113,26 @@ public class MessageWindow {
 		frame.setResizable(false);
 	}
 
-	public void append(Message message) {
-
-		try {
-			Document doc = textPane.getDocument();
-			doc.insertString(doc.getLength(), message.getText() + "\n"+"\n", null);
-		} catch (BadLocationException exc) {
-			exc.printStackTrace();
-		}
-
-		if (message.getImage() != null) {
-
-			JLabel label = new JLabel("");
-
-			// YEAH........ so thats the mouse listener shhhhhh no one will know
-			label.addMouseListener(new java.awt.event.MouseListener() {
-
-				public void mouseClicked(MouseEvent ee) {
-					JOptionPane.showMessageDialog(null, message.getImage());
-
-				}
-
-				public void mouseEntered(MouseEvent ee) {
-
-				}
-
-				public void mouseExited(MouseEvent ee) {
-
-				}
-
-				public void mousePressed(MouseEvent ee) {
-
-				}
-
-				public void mouseReleased(MouseEvent ee) {
-
-				}
-			});
-			// its not that much right?
-
-			Image resizedImg = bimg.getScaledInstance(100, 100, Image.SCALE_SMOOTH);
-
-			label.setIcon(new ImageIcon(resizedImg));
-
-			label.setAlignmentY(0.85f);
-			textPane.insertComponent(label);
-
-			try {
-				Document doc = textPane.getDocument();
-				doc.insertString(doc.getLength(),  "\n"+"\n" , null);
-			} catch (BadLocationException exc) {
-				exc.printStackTrace();
-			}
-
+	public void append(Message message)
+	{
+		textArea.append(message.getText() + "\n\n");
+		if(message.getImage() != null)
+		{
+			JOptionPane.showMessageDialog(null, message.getImage());
 		}
 	}
 
-	public void showImage(ImageIcon icon) {
+	public void showImage(ImageIcon icon)
+	{
 	}
 
-	private class ButtonListener implements ActionListener, KeyListener {
-		// private ImageIcon img = null;
-		public void actionPerformed(ActionEvent e) {
-			if (e.getSource() == btnSend) {
+	private class ButtonListener implements ActionListener, KeyListener
+	{
+		//		private ImageIcon img = null;
+		public void actionPerformed(ActionEvent e)
+		{
+			if (e.getSource() == btnSend)
+			{
 				System.out.println("Enter hit");
 				controller.sendMessage(new Message(tfInput.getText(), img));
 				tfInput.setText(null);
@@ -190,41 +141,40 @@ public class MessageWindow {
 
 			}
 
-			if (e.getSource() == btnOpenImages) {
+			if (e.getSource() == btnOpenImages)
+			{
 				JFileChooser chooser = new JFileChooser();
 				FileNameExtensionFilter filter = new FileNameExtensionFilter("Images", "jpg", "png", "gif");
 				chooser.setFileFilter(filter);
 				int returnVal = chooser.showOpenDialog(chooser);
 
-				if (returnVal == JFileChooser.APPROVE_OPTION) {
-
+				if (returnVal == JFileChooser.APPROVE_OPTION)
+				{
 					String imagename = chooser.getSelectedFile().getPath();
-					try {
-						bimg = ImageIO.read(new File(imagename));
-					} catch (IOException e1) {
-						e1.printStackTrace();
-					}
-
 					img = new ImageIcon(new ImageIcon(imagename).getImage());
 
-					// JOptionPane.showConfirmDialog(null, img);
+					//					JOptionPane.showConfirmDialog(null, img);
 				}
 
 			}
 		}
 
-		public void keyPressed(KeyEvent ee) {
-			if (ee.getKeyCode() == KeyEvent.VK_ENTER) {
+		public void keyPressed(KeyEvent ee)
+		{
+			if (ee.getKeyCode() == KeyEvent.VK_ENTER)
+			{
 				controller.sendMessage(new Message(tfInput.getText(), img));
 				tfInput.setText(null);
 				img = null;
 			}
 		}
 
-		public void keyReleased(KeyEvent e) {
+		public void keyReleased(KeyEvent e)
+		{
 		}
 
-		public void keyTyped(KeyEvent e) {
+		public void keyTyped(KeyEvent e)
+		{
 		}
 
 	}
