@@ -14,6 +14,8 @@ public class Server
 {
 	private ServerController controller;
 	private ServerSocket serverSocket;
+	private Socket socket;
+
 
 	public Server(int inPort, ServerController inController)
 	{
@@ -23,7 +25,6 @@ public class Server
 			serverSocket = new ServerSocket(inPort);
 		} catch (IOException e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		controller.registerServer(this);
@@ -42,7 +43,7 @@ public class Server
 
 		public void run()
 		{
-			Socket socket = null;
+//			Socket socket = null;
 			try
 			{
 				while (true)
@@ -57,6 +58,7 @@ public class Server
 				try
 				{
 					socket.close();
+//					controller.remove(socket); // Ersättas med user
 				} catch (IOException e1)
 				{
 					e1.printStackTrace();
@@ -82,7 +84,6 @@ public class Server
 
 			} catch (IOException e)
 			{
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
@@ -111,7 +112,10 @@ public class Server
 			{
 				try
 				{
-					socket.close();
+					if(socket != null)
+					{
+						socket.close();
+					}
 				} catch (IOException e1)
 				{
 					e1.printStackTrace();
@@ -146,7 +150,14 @@ public class Server
 				oos.flush();
 			} catch (IOException e)
 			{
-				e.printStackTrace();
+				try
+				{
+					socket.close();
+				} catch (IOException e1)
+				{
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		}
 
