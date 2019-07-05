@@ -15,7 +15,7 @@ import java.util.LinkedList;
 import user.User;
 
 /**
- * 
+ * Class for saving new users, the saved users txt file should be stored on the server
  * @author sethoberg
  *
  */
@@ -83,6 +83,8 @@ public class SaveObjects implements Serializable {
 	
 	/**
 	 * If the name and password matches a user 1 is returned
+	 * If either the name or password (or both) do not match a user 0 is returned meaning a user 
+	 * cannot log in
 	 */
 	public int logInUser(String name, String password) {
 		boolean notEmpty = true;
@@ -125,7 +127,11 @@ public class SaveObjects implements Serializable {
 		
 	}
 	
-
+	
+	/**
+	 * Save a new user to the savedUsers txt file
+	 * @param user
+	 */
 	public void saveNewUser(User user) {
 		//Spara ny användare till fil
 		

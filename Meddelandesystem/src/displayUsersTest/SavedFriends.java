@@ -14,6 +14,12 @@ import java.util.LinkedList;
 import user.User;
 
 
+/**
+ * Class used for saving friends a user adds to a local file (files/savedFriends.txt)
+ * @author sethoberg
+ *
+ */
+
 public class SavedFriends {
 	private String fileName; 
 	private LinkedList<User> savedFriends;
@@ -24,6 +30,10 @@ public class SavedFriends {
 	}
 	
 	
+	/**
+	 * Adds a new friend to the txt file
+	 * @param newFriend
+	 */
 	public void saveNewFriend(User newFriend) {
 		
 		try(ObjectOutputStream oos = new ObjectOutputStream( new BufferedOutputStream(
@@ -49,10 +59,15 @@ public class SavedFriends {
 		}
 		
 		System.out.println("Ny kontakt: " + newFriend.getName() + " Tillagd");
-		printFriendList();
+//		printFriendList(); For testing
 		
 	}
 	
+	
+	/**
+	 * Gets an updated version of the friend list after saving a new friend
+	 * Updates the savedFriends variable
+	 */
 	public void updateListOfFriends() {
 		boolean notEmpty = true;
 		
@@ -88,11 +103,16 @@ public class SavedFriends {
 			e.printStackTrace();
 		}
 		
-		printFriendList();
+//		printFriendList(); //For testing 
 		
 	}
 	
 	
+	
+	/**
+	 * Returns a list of all saved friends a user has 
+	 * @return
+	 */
 	public LinkedList getListOfFriends() {
 		boolean notEmpty = true;
 		
@@ -132,22 +152,26 @@ public class SavedFriends {
 	}
 	
 	
+	/**
+	 * Removes a friend from the list of friends if the list contains a user with the same username 
+	 * as the user chosen
+	 * @param oldFriend
+	 */
 	public void removeFriendFromList(User oldFriend) {
 		
-		/*
-		 * Change so that a person is removed depending on their name
-		 */
 		
 		for(int i = 0; i < savedFriends.size(); i++ ) {
 			if(savedFriends.get(i).getName().equals(oldFriend.getName())) {
 				savedFriends.remove(savedFriends.get(i));
 			}
 		}
-//		savedFriends.remove(oldFriend);
 		
 	}
 	
 	
+	/**
+	 * Saves the savedFriends variable to the txt file
+	 */
 	public void saveNewFriendList() {
 		
 		try(ObjectOutputStream oos = new ObjectOutputStream( new BufferedOutputStream(
@@ -164,7 +188,7 @@ public class SavedFriends {
 			e.printStackTrace();
 		}
 		
-		printFriendList(); 
+//		printFriendList(); For testing
 		
 	}
 	

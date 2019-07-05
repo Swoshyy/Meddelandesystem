@@ -17,7 +17,7 @@ import user.User;
 
 
 /**
- * 
+ * Class used for testing log in and signing up, now replaced by the classes LoginScreen and SignUpScreen
  * @author sethoberg
  *
  */

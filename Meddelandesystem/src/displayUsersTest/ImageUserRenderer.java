@@ -9,7 +9,8 @@ import javax.swing.ListCellRenderer;
 import user.User;
 
 /**
- * 
+ * Custom cellrenderer for the UsersGUI objects
+ * Shows an image and text next to it
  * @author sethoberg
  *
  */

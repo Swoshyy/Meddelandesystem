@@ -16,7 +16,8 @@ import java.awt.Color;
 import saveUsers.SaveObjects;
 
 /**
- * 
+ * LoginScreen combined with the saveObjects class to 
+ * see if user is allowed to log in (if username and password match)
  * @author aevanDino, sethoberg
  *
  */

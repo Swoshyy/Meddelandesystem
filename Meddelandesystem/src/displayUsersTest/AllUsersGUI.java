@@ -2,10 +2,12 @@ package displayUsersTest;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.LinkedList;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -15,7 +17,9 @@ import user.User;
 
 
 /**
- * 
+ * Gui showing a list of both all online users and a list of saved contacts/friends
+ * The GUI also has buttons for adding or removing a user from their friendlist, sending a 
+ * message to a selected user and logging out
  * @author sethoberg
  *
  */
@@ -52,6 +56,10 @@ public class AllUsersGUI extends JPanel {
 		
 	}
 	
+	
+	/**
+	 * Showing gui in frame
+	 */
 	public void showFrame() {
 		frame = new JFrame("Users gui");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -61,6 +69,10 @@ public class AllUsersGUI extends JPanel {
 		
 	}
 	
+	
+	/**
+	 * Method for creating the whole gui
+	 */
 	public void initializeGUI() {
 		
 		setLayout(new BorderLayout());
@@ -99,6 +111,10 @@ public class AllUsersGUI extends JPanel {
 	
 	
 	
+	/**
+	 * Method for adding a list of users to the online users list in the gui
+	 * @param userList
+	 */
 	public void addListOfOnlineUsers(LinkedList<User> userList) {
 		
 		onlineUsers.addListOfUsers(userList);
@@ -106,6 +122,10 @@ public class AllUsersGUI extends JPanel {
 	}
 	
 	
+	/**
+	 * Method for adding a list of friends to the friend list in the gui
+	 * @param userList
+	 */
 	public void addListOfSavedFriends(LinkedList<User> userList) {
 
 		friends.addListOfUsers(userList);
@@ -113,11 +133,20 @@ public class AllUsersGUI extends JPanel {
 	}
 	
 	
+	/**
+	 * Inner class for button clicks
+	 * @author sethoberg
+	 *
+	 */
 	
 	private class ButtonListener implements ActionListener {
 
 		public void actionPerformed(ActionEvent e) {
 			
+			
+			/**
+			 * Add friend if they are not already a friend or a user is not selected
+			 */
 			if(e.getSource() == addFriendBtn) {
 				
 				if(onlineUsers.userIsNotSelected() == false) {
@@ -131,6 +160,10 @@ public class AllUsersGUI extends JPanel {
 				}
 				
 			}
+			
+			/**
+			 * Add friend if they are not already a friend or a user is not selected
+			 */
 			if(e.getSource() == removeFriendBtn) {
 				if(friends.userIsNotSelected() == false) {
 					onlineUsers.addNewUser(friends.getChosenUser());
@@ -147,11 +180,12 @@ public class AllUsersGUI extends JPanel {
 				}
 			}
 			if(e.getSource() == messageBtn) {
-				System.out.println("Kan inte skicka meddelande än");
+				System.out.println("Cannot send message yet");
 			}
+			
 			if(e.getSource() == logOutBtn) {
-				System.exit(0); //Change later? Log out should take user back to the log in screen perhaps?
-				//Also the logOut button should log out the client from the server
+				System.out.println("Log out user here and send them back to the log in screen");
+//				System.exit(0); 
 			}
 			
 			
@@ -166,6 +200,18 @@ public class AllUsersGUI extends JPanel {
 	 */
 	public static void main(String [] args) {
 		AllUsersGUI testObject = new AllUsersGUI();
+		
+		LinkedList<User> testUsers = new LinkedList<User>(); 
+		testUsers.add(new User(new ImageIcon(new ImageIcon("images/blue.jpg").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT)), "User1"));
+		testUsers.add(new User(new ImageIcon(new ImageIcon("images/orange.jpg").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT)), "User2"));
+		testUsers.add(new User(new ImageIcon(new ImageIcon("images/magenta.jpg").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT)), "User3"));
+		testUsers.add(new User(new ImageIcon(new ImageIcon("images/blue.jpg").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT)), "User4"));
+		testUsers.add(new User(new ImageIcon(new ImageIcon("images/orange.jpg").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT)), "User5"));
+		testUsers.add(new User(new ImageIcon(new ImageIcon("images/magenta.jpg").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT)), "User6"));
+		testUsers.add(new User("User7"));
+		
+		testObject.addListOfOnlineUsers(testUsers);
+		testObject.addListOfSavedFriends(testUsers);
 	}
 
 }

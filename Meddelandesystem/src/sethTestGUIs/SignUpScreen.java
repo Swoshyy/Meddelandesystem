@@ -19,7 +19,8 @@ import saveUsers.SaveObjects;
 import user.User;
 
 /**
- * 
+ * SignUpScreen combined with the saveObjects class to 
+ * see if a new user can be created (or if there is already a user with the same username)
  * @author aevanDino, sethoberg
  *
  */
