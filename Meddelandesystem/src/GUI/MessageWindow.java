@@ -2,6 +2,7 @@ package GUI;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
@@ -42,7 +43,6 @@ public class MessageWindow {
 	private JButton btnOpenImages;
 	private JButton btnSend;
 	private JTextPane textPane;
-	private BufferedImage bimg;
 
 	// private TestSebbe imageChooser;
 	private ImageIcon img;
@@ -158,7 +158,20 @@ public class MessageWindow {
 			});
 			// its not that much right?
 
-			Image resizedImg = bimg.getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+//			ImageIcon yourImage = message.getImage();
+//			Image image = yourImage.getImage();
+//			BufferedImage buffered = (BufferedImage) image;
+			
+			BufferedImage bufferedImg = new BufferedImage(
+					message.getImage().getIconWidth(),
+					message.getImage().getIconHeight(),
+				    BufferedImage.TYPE_INT_RGB);
+				Graphics g = bufferedImg.createGraphics();
+				// paint the Icon to the BufferedImage.
+				message.getImage().paintIcon(null, g, 0,0);
+				g.dispose();
+			
+			Image resizedImg = bufferedImg.getScaledInstance(100, 100, Image.SCALE_SMOOTH);
 
 			label.setIcon(new ImageIcon(resizedImg));
 
@@ -199,11 +212,7 @@ public class MessageWindow {
 				if (returnVal == JFileChooser.APPROVE_OPTION) {
 
 					String imagename = chooser.getSelectedFile().getPath();
-					try {
-						bimg = ImageIO.read(new File(imagename));
-					} catch (IOException e1) {
-						e1.printStackTrace();
-					}
+					
 
 					img = new ImageIcon(new ImageIcon(imagename).getImage());
 
