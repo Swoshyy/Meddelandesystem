@@ -32,6 +32,7 @@ import javax.swing.text.DefaultCaret;
 import javax.swing.text.Document;
 
 import client.ClientController;
+import displayUsersTest.AllUsersGUI;
 import message.Message;
 
 public class MessageWindow {
@@ -43,6 +44,8 @@ public class MessageWindow {
 	private JButton btnOpenImages;
 	private JButton btnSend;
 	private JTextPane textPane;
+	
+	private AllUsersGUI userListGUI = new AllUsersGUI();
 
 	// private TestSebbe imageChooser;
 	private ImageIcon img;
@@ -113,6 +116,7 @@ public class MessageWindow {
 		pnlList.setBackground(new Color(255, 250, 250));
 		pnlList.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		pnlList.setBounds(0, 0, 200, 461);
+		pnlList.add(userListGUI);
 		frame.getContentPane().add(pnlList);
 
 		btnOpenImages.addActionListener(new ButtonListener());

@@ -55,7 +55,7 @@ public class AllUsersGUI extends JPanel {
 	public AllUsersGUI() {
 		
 		initializeGUI();
-		showFrame();
+//		showFrame();
 		
 	}
 	
@@ -110,6 +110,8 @@ public class AllUsersGUI extends JPanel {
 		buttonsPanel.add(logOutBtn);
 		
 		add(buttonsPanel, BorderLayout.SOUTH);
+		
+		testUsers();
 	}
 	
 	
@@ -197,16 +199,10 @@ public class AllUsersGUI extends JPanel {
 	}
 	
 	
-	/**
-	 * Used for testing, Remove later
-	 * @param args
+	/*
+	 * Remove later
 	 */
-	public static void main(String [] args) {
-		AllUsersGUI testObject = new AllUsersGUI();
-		
-		/*
-		 * Lista av användare för testning, tas bort när den inte behövs
-		 */
+	public void testUsers() {
 		LinkedList<User> testUsers = new LinkedList<User>(); 
 		testUsers.add(new User(new ImageIcon(new ImageIcon("images/blue.jpg").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT)), "User1"));
 		testUsers.add(new User(new ImageIcon(new ImageIcon("images/orange.jpg").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT)), "User2"));
@@ -216,8 +212,9 @@ public class AllUsersGUI extends JPanel {
 		testUsers.add(new User(new ImageIcon(new ImageIcon("images/magenta.jpg").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT)), "User6"));
 		testUsers.add(new User("User7"));
 		
-		testObject.addListOfOnlineUsers(testUsers);
-		testObject.addListOfSavedFriends(testUsers);
+		addListOfOnlineUsers(testUsers);
+		addListOfSavedFriends(testUsers);
 	}
+	
 
 }
