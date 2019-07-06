@@ -32,7 +32,7 @@ public class AllUsersGUI extends JPanel {
 	
 	private JPanel allUsersPanel = new JPanel();
 	
-	private SavedFriends saveFriendsObject = new SavedFriends("files/savedFriends.txt");
+	private SavedFriends saveFriendsObject = new SavedFriends("files/savedFriends.dat");
 	
 	private JPanel onlineUsersPanel = new JPanel();
 	private JLabel onlineUsersLabel = new JLabel("Online");

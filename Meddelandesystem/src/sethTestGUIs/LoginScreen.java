@@ -38,7 +38,7 @@ public class LoginScreen
 	
 	private SignUpScreen signUp;
 	
-	private SaveObjects savedUsers = new SaveObjects("files/savedUsers.txt");
+	private SaveObjects savedUsers = new SaveObjects("files/savedUsers.dat");
 
 	/**
 	 * Launch the application.
