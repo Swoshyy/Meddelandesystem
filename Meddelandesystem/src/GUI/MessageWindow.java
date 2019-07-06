@@ -101,6 +101,7 @@ public class MessageWindow {
 		textPane.setEditable(false);
 		textPane.setMargin(new Insets(20, 20, 20, 20));
 		textPane.setBackground(new Color(255, 250, 250));
+		textPane.setAutoscrolls(true);
 //		textArea.setLineWrap(true);
 //		textArea.setWrapStyleWord(true);
 		scrollPane.setViewportView(textPane);
