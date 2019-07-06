@@ -71,7 +71,7 @@ public class AllUsersGUI extends JPanel {
 		frame.pack();
 		
 	}
-	
+	 
 	
 	/**
 	 * Method for creating the whole gui

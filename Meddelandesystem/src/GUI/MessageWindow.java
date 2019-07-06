@@ -124,6 +124,7 @@ public class MessageWindow {
 		frame.setResizable(false);
 	}
 
+	
 	public void append(Message message) {
 
 		try {
