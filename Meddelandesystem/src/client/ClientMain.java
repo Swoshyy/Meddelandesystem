@@ -13,14 +13,14 @@ public class ClientMain
 		MessageWindow msgWindow = new MessageWindow(controller);
 		controller.setGUI(msgWindow);
 	
-//		new Client("localhost", 2020, controller);
-		try
-		{
-			new Client(InetAddress.getByName("LAPTOP-807OMURG"), 2020, controller);
-		} catch (UnknownHostException e)
-		{
-			e.printStackTrace();
-		}
+		new Client("localhost", 2020, controller);
+//		try
+//		{
+//			new Client(InetAddress.getByName("LAPTOP-807OMURG"), 2020, controller);
+//		} catch (UnknownHostException e)
+//		{
+//			e.printStackTrace();
+//		}
 
 	}
 }

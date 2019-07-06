@@ -12,8 +12,8 @@ import message.MessageQueue;
 public class Client
 {
 	private Socket socket;
-//	private String address;
-	private InetAddress address;
+	private String address;
+//	private InetAddress address;
 	private int port; 
 	
 	private ObjectOutputStream oos;
@@ -22,8 +22,8 @@ public class Client
 	private MessageWriter msgWriter;
 	private MessageReader msgReader;
 	
-//	public Client(String inAddress, int inPort, ClientController inController)
-	public Client(InetAddress inAddress, int inPort, ClientController inController)
+	public Client(String inAddress, int inPort, ClientController inController)
+//	public Client(InetAddress inAddress, int inPort, ClientController inController)
 	{
 		this.address = inAddress;
 		this.port = inPort;
