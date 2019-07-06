@@ -20,14 +20,14 @@ import user.User;
  *
  */
 
-public class SaveObjects implements Serializable {
+public class SavedUsers implements Serializable {
 	
 	private static final long serialVersionUID = 4833368582044573121L;
 	private String fileName; 
 	private LinkedList<User> savedUsers;
 	
 	
-	public SaveObjects(String fileName) {
+	public SavedUsers(String fileName) {
 		this.fileName = fileName;
 	}
 	
