@@ -15,7 +15,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-import saveUsers.SaveObjects;
+import saveUsers.SavedUsers;
 import user.User;
 
 /**
@@ -41,7 +41,7 @@ public class SignUpScreen
 	private JButton btnSignUp;
 	
 	private ButtonListener btnListener = new ButtonListener();
-	private SaveObjects savedUsers;
+	private SavedUsers savedUsers;
 	
 	/**
 	 * Launch the application.
@@ -73,7 +73,7 @@ public class SignUpScreen
 		addAcceptedImageFilters();
 	}
 	
-	public void addSavedUsersObject(SaveObjects savedUsers) {
+	public void addSavedUsersObject(SavedUsers savedUsers) {
 		this.savedUsers = savedUsers;
 	}
 

@@ -13,7 +13,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
-import saveUsers.SaveObjects;
+import saveUsers.SavedUsers;
 
 /**
  * LoginScreen combined with the saveObjects class to 
@@ -38,7 +38,7 @@ public class LoginScreen
 	
 	private SignUpScreen signUp;
 	
-	private SaveObjects savedUsers = new SaveObjects("files/savedUsers.dat");
+	private SavedUsers savedUsers = new SavedUsers("files/savedUsers.dat");
 
 	/**
 	 * Launch the application.
