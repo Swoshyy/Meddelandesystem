@@ -1,6 +1,8 @@
 package displayUsersTest;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -82,12 +84,15 @@ public class AllUsersGUI extends JPanel {
 		
 		
 		allUsersPanel.setLayout(new GridLayout(2,2));
+		allUsersPanel.setPreferredSize(new Dimension(200, 600));
+		allUsersPanel.setBackground(new Color(252, 137, 114));
 		
 		onlineUsersPanel.setLayout(new BorderLayout());
 		onlineUsersPanel.add(onlineUsersLabel, BorderLayout.NORTH);
 		onlineUsersPanel.add(onlineUsers, BorderLayout.CENTER);
 		
 		friendsPanel.setLayout(new BorderLayout());
+		friendsPanel.setPreferredSize(new Dimension(200, 600));
 		friendsPanel.add(friendsLabel, BorderLayout.NORTH);
 		friendsPanel.add(friends, BorderLayout.CENTER);
 		
@@ -111,7 +116,6 @@ public class AllUsersGUI extends JPanel {
 		
 		add(buttonsPanel, BorderLayout.SOUTH);
 		
-		testUsers();
 	}
 	
 	

@@ -131,6 +131,8 @@ public class LoginScreen
 			if(e.getSource() == btnLogin) {
 					
 					if(savedUsers.logInUser(textField.getText(), new String(passwordField.getPassword())) == 1) {
+						
+						
 						System.out.println("Inloggning lyckad");
 						//Låt användare logga in efter detta
 					}

@@ -58,19 +58,30 @@ public class MessageWindow {
 		initialize();
 		frame.setVisible(true);
 	}
+	
+	public MessageWindow() {
+		initialize();
+		frame.setVisible(true);
+	}
+	
+	public static void main(String[] args)
+	{
+		new MessageWindow();
+	}
 
 	/**
 	 * Initialise the contents of the frame.
 	 */
 	private void initialize() {
 		frame = new JFrame("Messenger");
-		frame.setBounds(100, 100, 800, 500);
+		frame.getContentPane().setBackground(new Color(250, 128, 114));
+		frame.setBounds(100, 100, 951, 697);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
 		pnlMessage = new JPanel();
 		pnlMessage.setBackground(new Color(250, 128, 114));
-		pnlMessage.setBounds(200, 0, 584, 461);
+		pnlMessage.setBounds(210, 0, 725, 647);
 		frame.getContentPane().add(pnlMessage);
 		pnlMessage.setLayout(null);
 
@@ -78,7 +89,7 @@ public class MessageWindow {
 		tfInput.setCaretPosition(0);
 		tfInput.setFont(new Font("Georgia", Font.PLAIN, 12));
 		tfInput.setBackground(new Color(255, 250, 250));
-		tfInput.setBounds(10, 432, 320, 20);
+		tfInput.setBounds(10, 616, 453, 20);
 		pnlMessage.add(tfInput);
 		tfInput.addKeyListener(new ButtonListener());
 		tfInput.setColumns(10);
@@ -86,18 +97,18 @@ public class MessageWindow {
 		btnOpenImages = new JButton("Open Images");
 		btnOpenImages.setBackground(new Color(240, 248, 255));
 		btnOpenImages.setFont(new Font("Georgia", Font.PLAIN, 11));
-		btnOpenImages.setBounds(458, 431, 116, 23);
+		btnOpenImages.setBounds(599, 615, 116, 23);
 		pnlMessage.add(btnOpenImages);
 
 		btnSend = new JButton("Send Message");
 		btnSend.setBackground(new Color(240, 248, 255));
 		btnSend.setFont(new Font("Georgia", Font.PLAIN, 11));
-		btnSend.setBounds(340, 431, 116, 23);
+		btnSend.setBounds(473, 615, 116, 23);
 		btnSend.addActionListener(new ButtonListener());
 		pnlMessage.add(btnSend);
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 11, 564, 410);
+		scrollPane.setBounds(10, 11, 705, 594);
 		pnlMessage.add(scrollPane);
 
 		textPane = new JTextPane();
@@ -115,13 +126,16 @@ public class MessageWindow {
 		JPanel pnlList = new JPanel();
 		pnlList.setBackground(new Color(255, 250, 250));
 		pnlList.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
-		pnlList.setBounds(0, 0, 200, 461);
+		pnlList.setBounds(0, 0, 200, 600);
+		pnlList.setLayout(null);
+		userListGUI.setBounds(2, 2, 210, 598);
 		pnlList.add(userListGUI);
 		frame.getContentPane().add(pnlList);
 
 		btnOpenImages.addActionListener(new ButtonListener());
 
 		frame.setResizable(false);
+		frame.setLocationRelativeTo(null);
 	}
 
 	
