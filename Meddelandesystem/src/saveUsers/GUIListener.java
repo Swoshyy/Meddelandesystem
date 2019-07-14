@@ -1,5 +1,7 @@
 package saveUsers;
 
+import user.User;
+
 /**
  * 
  * @author sethoberg

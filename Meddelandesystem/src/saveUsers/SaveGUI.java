@@ -13,9 +13,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import user.User;
+
 
 /**
- * 
+ * Class used for testing log in and signing up, now replaced by the classes LoginScreen and SignUpScreen
  * @author sethoberg
  *
  */
@@ -114,7 +116,6 @@ public class SaveGUI extends JPanel {
 			
 			if(e.getSource() == logInBtn) {
 				
-				User newUser = new User(nameField.getText(), passwordField.getText());
 				
 				for(int i = 0; i < listeners.size(); i++) {
 					

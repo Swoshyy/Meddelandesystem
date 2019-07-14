@@ -1,119 +1,208 @@
 package server;
 
-import java.awt.image.ImagingOpException;
-import java.io.IOError;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.Date;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.ArrayList;
+import java.util.LinkedList;
 
+import client.ClientConnection;
 import message.Message;
+import user.User;
 
 public class Server
 {
-	private ExecutorService threadPool = Executors.newFixedThreadPool(10);
-	private Date date = new Date();
+	private ServerController controller;
+	private ServerSocket serverSocket;
+	private Socket socket;
+	
+	private UserWriter userWriter;
 
-	public Server()
+
+	public Server(int inPort, ServerController inController)
 	{
+		this.controller = inController; 
 		try
 		{
-			ServerSocket serverSocket = new ServerSocket(2010);
-			Socket socket = serverSocket.accept();
-
-			Runnable task = new ClientHandler(socket);
-			threadPool.submit(task);
-
+			serverSocket = new ServerSocket(inPort);
 		} catch (IOException e)
 		{
 			e.printStackTrace();
 		}
+		controller.registerServer(this);
+		new ClientListener(inPort);
 	}
 
-	private class ClientHandler implements Runnable
+	private class ClientListener extends Thread
 	{
-		private Socket clientSocket;
-		private ObjectInputStream ois;
-		private ObjectOutputStream oos;
-		private Boolean ShouldBeRunning;
+		private int port;
 
-		public ClientHandler(Socket inSocket)
+		public ClientListener(int inPort)
 		{
-			this.clientSocket = inSocket;
-			this.ShouldBeRunning = true;
-			try
-			{
-				ois = new ObjectInputStream(clientSocket.getInputStream());
-				oos = new ObjectOutputStream(clientSocket.getOutputStream());
-			} catch (IOException e)
-			{
-				try
-				{
-					disconnectClient();
-
-				} catch(ImagingOpException ee)
-				{
-					ee.printStackTrace();
-				}
-			}
+			this.port = inPort;
+			start();
 		}
 
 		public void run()
 		{
-			Message message = null;
-
 			try
 			{
-				while (ShouldBeRunning)
+				while (true)
 				{
-					message = (Message) ois.readObject();
+					socket = serverSocket.accept();
+					new ClientHandler(socket);
+				}
+			} catch (IOException e)
+			{
+				try
+				{
+					socket.close();
+					//					controller.remove(socket); // Ersättas med user
+				} catch (IOException e1)
+				{
+					e1.printStackTrace();
+				}
+			}
+		}
+	}
 
-					oos.writeObject(message);
-					oos.flush();
+	private class ClientHandler extends Thread
+	{
+		private Socket socket;
+		private ObjectInputStream ois;
+		private ObjectOutputStream oos;
 
-					if (message.getImage() != null)
+		public ClientHandler(Socket inSocket)
+		{
+			this.socket = inSocket;
+			try
+			{
+				ois = new ObjectInputStream(socket.getInputStream());
+				oos = new ObjectOutputStream(socket.getOutputStream());
+				controller.newClient(new ClientConnection(oos, socket));
+				userWriter = new UserWriter(oos);
+
+			} catch (IOException e)
+			{
+				e.printStackTrace();
+			}
+
+			start();
+		}
+
+		public void run()
+		{
+			try
+			{
+				Message message;
+				Object obj;
+				while (true)
+				{
+					//					message = (Message) ois.readObject();
+					obj = ois.readObject();
+					if(obj instanceof Message)
 					{
-						/* Append image to text area */
+						message = (Message) obj;
+						controller.newMessage(message);
+					} else if(obj instanceof User)
+					{
+						controller.addNewUser((User) obj);
+						
+						// skriv user?
 					}
 				}
 			} catch (IOException | ClassNotFoundException e)
 			{
 				try
 				{
-					ShouldBeRunning = false;
-					disconnectClient();
-
-				} catch (Exception ee) {
-					ee.printStackTrace();
+					if(socket != null)
+					{
+						socket.close();
+					}
+				} catch (IOException e1)
+				{
+					e1.printStackTrace();
 				}
 			}
 		}
+	}
 
-		private void disconnectClient()
+	public void sendMessage(Message inMessage, ObjectOutputStream inOos)
+	{
+		new WriteMessage(inMessage, inOos);
+
+	}
+
+	private class WriteMessage extends Thread
+	{
+		private Message message;
+		private ObjectOutputStream oos;
+
+		public WriteMessage(Message message, ObjectOutputStream oos)
+		{
+			this.message = message;
+			this.oos = oos;
+			start();
+		}
+
+		public void run()
 		{
 			try
 			{
-				System.out.println("Kopplar ner klient");
+				oos.writeObject(message);
 				oos.flush();
-				oos.close();
-				ois.close();
-				threadPool.shutdown();
-				clientSocket.close();
-
 			} catch (IOException e)
 			{
-				e.printStackTrace();
+				try
+				{
+					socket.close();
+				} catch (IOException e1)
+				{
+					e1.printStackTrace();
+				}
 			}
 		}
 	}
-
-	public static void main(String[] args)
+	
+	public void writeUsers(ArrayList<User> users)
 	{
-		new Server();
+		userWriter.newUsers(users);
 	}
+	
+	private class UserWriter
+	{
+		private ArrayList<User> users;
+		private ObjectOutputStream userOos;
 
+		public UserWriter(ObjectOutputStream oos)
+		{
+			this.userOos = oos;
+		}
+
+		public void newUsers(ArrayList<User> users)
+		{
+			this.users = users;
+			write();
+		}
+
+		public void write()
+		{
+			try
+			{
+				userOos.writeObject(users);
+				userOos.flush();
+			} catch (IOException e)
+			{
+				try
+				{
+					socket.close();
+				} catch (IOException e1)
+				{
+					e1.printStackTrace();
+				}
+			}
+		}
+	}
 }
