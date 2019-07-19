@@ -148,7 +148,8 @@ public class Client
 							clientUser = status.getLoggedInUser();
 							System.out.println("Inloggning lyckad");
 							messageWindow = new MessageWindow();
-							controller.setGUI(messageWindow);
+//							controller.setGUI(messageWindow);
+							controller.setMessageGUI(messageWindow);
 						}
 						else if (status.getLoginStatus() == 0) {
 							System.out.println("Felaktigt användarnamn och/eller lösenord");
@@ -163,7 +164,8 @@ public class Client
 							tempList.add(activeUsers.get(i).getUser());
 						}
 						
-						messageWindow.addListOfUsers(tempList);
+						messageWindow.addListOfUsers(tempList); //använd denna listan för att visa användare
+//						controller.setUserListGUI(gui);
 						
 					}
 					
