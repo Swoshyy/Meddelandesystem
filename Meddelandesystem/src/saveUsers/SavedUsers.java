@@ -128,6 +128,12 @@ public class SavedUsers implements Serializable {
 	}
 	
 	
+	
+	
+	public User getUser() {
+		return savedUsers.get(returnUserIndex);
+	}
+	
 	/**
 	 * Save a new user to the savedUsers txt file
 	 * @param user

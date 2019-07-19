@@ -9,7 +9,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 import client.ClientConnection;
+import client.LogInObject;
 import message.Message;
+import saveUsers.SavedUsers;
+import server.Server.WriteMessage;
 import user.User;
 
 public class Server
@@ -20,7 +23,15 @@ public class Server
 	
 	private UserWriter userWriter;
 
+	
+	private SavedUsers savedUsers = new SavedUsers("files/SavedUsers.dat");
+	private LinkedList<ActiveClient> connectedClients = new LinkedList<ActiveClient>();
+	
 
+	public LinkedList<ActiveClient> getConnectedClients() {
+		return this.connectedClients;
+	}
+	
 	public Server(int inPort, ServerController inController)
 	{
 		this.controller = inController; 
@@ -59,7 +70,7 @@ public class Server
 				try
 				{
 					socket.close();
-					//					controller.remove(socket); // Ers�ttas med user
+					//					controller.remove(socket); // Ers�ttas med user
 				} catch (IOException e1)
 				{
 					e1.printStackTrace();
@@ -112,6 +123,68 @@ public class Server
 						
 						// skriv user?
 					}
+					
+					else if(obj == null) {
+						System.out.println("objekt är null");
+					}
+					
+					
+					/*
+					 * Logga in användare med loginobject
+					 */
+					else if(obj instanceof LogInObject) {
+						LogInObject logInUser = (LogInObject) obj;
+						LoginStatus status = new LoginStatus();
+						
+//						User haj = logInUser.getUser();
+						
+						if(savedUsers.logInUser(logInUser.getName(), logInUser.getPassword()) == 1) {
+							System.out.println("inloggning lyckad");
+							status.setLoginSucessfull(1);
+							status.setUser(savedUsers.getUser());
+							connectedClients.add(new ActiveClient(oos, status.getLoggedInUser()));
+							//Alla klienters listor behöver uppdateras här
+							new WriteMessage(status, oos); //För att skicka statusen av inloggningen till clienten (lyckad/ej lyckad inloggning)
+							new WriteMessage(connectedClients, oos); //För att uppdatera lista med användare
+						}
+						else {
+							System.out.println("inloggning ej godkänd");
+						}
+						
+						
+					}
+					
+					
+					
+					
+					
+					/*
+					 * Skapa ny användare med User objekt
+					 */
+					else if(obj instanceof User) {
+						User user = (User) obj;
+						LoginStatus status = new LoginStatus();
+						
+						if(savedUsers.controlUser(user) == 0) {
+							System.out.println("Ny användare skapad!");
+							savedUsers.saveNewUser(user);
+							status.setLoginSucessfull(1);
+							status.setUser(user);
+							connectedClients.add(new ActiveClient(oos, status.getLoggedInUser()));
+							new WriteMessage(status, oos);
+//							new WriteMessage(connectedClients, oos);
+						}
+						else {
+							System.out.println("Användare finns redan");
+						}
+						
+					}
+					
+					
+					else {
+						System.out.println("Objekt kan inte typkonverteras");
+					}
+					
 				}
 			} catch (IOException | ClassNotFoundException e)
 			{
@@ -137,10 +210,10 @@ public class Server
 
 	private class WriteMessage extends Thread
 	{
-		private Message message;
+		private Object message;
 		private ObjectOutputStream oos;
 
-		public WriteMessage(Message message, ObjectOutputStream oos)
+		public WriteMessage(Object message, ObjectOutputStream oos)
 		{
 			this.message = message;
 			this.oos = oos;

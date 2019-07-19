@@ -1,7 +1,5 @@
 package sethTestGUIs;
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
@@ -13,7 +11,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
-import saveUsers.SavedUsers;
+import user.User;
+import client.ClientController;
+import client.LogInObject;
 
 /**
  * LoginScreen combined with the saveObjects class to 
@@ -29,6 +29,7 @@ public class LoginScreen
 	/* Textfields */
 	private JTextField textField;
 	private JPasswordField passwordField;
+	private ClientController clientController;
 	
 	/* Buttons */
 	private JButton btnSignUp;
@@ -38,34 +39,35 @@ public class LoginScreen
 	
 	private SignUpScreen signUp;
 	
-	private SavedUsers savedUsers = new SavedUsers("files/savedUsers.dat");
+//	private SavedUsers savedUsers = new SavedUsers("files/savedUsers.dat"); //Ska flyttas till server!
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args)
-	{
-		EventQueue.invokeLater(new Runnable()
-		{
-			public void run()
-			{
-				try
-				{
-					LoginScreen window = new LoginScreen();
-					window.frame.setVisible(true);
-				} catch (Exception e)
-				{
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+//	public static void main(String[] args)
+//	{
+//		EventQueue.invokeLater(new Runnable()
+//		{
+//			public void run()
+//			{
+//				try
+//				{
+//					LoginScreen window = new LoginScreen();
+//					window.frame.setVisible(true);
+//				} catch (Exception e)
+//				{
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
 
 	/**
 	 * Create the application.
 	 */
-	public LoginScreen()
+	public LoginScreen(ClientController clientController)
 	{
+		this.clientController = clientController;
 		initialize();
 	}
 
@@ -86,39 +88,55 @@ public class LoginScreen
 		textField.setBounds(50, 77, 150, 25);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
+		textField.setOpaque(true);
 		
 		JLabel lblUsername = new JLabel("Username:");
 		lblUsername.setForeground(new Color(0, 0, 0));
 		lblUsername.setFont(new Font("Georgia", Font.BOLD, 12));
 		lblUsername.setBounds(50, 55, 75, 21);
+		lblUsername.setOpaque(true);
 		frame.getContentPane().add(lblUsername);
 		
 		JLabel lblPassword = new JLabel("Password:");
 		lblPassword.setFont(new Font("Georgia", Font.BOLD, 12));
 		lblPassword.setBounds(50, 113, 75, 21);
+		lblPassword.setOpaque(true);
 		frame.getContentPane().add(lblPassword);
 		
 		passwordField = new JPasswordField();
 		passwordField.setBounds(50, 133, 150, 25);
+		passwordField.setOpaque(true);
 		frame.getContentPane().add(passwordField);
 		
 		JLabel lblUser = new JLabel("New User?");
 		lblUser.setFont(new Font("Georgia", Font.BOLD, 12));
 		lblUser.setBounds(90, 224, 75, 21);
+		lblUser.setOpaque(true);
 		frame.getContentPane().add(lblUser);
 		
 		btnSignUp = new JButton("Sign up");
 		btnSignUp.setFont(new Font("Georgia", Font.PLAIN, 12));
 		btnSignUp.setBounds(75, 256, 100, 23);
+		btnSignUp.setOpaque(true);
 		frame.getContentPane().add(btnSignUp);
 		
 		btnLogin= new JButton("Login");
 		btnLogin.setFont(new Font("Georgia", Font.PLAIN, 12));
 		btnLogin.setBounds(75, 169, 100, 23);
+		btnLogin.setOpaque(true);
 		frame.getContentPane().add(btnLogin);
 		
 		btnSignUp.addActionListener(btnListener);
 		btnLogin.addActionListener(btnListener);
+	}
+	
+	
+	public void closeLogin() {
+		frame.dispose();
+	}
+	
+	public void test() {
+		System.out.println("Login Screen started");
 	}
 	
 	
@@ -129,25 +147,24 @@ public class LoginScreen
 			
 
 			if(e.getSource() == btnLogin) {
-					
-					if(savedUsers.logInUser(textField.getText(), new String(passwordField.getPassword())) == 1) {
-						
-						
-						System.out.println("Inloggning lyckad");
-						//Låt användare logga in efter detta
-					}
-					else {
-						System.out.println("Felaktigt användarnamn och/eller fel lösenord");
-					}
-
+//				User testUser;
+				LogInObject hej;
 				
-
+				
+					hej = new LogInObject(textField.getText(), new String(passwordField.getPassword()));
+//					hej = new LogInObject(testUser);
+					System.out.println(textField.getText());
+					System.out.println(new String(passwordField.getPassword()));
+					if(hej != null) {
+						clientController.sendMessage(hej);
+					}
+				
+				
 			}
 			
 			if(e.getSource() == btnSignUp) {
 				System.out.println("Nu ska nytt fönster öppnas");
-//				signUp = new SignUpScreen();
-				signUp.addSavedUsersObject(savedUsers);
+				signUp = new SignUpScreen(clientController);
 			}
 			
 		}

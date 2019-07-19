@@ -38,7 +38,7 @@ public class ClientController
 	{
 		this.user = user;
 		client.connect();
-		client.writeUsers(user);
+		client.writeUsers(user); //Råkade ta bort denna metoden
 	}
 	
 	public void displayMessage(Message message)
@@ -46,9 +46,9 @@ public class ClientController
 		msgWindow.append(message);
 	}
 	
-	public void sendMessage(Message message)
+	public void sendMessage(Object message)
 	{
-		client.sendMessage(message);
+		client.sendObject(message);
 	}
 	
 	public void setMessageGUI(MessageWindow gui)
