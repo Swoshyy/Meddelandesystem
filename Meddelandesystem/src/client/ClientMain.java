@@ -1,6 +1,7 @@
 package client;
 
 import GUI.MessageWindow;
+import sethTestGUIs.LoginScreen;
 import sethTestGUIs.SignUpScreen;
 
 public class ClientMain
@@ -10,7 +11,8 @@ public class ClientMain
 		ClientController controller = new ClientController();
 		Client client = new Client("localhost", 2020, controller);
 
-		new SignUpScreen(controller);
+		LoginScreen hej = new LoginScreen(controller);
+//		new SignUpScreen(controller);
 
 	}
 }
