@@ -13,6 +13,7 @@ import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.LinkedList;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -73,6 +74,10 @@ public class MessageWindow {
 	public static void main(String[] args)
 	{
 		new MessageWindow();
+	}
+	
+	public void addListOfUsers(LinkedList<User> users) {
+		userListGUI.addListOfOnlineUsers(users);
 	}
 
 	/**

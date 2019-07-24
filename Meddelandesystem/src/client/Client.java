@@ -149,7 +149,11 @@ public class Client
 							System.out.println("Inloggning lyckad");
 							messageWindow = new MessageWindow();
 //							controller.setGUI(messageWindow);
-							controller.setMessageGUI(messageWindow);
+//							controller.setMessageGUI(messageWindow);
+							controller.setGUI(messageWindow);
+							
+							RequestList getListOfUsers = new RequestList(1);
+							sendObject(getListOfUsers);
 						}
 						else if (status.getLoginStatus() == 0) {
 							System.out.println("Felaktigt användarnamn och/eller lösenord");
@@ -157,15 +161,14 @@ public class Client
 						
 					}
 					
-					else if(object instanceof LinkedList) {
+					else if(object instanceof LinkedList<?>) {
 						LinkedList<ActiveClient> activeUsers = (LinkedList<ActiveClient>) object;
 						LinkedList<User> tempList = new LinkedList<User>();
 						for(int i = 0; i < activeUsers.size(); i++) {
 							tempList.add(activeUsers.get(i).getUser());
 						}
 						
-						messageWindow.addListOfUsers(tempList); //använd denna listan för att visa användare
-//						controller.setUserListGUI(gui);
+						controller.addListOfUsers(tempList);
 						
 					}
 					
