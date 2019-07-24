@@ -149,8 +149,8 @@ public class Client
 							System.out.println("Inloggning lyckad");
 							messageWindow = new MessageWindow();
 //							controller.setGUI(messageWindow);
-							controller.setMessageGUI(messageWindow);
-							
+//							controller.setMessageGUI(messageWindow);
+							controller.setGUI(messageWindow);
 							
 							RequestList getListOfUsers = new RequestList(1);
 							sendObject(getListOfUsers);
