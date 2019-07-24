@@ -25,6 +25,7 @@ public class SavedUsers implements Serializable {
 	private static final long serialVersionUID = 4833368582044573121L;
 	private String fileName; 
 	private LinkedList<User> savedUsers;
+	private int returnUserIndex = 0;
 	
 	
 	public SavedUsers(String fileName) {
@@ -103,6 +104,7 @@ public class SavedUsers implements Serializable {
 					for(int i = 0; i < savedUsers.size(); i++) {
 						if(savedUsers.get(i).checkPassword(name, password) == 1) {
 							logInSuccessfull = 1;
+							returnUserIndex = i;
 						}
 					}
 					
@@ -128,11 +130,15 @@ public class SavedUsers implements Serializable {
 	}
 	
 	
-	
-	
+	/**
+	 * Kommer bli en bugg
+	 * För att fungera felfritt måste hela listan läsas av på nytt och ha ett user objekt som parameter så man får 
+	 * @return
+	 */
 	public User getUser() {
 		return savedUsers.get(returnUserIndex);
 	}
+	
 	
 	/**
 	 * Save a new user to the savedUsers txt file
