@@ -80,7 +80,7 @@ public class ServerHistory
 		panel.add(lblFrom);
 		
 		txtYyyymmdd = new JTextField();
-		txtYyyymmdd.setText("yyyy/mm/dd");
+		txtYyyymmdd.setText("2019/07/24");
 		panel.add(txtYyyymmdd);
 		txtYyyymmdd.setColumns(10);
 		
@@ -88,7 +88,7 @@ public class ServerHistory
 		panel.add(lblTo);
 		
 		txtYyyymmdd_1 = new JTextField();
-		txtYyyymmdd_1.setText("yyyy/mm/dd");
+		txtYyyymmdd_1.setText("2019/07/31");
 		panel.add(txtYyyymmdd_1);
 		txtYyyymmdd_1.setColumns(10);
 		
@@ -97,18 +97,16 @@ public class ServerHistory
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				taLog.setText("");
 				logger.checkDate(txtYyyymmdd.getText(), txtYyyymmdd_1.getText());
 			}
 			
 		});
-		panel.add(btnShowHistory);
-		
-		frame.setVisible(true);
-		
+		panel.add(btnShowHistory);	
+		frame.setVisible(true);	
 	}
 	
 	public void showLog(String message) {
 		taLog.append(message + "\n");
 	}
-
 }
