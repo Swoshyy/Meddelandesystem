@@ -6,11 +6,15 @@ import javax.swing.JFrame;
 import java.awt.BorderLayout;
 import javax.swing.JTextArea;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.border.MatteBorder;
+import server.ServerLogger;
 import java.awt.Color;
 
 public class ServerHistory
@@ -19,34 +23,36 @@ public class ServerHistory
 	private JFrame frame;
 	private JTextField txtYyyymmdd;
 	private JTextField txtYyyymmdd_1;
-
+	private JTextArea taLog;
+	private ServerLogger logger;
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args)
-	{
-		EventQueue.invokeLater(new Runnable()
-		{
-			public void run()
-			{
-				try
-				{
-					ServerHistory window = new ServerHistory();
-					window.frame.setVisible(true);
-				} catch (Exception e)
-				{
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+//	public static void main(String[] args)
+//	{
+//		EventQueue.invokeLater(new Runnable()
+//		{
+//			public void run()
+//			{
+//				try
+//				{
+//					ServerHistory window = new ServerHistory();
+//					window.frame.setVisible(true);
+//				} catch (Exception e)
+//				{
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
 
 	/**
 	 * Create the application.
 	 */
-	public ServerHistory()
+	public ServerHistory(ServerLogger logger)
 	{
 		initialize();
+		this.logger = logger;
 	}
 
 	/**
@@ -62,9 +68,8 @@ public class ServerHistory
 		frame.getContentPane().add(panel_1, BorderLayout.CENTER);
 		panel_1.setLayout(new BorderLayout(0, 0));
 		
-		JTextArea txtrLmaoo = new JTextArea();
-		txtrLmaoo.setText("Lmaoo");
-		panel_1.add(txtrLmaoo, BorderLayout.CENTER);
+		taLog = new JTextArea();
+		panel_1.add(new JScrollPane(taLog), BorderLayout.CENTER);
 		
 		JPanel panel = new JPanel();
 		panel.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
@@ -88,7 +93,22 @@ public class ServerHistory
 		txtYyyymmdd_1.setColumns(10);
 		
 		JButton btnShowHistory = new JButton("Show History");
+		btnShowHistory.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				logger.checkDate(txtYyyymmdd.getText(), txtYyyymmdd_1.getText());
+			}
+			
+		});
 		panel.add(btnShowHistory);
+		
+		frame.setVisible(true);
+		
+	}
+	
+	public void showLog(String message) {
+		taLog.append(message + "\n");
 	}
 
 }

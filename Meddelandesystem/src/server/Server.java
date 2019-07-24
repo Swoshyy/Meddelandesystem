@@ -7,12 +7,11 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.LinkedList;
-
 import client.ClientConnection;
 import client.LogInObject;
 import message.Message;
 import saveUsers.SavedUsers;
-import server.Server.WriteMessage;
+//import server.Server.WriteMessage;
 import user.User;
 
 public class Server
@@ -20,17 +19,10 @@ public class Server
 	private ServerController controller;
 	private ServerSocket serverSocket;
 	private Socket socket;
-	
 	private UserWriter userWriter;
-
-	
 	private SavedUsers savedUsers = new SavedUsers("files/SavedUsers.dat");
 	private LinkedList<ActiveClient> connectedClients = new LinkedList<ActiveClient>();
-	
-
-	public LinkedList<ActiveClient> getConnectedClients() {
-		return this.connectedClients;
-	}
+	private ServerLogger logger;
 	
 	public Server(int inPort, ServerController inController)
 	{
@@ -44,8 +36,14 @@ public class Server
 		}
 		controller.registerServer(this);
 		new ClientListener(inPort);
+		logger = new ServerLogger();
+		logger.log("server up and running");
 	}
 
+	public LinkedList<ActiveClient> getConnectedClients() {
+		return this.connectedClients;
+	}
+	
 	private class ClientListener extends Thread
 	{
 		private int port;
