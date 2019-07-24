@@ -1,45 +1,35 @@
 package client;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 import GUI.MessageWindow;
-import displayUsersTest.AllUsersGUI;
 import message.Message;
+import sethTestGUIs.LoginScreen;
+import sethTestGUIs.SignUpScreen;
 import user.User;
 
 public class ClientController
-{
+ {
 	private Client client;
-	private User user;
 	private MessageWindow msgWindow;
-	private AllUsersGUI listGUI;
+	private LoginScreen logInScreen;
+	private SignUpScreen signupScreen;
 	
-	
-	public void setUserListGUI(AllUsersGUI gui)
-	{
-		this.listGUI = gui;
-	}
 	
 	public void newClient(Client inClient)
 	{
 		this.client = inClient; 
+//		logInScreen = new LoginScreen(this);
 	}
 	
-	public void updateUserList(ArrayList<User> users)
-	{
-		for(int i=0; i<users.size(); i++)
-		{
-//			listGUI.addUser(users.get(i));
-			msgWindow.displayUser(users.get(i));
-		}
+//	public void newLoginScreen(LoginScreen logInScreen) {
+//		this.logInScreen = logInScreen;
+//	}
+	
+	public void addListOfUsers(LinkedList<User> users) {
+		msgWindow.addListOfUsers(users);
 	}
 	
-	public void newUser(User user)
-	{
-		this.user = user;
-		client.connect();
-		client.writeUsers(user); //Råkade ta bort denna metoden
-	}
 	
 	public void displayMessage(Message message)
 	{
@@ -51,9 +41,32 @@ public class ClientController
 		client.sendObject(message);
 	}
 	
-	public void setMessageGUI(MessageWindow gui)
+	public void setGUI(MessageWindow gui)
 	{
 		this.msgWindow = gui;
 	}
+	
+	public void setLoginGUI(LoginScreen loginGUI) {
+		this.logInScreen = loginGUI;
+	}
+	
+	public void closeLogin() {
+		logInScreen.closeLogin();
+	}
+	
+	public void setSignupGUI(SignUpScreen signupGUI) {
+		this.signupScreen = signupGUI;
+	}
+	
+	public void closeSignUp() {
+		signupScreen.closeSignUp();
+	}
+	
+
+	public User getNewUser() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 	
 }
