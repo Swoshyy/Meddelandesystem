@@ -38,6 +38,7 @@ public class Server
 		try
 		{
 			serverSocket = new ServerSocket(inPort);
+			System.out.println("Server startad på port " + inPort);
 		} catch (IOException e)
 		{
 			e.printStackTrace();
