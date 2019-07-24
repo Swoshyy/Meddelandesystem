@@ -6,6 +6,7 @@ public class ServerMain
 	{
 		ServerController controller = new ServerController();
 		new Server(2020, controller);
+		System.out.println("Server startad på port 2020");
 	} 
 	
 }
