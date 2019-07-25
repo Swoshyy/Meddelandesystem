@@ -1,7 +1,6 @@
 package client;
 
-import GUI.MessageWindow;
-import sethTestGUIs.LoginScreen;
+//import sethTestGUIs.LoginScreen;
 import sethTestGUIs.SignUpScreen;
 
 public class ClientMain
@@ -13,8 +12,11 @@ public class ClientMain
 //		controller.setGUI(msgWindow);
 	 
 		new Client("localhost", 2020, controller);
-		LoginScreen hej = new LoginScreen(controller);
-		controller.setLoginGUI(hej);
+		SignUpScreen sign = new SignUpScreen(controller);
+//		LoginScreen logInScreen = new LoginScreen(controller);
+//		controller.setLoginGUI(logInScreen);
+//		controller.setSignupGUI(sign);
+		
 //		try
 //		{
 //			new Client(InetAddress.getByName("LAPTOP-807OMURG"), 2020, controller);
