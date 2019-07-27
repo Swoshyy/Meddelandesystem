@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import client.ClientConnection;
 import client.LogInObject;
+import client.RequestList;
 import message.Message;
 import saveUsers.SavedUsers;
 //import server.Server.WriteMessage;
@@ -99,7 +100,7 @@ public class Server {
 				Message message;
 				Object obj;
 				while (true) {
-					// message = (Message) ois.readObject();
+					
 					obj = ois.readObject();
 					if (obj instanceof Message) {
 						message = (Message) obj;
@@ -122,18 +123,16 @@ public class Server {
 						LogInObject logInUser = (LogInObject) obj;
 						LoginStatus status = new LoginStatus();
 				
-//						User haj = logInUser.getUser();
 
 						if (savedUsers.logInUser(logInUser.getName(), logInUser.getPassword()) == 1) {
 							logger.info(logInUser.getName() + " logged in");
 							System.out.println("inloggning lyckad");
 							status.setLoginSucessfull(1);
 							status.setUser(savedUsers.getUser());
-							connectedClients.add(new ActiveClient(oos, status.getLoggedInUser()));
-							// Alla klienters listor behöver uppdateras här
-							new WriteMessage(status, oos); // För att skicka statusen av inloggningen till clienten
-															// (lyckad/ej lyckad inloggning)
-							new WriteMessage(connectedClients, oos); // För att uppdatera lista med användare
+							controller.newClient(new ClientConnection(oos, socket, savedUsers.getUser()));
+							
+							new WriteMessage(status, oos); 
+							
 						} else {
 							logger.info(logInUser.getName() + " failed to log in");
 							System.out.println("inloggning ej godkänd");
@@ -154,13 +153,28 @@ public class Server {
 							savedUsers.saveNewUser(user);
 							status.setLoginSucessfull(1);
 							status.setUser(user);
-							connectedClients.add(new ActiveClient(oos, status.getLoggedInUser()));
+							controller.newClient(new ClientConnection(oos, socket, status.getLoggedInUser()));
 							new WriteMessage(status, oos);
-//							new WriteMessage(connectedClients, oos);
 						} else {
 							System.out.println("Användare finns redan");
 						}
 
+					}
+					
+					else if(obj instanceof RequestList) {
+						RequestList sendList = (RequestList) obj;
+						
+						System.out.println("Nu ska lista skickas till alla klienter?");
+						if(sendList.getStatus() == 1) {
+//							new WriteMessage(connectedClients, oos);
+//							controller.newObject(sendList);
+							
+//							Om Detta körs fastnar koden och det går inte att skicka meddelanden?
+//							UserListHolder tempList = new UserListHolder();
+//							tempList.setList(controller.getClientList());
+//							controller.newObject(tempList);
+						}
+						
 					}
 
 					else {
