@@ -39,6 +39,17 @@ public class ServerController
 			}
 		}
 	}
+	
+	public void newObject(Object obj)
+	{
+		for(int i=0; i<clients.size(); i++)
+		{	
+			if(clients.get(i) != null)
+			{
+				server.sendMessage(obj, clients.get(i).getOos());
+			}
+		}
+	}
 
 	public void addNewUser(User user)
 	{

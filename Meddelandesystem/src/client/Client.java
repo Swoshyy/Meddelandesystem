@@ -12,6 +12,7 @@ import message.Message;
 import message.MessageQueue;
 import server.ActiveClient;
 import server.LoginStatus;
+import server.UserListHolder;
 import sethTestGUIs.LoginScreen;
 import user.User;
 
@@ -133,7 +134,7 @@ public class Client
 				{
 					Object object = (Object) ois.readObject();
 					
-					if(object instanceof Message) {
+if(object instanceof Message) {
 						
 						Message mess = (Message) object;
 						System.out.println("MEssage read from client");
@@ -147,13 +148,16 @@ public class Client
 						if(status.getLoginStatus() == 1) {
 							clientUser = status.getLoggedInUser();
 							System.out.println("Inloggning lyckad");
-							messageWindow = new MessageWindow();
-//							controller.setGUI(messageWindow);
-//							controller.setMessageGUI(messageWindow);
+							messageWindow = new MessageWindow(controller);
 							controller.setGUI(messageWindow);
+							controller.closeLogin();
 							
+							//Denna del utförs inte?
 							RequestList getListOfUsers = new RequestList(1);
-							sendObject(getListOfUsers);
+//							sendObject(getListOfUsers);
+							controller.sendMessage(getListOfUsers);
+							
+//							controller.closeSignUp(); 
 						}
 						else if (status.getLoginStatus() == 0) {
 							System.out.println("Felaktigt användarnamn och/eller lösenord");
@@ -161,9 +165,12 @@ public class Client
 						
 					}
 					
-					else if(object instanceof LinkedList<?>) {
-						LinkedList<ActiveClient> activeUsers = (LinkedList<ActiveClient>) object;
+					
+					else if(object instanceof UserListHolder) {
+						UserListHolder listHolderObject = (UserListHolder) object;
+						LinkedList<ClientConnection> activeUsers = (LinkedList<ClientConnection>) listHolderObject.getUserList();
 						LinkedList<User> tempList = new LinkedList<User>();
+						System.out.print("Lista mottagen av client");
 						for(int i = 0; i < activeUsers.size(); i++) {
 							tempList.add(activeUsers.get(i).getUser());
 						}
@@ -172,8 +179,27 @@ public class Client
 						
 					}
 					
+					
+					else if(object instanceof ClientConnection[]) {
+						UserListHolder listHolderObject = (UserListHolder) object;
+						LinkedList<ClientConnection> activeUsers = (LinkedList<ClientConnection>) listHolderObject.getUserList();
+						LinkedList<User> tempList = new LinkedList<User>();
+						System.out.print("Lista mottagen av client");
+						for(int i = 0; i < activeUsers.size(); i++) {
+							tempList.add(activeUsers.get(i).getUser());
+						}
+						
+						controller.addListOfUsers(tempList);
+						
+					}
+					
+					
+					else if(object == null) {
+						System.out.println("Objekt är null");
+					}
+					
 					else {
-						System.out.println("objekt kan inte typkonverteras");
+						System.out.println("Objekt kan inte typkonverteras");
 					}
 					
 					

@@ -61,20 +61,26 @@ public class MessageWindow {
 		this.user = user;
 //		userListGUI.addUser(user);
 		this.controller = controller;
-		controller.setUserListGUI(userListGUI);
+//		controller.setUserListGUI(userListGUI);
 		initialize();
 		frame.setVisible(true);
 	}
 	
-	public MessageWindow() {
+	public MessageWindow(ClientController controller) {
+		this.controller = controller;
 		initialize();
 		frame.setVisible(true);
 	}
 	
-	public static void main(String[] args)
-	{
-		new MessageWindow();
-	}
+//	public MessageWindow() {
+//		initialize();
+//		frame.setVisible(true);
+//	}
+	
+//	public static void main(String[] args)
+//	{
+//		new MessageWindow();
+//	}
 	
 	public void addListOfUsers(LinkedList<User> users) {
 		userListGUI.addListOfOnlineUsers(users);

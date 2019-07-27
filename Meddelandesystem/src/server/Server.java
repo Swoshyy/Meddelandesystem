@@ -183,7 +183,7 @@ public class Server {
 		}
 	}
 
-	public void sendMessage(Message inMessage, ObjectOutputStream inOos) {
+	public void sendMessage(Object inMessage, ObjectOutputStream inOos) {
 		new WriteMessage(inMessage, inOos);
 
 	}
