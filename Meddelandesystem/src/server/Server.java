@@ -28,16 +28,17 @@ public class Server {
 		this.controller = inController;
 		try {
 			serverSocket = new ServerSocket(inPort);
-<<<<<<< HEAD
+//<<<<<<< HEAD
 		} catch (IOException e) {
 			logger.severe(e.toString());
-=======
+//=======
 			System.out.println("Server startad på port " + inPort);
-		} catch (IOException e)
-		{
->>>>>>> 26359d9d4384031ef69191661cdec5e9c18d579c
-			e.printStackTrace();
-		}
+		} 
+//		catch (IOException e)
+//		{
+////>>>>>>> 26359d9d4384031ef69191661cdec5e9c18d579c
+//			e.printStackTrace();
+//		}
 		controller.registerServer(this);
 		new ClientListener(inPort);
 		logger.info(this.toString() + " running on port " + inPort);
