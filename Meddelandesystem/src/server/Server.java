@@ -84,7 +84,7 @@ public class Server {
 			try {
 				ois = new ObjectInputStream(socket.getInputStream());
 				oos = new ObjectOutputStream(socket.getOutputStream());
-				controller.newClient(new ClientConnection(oos, socket));
+//				controller.newClient(new ClientConnection(oos, socket));
 				userWriter = new UserWriter(oos);
 				logger.info("Client added: oos=" + oos.toString());
 			} catch (IOException e) {
