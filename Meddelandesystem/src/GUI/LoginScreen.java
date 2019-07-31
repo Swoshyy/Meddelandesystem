@@ -4,6 +4,8 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
+
 import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
@@ -99,5 +101,7 @@ public class LoginScreen
 		btnLogin.setFont(new Font("Georgia", Font.PLAIN, 12));
 		btnLogin.setBounds(75, 169, 100, 23);
 		frame.getContentPane().add(btnLogin);
+		
+		frame.setVisible(true);
 	}
 }

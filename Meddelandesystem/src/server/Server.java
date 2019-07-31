@@ -1,12 +1,26 @@
 package server;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
+
+import javax.swing.SwingUtilities;
+
+import GUI.ServerHistory;
 import client.ClientConnection;
 import client.LogInObject;
 import message.Message;
@@ -15,58 +29,55 @@ import saveUsers.SavedUsers;
 import user.User;
 
 public class Server {
+	private final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 	private ServerController controller;
 	private ServerSocket serverSocket;
 	private Socket socket;
 	private UserWriter userWriter;
 	private SavedUsers savedUsers = new SavedUsers("files/SavedUsers.dat");
-	private LinkedList<ActiveClient> connectedClients = new LinkedList<ActiveClient>();
-	private ServerLogger logger = new ServerLogger();
+//	private LinkedList<ActiveClient> connectedClients = new LinkedList<ActiveClient>();
+//	private ServerLogger logger;
+
+	private LinkedList<ClientHandler> clientList = new LinkedList<>(); // Till�gg Johan
 
 	public Server(int inPort, ServerController inController) {
 		this.controller = inController;
+		controller.registerServer(this);
+		controller.setUpLogger(logger);
+		controller.setServerGUI();
+
 		try {
 			serverSocket = new ServerSocket(inPort);
-<<<<<<< HEAD
+			logger.log(Level.INFO, this.toString() + " running on port " + inPort);
 		} catch (IOException e) {
-			logger.severe(e.toString());
-=======
-			System.out.println("Server startad på port " + inPort);
-		} catch (IOException e)
-		{
->>>>>>> 26359d9d4384031ef69191661cdec5e9c18d579c
+			logger.log(Level.SEVERE, e.toString());
 			e.printStackTrace();
 		}
-		controller.registerServer(this);
-		new ClientListener(inPort);
-		logger.info(this.toString() + " running on port " + inPort);
+
+		Thread cl = new ClientListener();
+		cl.start();
 	}
 
-	public LinkedList<ActiveClient> getConnectedClients() {
-		return this.connectedClients;
-	}
+//	public LinkedList<ActiveClient> getConnectedClients() {
+//		return this.connectedClients;
+//	}
 
 	private class ClientListener extends Thread {
-		private int port;
-
-		public ClientListener(int inPort) {
-			this.port = inPort;
-			start();
-		}
 
 		public void run() {
 			try {
 				while (true) {
 					socket = serverSocket.accept();
-					new ClientHandler(socket);
+					Thread ch = new ClientHandler(socket);
+					ch.start();
 				}
 			} catch (IOException e) {
-				logger.severe(e.toString());
+				logger.log(Level.SEVERE, e.toString());
 				try {
 					socket.close();
 					// controller.remove(socket); // Ers�ttas med user
 				} catch (IOException e1) {
-					logger.severe(e1.toString());
+					logger.log(Level.SEVERE, e1.toString());
 					e1.printStackTrace();
 				}
 			}
@@ -77,43 +88,41 @@ public class Server {
 		private Socket socket;
 		private ObjectInputStream ois;
 		private ObjectOutputStream oos;
-
+		private User user;
+		
 		public ClientHandler(Socket inSocket) {
 			this.socket = inSocket;
+
 			try {
 				ois = new ObjectInputStream(socket.getInputStream());
 				oos = new ObjectOutputStream(socket.getOutputStream());
-				controller.newClient(new ClientConnection(oos, socket));
+//				controller.newClient(new ClientConnection(oos, socket));
 				userWriter = new UserWriter(oos);
-				logger.info("Client added: oos=" + oos.toString());
+				logger.log(Level.INFO, "New client connected: " + socket.toString());
 			} catch (IOException e) {
-				logger.warning(e.toString());
+				logger.log(Level.WARNING, e.toString());
 				e.printStackTrace();
 			}
-
-			start();
+			clientList.add(this); // Till�gg Johan
 		}
 
 		public void run() {
 			try {
 				Message message;
 				Object obj;
+
 				while (true) {
-					// message = (Message) ois.readObject();
 					obj = ois.readObject();
+					
 					if (obj instanceof Message) {
 						message = (Message) obj;
-						controller.newMessage(message);
-					} else if (obj instanceof User) {
-						controller.addNewUser((User) obj);
-						logger.info("User " + obj.toString() + " added"); 
-						// skriv user?
+						controller.newMessage(message, savedUsers);
 					}
-
-					else if (obj == null) {
-						logger.warning("Object sent from " + this.toString() + " = null");
-						System.out.println("objekt är null");
-					}
+//					} else if (obj instanceof User) {
+//						controller.addNewUser((User) obj);
+//						logger.info("User " + obj.toString() + " added"); 
+//						// skriv user?
+//					}
 
 					/*
 					 * Logga in användare med loginobject
@@ -121,71 +130,95 @@ public class Server {
 					else if (obj instanceof LogInObject) {
 						LogInObject logInUser = (LogInObject) obj;
 						LoginStatus status = new LoginStatus();
-				
+
 //						User haj = logInUser.getUser();
 
 						if (savedUsers.logInUser(logInUser.getName(), logInUser.getPassword()) == 1) {
-							logger.info(logInUser.getName() + " logged in");
-							System.out.println("inloggning lyckad");
+							logger.log(Level.INFO, logInUser.getName() + " logged in");
 							status.setLoginSucessfull(1);
-							status.setUser(savedUsers.getUser());
-							connectedClients.add(new ActiveClient(oos, status.getLoggedInUser()));
-							// Alla klienters listor behöver uppdateras här
+							status.setUser(savedUsers.getUser(logInUser.getName()));
+							this.user = savedUsers.getUser(logInUser.getName());
+//							connectedClients.add(new ActiveClient(oos, status.getLoggedInUser()));
+							
 							new WriteMessage(status, oos); // För att skicka statusen av inloggningen till clienten
-															// (lyckad/ej lyckad inloggning)
-							new WriteMessage(connectedClients, oos); // För att uppdatera lista med användare
+							writeUserList(status);							
+//							new WriteMessage(connectedClients, oos); // För att uppdatera lista med användare
 						} else {
-							logger.info(logInUser.getName() + " failed to log in");
-							System.out.println("inloggning ej godkänd");
+							logger.log(Level.INFO, logInUser.getName() + " failed to log in");
 						}
-
 					}
 
 					/*
 					 * Skapa ny användare med User objekt
 					 */
-					else if (obj instanceof User) {		// MARKER: Also checked at line 101 
+					else if (obj instanceof User) {
 						User user = (User) obj;
 						LoginStatus status = new LoginStatus();
 
 						if (savedUsers.controlUser(user) == 0) {
-							logger.info("New user added: " + user.getName());
-							System.out.println("Ny användare skapad!");
+							logger.log(Level.INFO, "New user added: " + user.getName());
 							savedUsers.saveNewUser(user);
 							status.setLoginSucessfull(1);
 							status.setUser(user);
-							connectedClients.add(new ActiveClient(oos, status.getLoggedInUser()));
+							this.user = user;
+//							connectedClients.add(new ActiveClient(oos, status.getLoggedInUser()));
 							new WriteMessage(status, oos);
+							writeUserList(status);		
 //							new WriteMessage(connectedClients, oos);
 						} else {
 							System.out.println("Användare finns redan");
 						}
 
+					} else if (obj.equals("getActiveUserList")) {
+						oos.writeObject(savedUsers.getUsers());
+						oos.flush();
 					}
-
+					
 					else {
-						logger.warning(obj.toString() + " could not be converted");
-						System.out.println("Objekt kan inte typkonverteras");
+						logger.log(Level.WARNING, obj.toString() + " could not be converted");
 					}
 
 				}
-			} catch (IOException | ClassNotFoundException e) {
-				logger.severe(e.toString());
+			} catch (IOException e) {
+				logger.log(Level.WARNING, e.toString());
+				clientList.remove(this);
 				try {
 					if (socket != null) {
 						socket.close();
 					}
 				} catch (IOException e1) {
-					logger.severe(e1.toString());
+					logger.log(Level.SEVERE, e1.toString());
 					e1.printStackTrace();
 				}
+			} catch (ClassNotFoundException e1) {
+				e1.printStackTrace();
+			}
+		}
+		
+		public User getUser() {
+			return user;
+		}
+		
+		public ObjectOutputStream getOos() {
+			return oos;
+		}
+		
+		private void writeUserList(LoginStatus status) throws IOException {
+			for(ClientHandler client : clientList) {
+				if(!client.equals(this)) {
+					client.oos.writeObject(status.getLoggedInUser());
+					client.oos.flush();
+				} 
 			}
 		}
 	}
 
-	public void sendMessage(Message inMessage, ObjectOutputStream inOos) {
-		new WriteMessage(inMessage, inOos);
-
+	public void sendMessage(Message inMessage, User user) {
+		for(ClientHandler ch : clientList) {
+			if(ch.getUser().equals(user)) {
+				new WriteMessage(inMessage, ch.getOos());
+			}
+		}
 	}
 
 	private class WriteMessage extends Thread {
@@ -202,17 +235,17 @@ public class Server {
 			try {
 				oos.writeObject(message);
 				oos.flush();
-				if(message instanceof Message) {
-					Message m = (Message)message;
-					logger.info(m.getText() + " sent from " + m.getSender().getName() +
-							" to " + m.getReceiver().getName());
+				if (message instanceof Message) {
+					Message m = (Message) message;
+					logger.log(Level.INFO,
+							m.getText() + " sent from " + m.getSender().getName() + " to " + m.getReceiver().getName());
 				}
 			} catch (IOException e) {
-				logger.severe(e.toString());
+				logger.log(Level.SEVERE, e.toString());
 				try {
 					socket.close();
 				} catch (IOException e1) {
-					logger.severe(e1.toString());
+					logger.log(Level.SEVERE, e1.toString());
 					e1.printStackTrace();
 				}
 			}
@@ -232,7 +265,7 @@ public class Server {
 		}
 
 		public void newUsers(ArrayList<User> users) {
-			this.users = users;
+//			this.users = users;
 			write();
 		}
 

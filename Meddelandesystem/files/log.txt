@@ -122,3 +122,915 @@ juli 24, 2019 11:13:53 EM server.ServerLogger info
 INFO: server.Server@5119fb47 running on port 2020
 juli 25, 2019 12:14:02 FM server.ServerLogger info
 INFO: server.Server@5119fb47 running on port 2020
+juli 25, 2019 10:18:12 EM server.ServerLogger info
+INFO: server.Server@6a192cfe running on port 2020
+juli 25, 2019 10:18:18 EM server.ServerLogger info
+INFO: Client added: oos=java.io.ObjectOutputStream@5ed12a39
+juli 25, 2019 10:19:23 EM server.ServerLogger info
+INFO:  failed to log in
+juli 25, 2019 10:23:51 EM server.ServerLogger info
+INFO: server.Server@6a192cfe running on port 2020
+juli 25, 2019 10:24:09 EM server.ServerLogger info
+INFO: Client added: oos=java.io.ObjectOutputStream@5db5e833
+juli 25, 2019 10:25:02 EM server.ServerLogger info
+INFO: User johan added
+juli 25, 2019 10:25:25 EM server.ServerLogger info
+INFO:  failed to log in
+juli 25, 2019 10:25:35 EM server.ServerLogger severe
+SEVERE: java.net.SocketException: Connection reset
+juli 25, 2019 10:28:56 EM server.ServerLogger info
+INFO: server.Server@6a192cfe running on port 2020
+juli 25, 2019 10:29:05 EM server.ServerLogger info
+INFO: Client added: oos=java.io.ObjectOutputStream@632ca75c
+juli 25, 2019 10:30:27 EM server.ServerLogger severe
+SEVERE: java.net.SocketException: Connection reset
+juli 25, 2019 10:31:16 EM server.ServerLogger info
+INFO: server.Server@6a192cfe running on port 2020
+juli 25, 2019 10:31:25 EM server.ServerLogger info
+INFO: Client added: oos=java.io.ObjectOutputStream@288adebc
+juli 25, 2019 10:31:35 EM server.ServerLogger severe
+SEVERE: java.net.SocketException: Connection reset
+juli 25, 2019 10:33:57 EM server.ServerLogger info
+INFO: server.Server@6a192cfe running on port 2020
+juli 25, 2019 10:34:07 EM server.ServerLogger info
+INFO: Client added: oos=java.io.ObjectOutputStream@2ca3eeaa
+juli 25, 2019 10:34:11 EM server.ServerLogger warning
+WARNING: java.net.SocketException: Connection reset
+juli 25, 2019 10:42:52 EM server.ServerLogger info
+INFO: Client added: oos=java.io.ObjectOutputStream@473918e3
+juli 25, 2019 10:43:02 EM server.ServerLogger warning
+WARNING: java.net.SocketException: Connection reset
+juli 25, 2019 10:46:38 EM server.ServerLogger info
+INFO: Client added: oos=java.io.ObjectOutputStream@631250dd
+juli 25, 2019 11:00:38 EM server.ServerLogger info
+INFO: server.Server@20deea7f running on port 2020
+juli 25, 2019 11:00:53 EM server.ServerLogger info
+INFO: Client added: oos=java.io.ObjectOutputStream@35358ce7
+juli 25, 2019 11:01:27 EM server.ServerLogger info
+INFO: User johan added
+juli 25, 2019 11:01:31 EM server.ServerLogger warning
+WARNING: java.net.SocketException: Connection reset
+juli 25, 2019 11:02:21 EM server.ServerLogger info
+INFO: Client added: oos=java.io.ObjectOutputStream@367b7c9d
+juli 25, 2019 11:02:30 EM server.ServerLogger info
+INFO: Client added: oos=java.io.ObjectOutputStream@6cbcda22
+juli 25, 2019 11:02:33 EM server.ServerLogger info
+INFO: Client added: oos=java.io.ObjectOutputStream@36c5c863
+juli 25, 2019 11:03:16 EM server.ServerLogger info
+INFO: johan failed to log in
+juli 25, 2019 11:07:01 EM server.ServerLogger info
+INFO: server.Server@61862a7f running on port 2020
+juli 25, 2019 11:07:08 EM server.ServerLogger info
+INFO: Client added: oos=java.io.ObjectOutputStream@79ac1794
+juli 25, 2019 11:07:23 EM server.ServerLogger info
+INFO: dkjfhd failed to log in
+juli 25, 2019 11:07:38 EM server.ServerLogger warning
+WARNING: java.net.SocketException: Connection reset
+juli 25, 2019 11:14:42 EM server.ServerLogger info
+INFO: server.Server@61862a7f running on port 2020
+juli 25, 2019 11:14:48 EM server.ServerLogger info
+INFO: Client added: oos=java.io.ObjectOutputStream@53d0a9aa
+juli 25, 2019 11:15:05 EM server.ServerLogger warning
+WARNING: java.net.SocketException: Connection reset
+juli 25, 2019 11:16:25 EM server.ServerLogger info
+INFO: server.Server@20deea7f running on port 2020
+juli 25, 2019 11:16:30 EM server.ServerLogger info
+INFO: Client added: oos=java.io.ObjectOutputStream@395144fa
+juli 25, 2019 11:16:43 EM server.ServerLogger warning
+WARNING: java.net.SocketException: Connection reset
+juli 25, 2019 11:17:50 EM server.ServerLogger info
+INFO: server.Server@20deea7f running on port 2020
+juli 25, 2019 11:17:54 EM server.ServerLogger info
+INFO: Client added: oos=java.io.ObjectOutputStream@45bfdd63
+juli 25, 2019 11:18:02 EM server.ServerLogger warning
+WARNING: java.net.SocketException: Connection reset
+juli 25, 2019 11:21:04 EM server.ServerLogger info
+INFO: server.Server@3043fe0e running on port 2020
+juli 25, 2019 11:21:21 EM server.ServerLogger info
+INFO: Client added: oos=java.io.ObjectOutputStream@52b75694
+juli 25, 2019 11:22:07 EM server.ServerLogger warning
+WARNING: java.net.SocketException: Connection reset
+juli 25, 2019 11:37:13 EM server.ServerLogger info
+INFO: server.Server@3d921e20 running on port 2020
+juli 25, 2019 11:49:55 EM server.ServerLogger info
+INFO: server.Server@3043fe0e running on port 2020
+juli 25, 2019 11:50:13 EM server.ServerLogger info
+INFO: Client added: oos=java.io.ObjectOutputStream@7e886c9c
+juli 26, 2019 8:06:52 FM server.ServerLogger info
+INFO: server.Server@3043fe0e running on port 2020
+juli 26, 2019 8:07:17 FM server.ServerLogger info
+INFO: Client added: oos=java.io.ObjectOutputStream@aa9b0d1
+juli 26, 2019 8:13:25 FM server.ServerLogger warning
+WARNING: java.net.SocketException: Connection reset
+juli 26, 2019 8:15:59 FM server.ServerLogger info
+INFO: server.Server@3043fe0e running on port 2020
+juli 26, 2019 8:16:10 FM server.ServerLogger info
+INFO: Client added: oos=java.io.ObjectOutputStream@33c5682
+juli 26, 2019 8:16:22 FM server.ServerLogger warning
+WARNING: java.net.SocketException: Connection reset
+juli 26, 2019 11:51:37 EM server.ServerLogger info
+INFO: server.Server@3043fe0e running on port 2020
+juli 26, 2019 11:52:23 EM server.ServerLogger info
+INFO: Client added: oos=java.io.ObjectOutputStream@47a5c6c8
+juli 27, 2019 12:13:26 FM server.ServerLogger info
+INFO: Client added: oos=java.io.ObjectOutputStream@4ece339f
+juli 27, 2019 12:14:07 FM server.ServerLogger warning
+WARNING: java.net.SocketException: Connection reset
+juli 27, 2019 12:19:43 FM server.ServerLogger info
+INFO: server.Server@3d921e20 running on port 2020
+juli 27, 2019 12:19:49 FM server.ServerLogger info
+INFO: Client added: oos=java.io.ObjectOutputStream@26c2ab58
+juli 27, 2019 12:23:53 FM server.ServerLogger info
+INFO:  failed to log in
+juli 27, 2019 12:24:06 FM server.ServerLogger info
+INFO: User johan added
+juli 27, 2019 12:24:29 FM server.ServerLogger info
+INFO: johan failed to log in
+juli 27, 2019 12:24:38 FM server.ServerLogger warning
+WARNING: java.net.SocketException: Connection reset
+juli 27, 2019 10:12:12 EM server.ServerLogger info
+INFO: server.Server@3043fe0e running on port 2020
+juli 27, 2019 10:12:35 EM server.ServerLogger info
+INFO: Client added: oos=java.io.ObjectOutputStream@6f71f0a5
+juli 27, 2019 10:12:46 EM server.ServerLogger warning
+WARNING: java.net.SocketException: Connection reset
+juli 27, 2019 10:39:12 EM server.ServerLogger info
+INFO: server.Server@3043fe0e running on port 2020
+juli 27, 2019 10:39:22 EM server.ServerLogger info
+INFO: New client connected: Socket[addr=/127.0.0.1,port=63951,localport=2020]
+juli 27, 2019 10:39:46 EM server.ServerLogger warning
+WARNING: java.net.SocketException: Connection reset
+juli 27, 2019 11:51:59 EM server.ServerLogger info
+INFO: server.Server@480bdb19 running on port 2020
+juli 27, 2019 11:52:16 EM server.ServerLogger info
+INFO: New client connected: Socket[addr=/127.0.0.1,port=64022,localport=2020]
+juli 27, 2019 11:52:25 EM server.ServerLogger warning
+WARNING: java.net.SocketException: Connection reset
+juli 28, 2019 10:58:00 EM server.ServerLogger info
+INFO: server.Server@4466af20 running on port 2020
+juli 28, 2019 11:25:29 EM server.ServerLogger info
+INFO: server.Server@2a556333 running on port 2020
+juli 28, 2019 11:25:37 EM server.ServerLogger info
+INFO: server.Server@4466af20 running on port 2020
+juli 28, 2019 11:25:50 EM server.ServerLogger info
+INFO: New client connected: Socket[addr=/127.0.0.1,port=49527,localport=2020]
+juli 28, 2019 11:26:02 EM server.ServerLogger info
+INFO: johan failed to log in
+juli 28, 2019 11:27:48 EM server.ServerLogger info
+INFO: server.Server@6379eb running on port 2020
+juli 28, 2019 11:27:57 EM server.ServerLogger info
+INFO: New client connected: Socket[addr=/127.0.0.1,port=49535,localport=2020]
+juli 28, 2019 11:28:07 EM server.ServerLogger info
+INFO: johan failed to log in
+juli 28, 2019 11:44:23 EM server.ServerLogger info
+INFO: New client connected: Socket[addr=/127.0.0.1,port=49547,localport=2020]
+juli 28, 2019 11:44:36 EM server.ServerLogger info
+INFO: johan failed to log in
+juli 28, 2019 11:55:16 EM server.ServerLogger info
+INFO: server.Server@4a94ee4 running on port 2020
+juli 28, 2019 11:55:37 EM server.ServerLogger info
+INFO: server.Server@4a94ee4 running on port 2020
+juli 28, 2019 11:57:43 EM server.ServerLogger info
+INFO: server.Server@5c18298f running on port 2020
+juli 28, 2019 11:57:55 EM server.ServerLogger info
+INFO: New client connected: Socket[addr=/127.0.0.1,port=49568,localport=2020]
+juli 29, 2019 12:00:37 FM server.ServerLogger info
+INFO: server.Server@368f2016 running on port 2020
+juli 29, 2019 12:00:47 FM server.ServerLogger info
+INFO: New client connected: Socket[addr=/127.0.0.1,port=49575,localport=2020]
+juli 29, 2019 12:00:56 FM server.ServerLogger info
+INFO: johan failed to log in
+juli 29, 2019 12:04:27 FM server.ServerLogger info
+INFO: New client connected: Socket[addr=/127.0.0.1,port=49587,localport=2020]
+juli 29, 2019 12:04:37 FM server.ServerLogger info
+INFO: johan failed to log in
+juli 29, 2019 12:05:57 FM server.ServerLogger info
+INFO: New client connected: Socket[addr=/127.0.0.1,port=49588,localport=2020]
+juli 29, 2019 12:06:09 FM server.ServerLogger info
+INFO: johan failed to log in
+juli 29, 2019 12:07:18 FM server.ServerLogger info
+INFO: New client connected: Socket[addr=/127.0.0.1,port=49589,localport=2020]
+juli 29, 2019 12:07:34 FM server.ServerLogger info
+INFO: johan failed to log in
+juli 29, 2019 12:09:52 FM server.ServerLogger info
+INFO: server.Server@409bf450 running on port 2020
+juli 29, 2019 12:10:26 FM server.ServerLogger info
+INFO: New client connected: Socket[addr=/127.0.0.1,port=49594,localport=2020]
+juli 29, 2019 12:24:11 FM server.ServerLogger info
+INFO: New client connected: Socket[addr=/127.0.0.1,port=49619,localport=2020]
+juli 29, 2019 12:25:44 FM server.ServerLogger info
+INFO: server.Server@2b662a77 running on port 2020
+juli 29, 2019 12:25:51 FM server.ServerLogger info
+INFO: New client connected: Socket[addr=/127.0.0.1,port=49624,localport=2020]
+juli 29, 2019 12:26:00 FM server.ServerLogger info
+INFO: johan failed to log in
+juli 29, 2019 12:29:21 FM server.ServerLogger info
+INFO: server.Server@2b662a77 running on port 2020
+juli 29, 2019 12:29:32 FM server.ServerLogger info
+INFO: New client connected: Socket[addr=/127.0.0.1,port=49629,localport=2020]
+juli 29, 2019 12:29:42 FM server.ServerLogger info
+INFO: johan failed to log in
+juli 29, 2019 12:29:54 FM server.ServerLogger info
+INFO: User johan added
+juli 29, 2019 12:30:06 FM server.ServerLogger info
+INFO: johan failed to log in
+juli 29, 2019 12:30:24 FM server.ServerLogger info
+INFO: johan failed to log in
+juli 29, 2019 12:30:27 FM server.ServerLogger warning
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 12:30:46 FM server.ServerLogger info
+INFO: server.Server@564fabc8 running on port 2020
+juli 29, 2019 12:30:54 FM server.ServerLogger info
+INFO: New client connected: Socket[addr=/127.0.0.1,port=49636,localport=2020]
+juli 29, 2019 12:31:02 FM server.ServerLogger info
+INFO: johan failed to log in
+juli 29, 2019 12:31:11 FM server.ServerLogger info
+INFO: johan failed to log in
+juli 29, 2019 12:31:16 FM server.ServerLogger warning
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 12:35:37 FM server.ServerLogger info
+INFO: server.Server@564fabc8 running on port 2020
+juli 29, 2019 12:35:50 FM server.ServerLogger info
+INFO: New client connected: Socket[addr=/127.0.0.1,port=49643,localport=2020]
+juli 29, 2019 12:36:01 FM server.ServerLogger info
+INFO: johan failed to log in
+juli 29, 2019 12:36:11 FM server.ServerLogger info
+INFO: New user added: johan
+juli 29, 2019 12:40:20 FM server.ServerLogger warning
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 12:40:41 FM server.ServerLogger info
+INFO: server.Server@77847718 running on port 2020
+juli 29, 2019 12:40:55 FM server.ServerLogger info
+INFO: New client connected: Socket[addr=/127.0.0.1,port=49650,localport=2020]
+juli 29, 2019 12:41:05 FM server.ServerLogger info
+INFO: johan failed to log in
+juli 29, 2019 12:41:19 FM server.ServerLogger warning
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 12:45:07 FM server.ServerLogger info
+INFO: server.Server@77847718 running on port 2020
+juli 29, 2019 12:45:18 FM server.ServerLogger info
+INFO: New client connected: Socket[addr=/127.0.0.1,port=49673,localport=2020]
+juli 29, 2019 12:45:31 FM server.ServerLogger info
+INFO: New user added: johan
+juli 29, 2019 12:45:32 FM server.ServerLogger warning
+WARNING: java.io.WriteAbortedException: writing aborted; java.io.NotSerializableException: client.RequestList
+juli 29, 2019 12:46:22 FM server.ServerLogger info
+INFO: server.Server@7e07db1f running on port 2020
+juli 29, 2019 12:46:30 FM server.ServerLogger info
+INFO: New client connected: Socket[addr=/127.0.0.1,port=49678,localport=2020]
+juli 29, 2019 12:46:42 FM server.ServerLogger info
+INFO: johan failed to log in
+juli 29, 2019 12:46:53 FM server.ServerLogger info
+INFO: New user added: johan
+juli 29, 2019 12:46:53 FM server.ServerLogger warning
+WARNING: java.io.WriteAbortedException: writing aborted; java.io.NotSerializableException: client.RequestList
+juli 29, 2019 12:50:24 FM server.ServerLogger info
+INFO: server.Server@7e0e6aa2 running on port 2020
+juli 29, 2019 12:50:32 FM server.ServerLogger info
+INFO: New client connected: Socket[addr=/127.0.0.1,port=49682,localport=2020]
+juli 29, 2019 12:50:44 FM server.ServerLogger info
+INFO: New user added: johan
+juli 29, 2019 12:50:44 FM server.ServerLogger warning
+WARNING: client.RequestList@461b2bf8 could not be converted
+juli 29, 2019 12:51:25 FM server.ServerLogger info
+INFO: New client connected: Socket[addr=/127.0.0.1,port=49684,localport=2020]
+juli 29, 2019 12:51:54 FM server.ServerLogger info
+INFO: New user added: another
+juli 29, 2019 12:51:54 FM server.ServerLogger warning
+WARNING: client.RequestList@68bb0eb1 could not be converted
+juli 29, 2019 12:52:19 FM server.ServerLogger warning
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 12:52:28 FM server.ServerLogger warning
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 12:53:47 FM server.ServerLogger info
+INFO: server.Server@6dc17b83 running on port 2020
+juli 29, 2019 12:53:59 FM server.ServerLogger info
+INFO: New client connected: Socket[addr=/127.0.0.1,port=49691,localport=2020]
+juli 29, 2019 12:54:13 FM server.ServerLogger info
+INFO: New user added: johan
+juli 29, 2019 12:54:14 FM server.ServerLogger warning
+WARNING: client.RequestList@2dd4d0bb could not be converted
+juli 29, 2019 12:54:20 FM server.ServerLogger warning
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 12:54:29 FM server.ServerLogger info
+INFO: New client connected: Socket[addr=/127.0.0.1,port=49694,localport=2020]
+juli 29, 2019 12:54:37 FM server.ServerLogger info
+INFO: johan logged in
+juli 29, 2019 12:54:37 FM server.ServerLogger warning
+WARNING: java.io.EOFException
+juli 29, 2019 12:56:36 FM server.ServerLogger info
+INFO: server.Server@5c072e3f running on port 2020
+juli 29, 2019 12:56:44 FM server.ServerLogger info
+INFO: New client connected: Socket[addr=/127.0.0.1,port=49697,localport=2020]
+juli 29, 2019 12:56:53 FM server.ServerLogger info
+INFO: johan failed to log in
+juli 29, 2019 12:57:04 FM server.ServerLogger warning
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 12:57:44 FM server.ServerLogger info
+INFO: server.Server@77847718 running on port 2020
+juli 29, 2019 12:57:52 FM server.ServerLogger info
+INFO: New client connected: Socket[addr=/127.0.0.1,port=49703,localport=2020]
+juli 29, 2019 12:58:01 FM server.ServerLogger info
+INFO: johan failed to log in
+juli 29, 2019 12:58:07 FM server.ServerLogger warning
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 1:00:25 FM server.ServerLogger info
+INFO: server.Server@564fabc8 running on port 2020
+juli 29, 2019 1:00:33 FM server.ServerLogger info
+INFO: New client connected: Socket[addr=/127.0.0.1,port=49710,localport=2020]
+juli 29, 2019 1:00:50 FM server.ServerLogger info
+INFO: johan failed to log in
+juli 29, 2019 1:00:59 FM server.ServerLogger warning
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 1:04:44 FM server.ServerLogger info
+INFO: server.Server@564fabc8 running on port 2020
+juli 29, 2019 1:08:09 FM server.ServerLogger info
+INFO: server.Server@7e0e6aa2 running on port 2020
+juli 29, 2019 1:12:52 FM server.ServerLogger info
+INFO: server.Server@7e0e6aa2 running on port 2020
+juli 29, 2019 1:13:09 FM server.ServerLogger info
+INFO: server.Server@16d04d3d running on port 2020
+juli 29, 2019 1:33:21 FM server.ServerLogger info
+INFO: server.Server@5fdcaa40 running on port 2020
+juli 29, 2019 1:34:15 FM server.ServerLogger info
+INFO: server.Server@74e52303 running on port 2020
+juli 29, 2019 1:34:58 FM server.ServerLogger info
+INFO: server.Server@3d921e20 running on port 2020
+juli 29, 2019 1:35:08 FM server.ServerLogger info
+INFO: New client connected: Socket[addr=/127.0.0.1,port=49751,localport=2020]
+juli 29, 2019 1:35:17 FM server.ServerLogger info
+INFO: johan failed to log in
+juli 29, 2019 1:35:28 FM server.ServerLogger info
+INFO: New user added: johan
+juli 29, 2019 1:35:28 FM server.ServerLogger warning
+WARNING: client.RequestList@48de3f14 could not be converted
+juli 29, 2019 1:35:33 FM server.ServerLogger warning
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 1:35:41 FM server.ServerLogger info
+INFO: New client connected: Socket[addr=/127.0.0.1,port=49754,localport=2020]
+juli 29, 2019 1:35:50 FM server.ServerLogger info
+INFO: johan logged in
+juli 29, 2019 1:35:50 FM server.ServerLogger severe
+SEVERE: java.io.NotSerializableException: java.io.ObjectOutputStream
+juli 29, 2019 1:35:50 FM server.ServerLogger warning
+WARNING: java.net.SocketException: Socket closed
+juli 29, 2019 1:35:50 FM server.ServerLogger severe
+SEVERE: java.net.SocketException: Socket closed
+juli 29, 2019 1:37:41 FM server.ServerLogger info
+INFO: server.Server@402bba4f running on port 2020
+juli 29, 2019 1:37:50 FM server.ServerLogger info
+INFO: New client connected: Socket[addr=/127.0.0.1,port=49757,localport=2020]
+juli 29, 2019 1:38:00 FM server.ServerLogger info
+INFO: johan failed to log in
+juli 29, 2019 1:38:14 FM server.ServerLogger info
+INFO: johan failed to log in
+juli 29, 2019 1:38:18 FM server.ServerLogger warning
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 1:41:45 FM server.ServerLogger info
+INFO: server.Server@78186a70 running on port 2020
+juli 29, 2019 1:43:55 FM server.ServerLogger info
+INFO: server.Server@78186a70 running on port 2020
+juli 29, 2019 1:44:05 FM server.ServerLogger info
+INFO: New client connected: Socket[addr=/127.0.0.1,port=49762,localport=2020]
+juli 29, 2019 1:44:13 FM server.ServerLogger info
+INFO: johan logged in
+juli 29, 2019 1:44:13 FM server.ServerLogger severe
+SEVERE: java.io.NotSerializableException: java.io.ObjectOutputStream
+juli 29, 2019 1:44:13 FM server.ServerLogger warning
+WARNING: java.io.EOFException
+juli 29, 2019 1:44:13 FM server.ServerLogger severe
+SEVERE: java.net.SocketException: Software caused connection abort: socket write error
+juli 29, 2019 1:46:10 FM server.ServerLogger info
+INFO: server.Server@78186a70 running on port 2020
+juli 29, 2019 1:48:54 FM server.ServerLogger info
+INFO: server.Server@10a035a0 running on port 2020
+juli 29, 2019 1:50:46 FM server.ServerLogger info
+INFO: server.Server@223d2c72 running on port 2020
+juli 29, 2019 1:53:37 FM server.ServerLogger info
+INFO: server.Server@64485a47 running on port 2020
+juli 29, 2019 1:55:38 FM server.ServerLogger info
+INFO: server.Server@64485a47 running on port 2020
+juli 29, 2019 2:04:16 FM server.ServerLogger info
+INFO: server.Server@a74868d running on port 2020
+juli 29, 2019 2:04:25 FM server.ServerLogger info
+INFO: New client connected: Socket[addr=/127.0.0.1,port=49884,localport=2020]
+juli 29, 2019 2:04:34 FM server.ServerLogger info
+INFO: johan logged in
+juli 29, 2019 2:04:34 FM server.ServerLogger severe
+SEVERE: java.io.NotSerializableException: java.io.ObjectOutputStream
+juli 29, 2019 2:04:34 FM server.ServerLogger warning
+WARNING: java.net.SocketException: Socket closed
+juli 29, 2019 2:04:34 FM server.ServerLogger severe
+SEVERE: java.net.SocketException: Socket closed
+juli 29, 2019 2:05:44 FM server.ServerLogger info
+INFO: New client connected: Socket[addr=/127.0.0.1,port=49885,localport=2020]
+juli 29, 2019 2:06:01 FM server.ServerLogger info
+INFO: balle failed to log in
+juli 29, 2019 2:06:20 FM server.ServerLogger info
+INFO: johan logged in
+juli 29, 2019 2:06:20 FM server.ServerLogger severe
+SEVERE: java.io.NotSerializableException: java.io.ObjectOutputStream
+juli 29, 2019 2:06:20 FM server.ServerLogger severe
+SEVERE: java.net.SocketException: Software caused connection abort: socket write error
+juli 29, 2019 2:06:20 FM server.ServerLogger warning
+WARNING: java.io.EOFException
+juli 29, 2019 2:06:48 FM server.ServerLogger info
+INFO: server.Server@67b467e9 running on port 2020
+juli 29, 2019 2:06:55 FM server.ServerLogger info
+INFO: New client connected: Socket[addr=/127.0.0.1,port=49886,localport=2020]
+juli 29, 2019 2:07:04 FM server.ServerLogger info
+INFO: johan logged in
+juli 29, 2019 8:14:51 FM server.ServerLogger info
+INFO: server.Server@78dd667e running on port 2020
+juli 29, 2019 8:15:04 FM server.ServerLogger info
+INFO: New client connected: Socket[addr=/127.0.0.1,port=50098,localport=2020]
+juli 29, 2019 8:15:20 FM server.ServerLogger info
+INFO: johan logged in
+juli 29, 2019 8:15:20 FM server.ServerLogger warning
+WARNING: java.io.EOFException
+juli 29, 2019 8:15:20 FM server.ServerLogger severe
+SEVERE: java.net.SocketException: Socket closed
+juli 29, 2019 8:15:20 FM server.ServerLogger severe
+SEVERE: java.net.SocketException: Socket closed
+juli 29, 2019 8:55:38 FM server.Server <init>
+INFO: server.Server@36902638 running on port 2020
+juli 29, 2019 8:55:50 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=50194,localport=2020]
+juli 29, 2019 8:55:59 FM server.Server$ClientHandler run
+INFO: johan logged in
+juli 29, 2019 8:56:00 FM server.Server$ClientHandler run
+WARNING: client.RequestList@5534756d could not be converted
+juli 29, 2019 8:56:50 FM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 9:10:52 FM server.Server <init>
+INFO: server.Server@6121c9d6 running on port 2020
+juli 29, 2019 9:19:13 EM server.Server <init>
+INFO: server.Server@6121c9d6 running on port 2020
+juli 29, 2019 9:19:23 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=50702,localport=2020]
+juli 29, 2019 9:19:34 EM server.Server$ClientHandler run
+INFO: johan logged in
+juli 29, 2019 9:19:34 EM server.Server$ClientHandler run
+WARNING: client.RequestList@2272dafa could not be converted
+juli 29, 2019 9:19:54 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 9:32:11 EM server.Server <init>
+INFO: server.Server@3ecd23d9 running on port 2020
+juli 29, 2019 9:32:19 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=50719,localport=2020]
+juli 29, 2019 9:32:27 EM server.Server$ClientHandler run
+INFO: johan logged in
+juli 29, 2019 9:32:33 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 9:32:48 EM server.Server <init>
+INFO: server.Server@3ecd23d9 running on port 2020
+juli 29, 2019 9:32:51 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=50720,localport=2020]
+juli 29, 2019 9:32:57 EM server.Server$ClientHandler run
+INFO: johan logged in
+juli 29, 2019 9:36:43 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 9:36:50 EM server.Server <init>
+INFO: server.Server@6121c9d6 running on port 2020
+juli 29, 2019 9:37:00 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=50721,localport=2020]
+juli 29, 2019 9:37:08 EM server.Server$ClientHandler run
+INFO: johan logged in
+juli 29, 2019 9:38:07 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 9:45:04 EM server.Server <init>
+INFO: server.Server@3ecd23d9 running on port 2020
+juli 29, 2019 9:45:08 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=50726,localport=2020]
+juli 29, 2019 9:45:14 EM server.Server$ClientHandler run
+INFO: johan logged in
+juli 29, 2019 9:45:21 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 9:45:27 EM server.Server <init>
+INFO: server.Server@6121c9d6 running on port 2020
+juli 29, 2019 9:45:30 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=50727,localport=2020]
+juli 29, 2019 9:45:37 EM server.Server$ClientHandler run
+INFO: johan logged in
+juli 29, 2019 9:45:43 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 9:45:48 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=50728,localport=2020]
+juli 29, 2019 9:46:24 EM server.Server$ClientHandler run
+INFO: New user added: testUser1
+juli 29, 2019 9:46:42 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 9:46:50 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=50730,localport=2020]
+juli 29, 2019 9:46:57 EM server.Server$ClientHandler run
+INFO: johan logged in
+juli 29, 2019 9:47:26 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 9:47:34 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=50732,localport=2020]
+juli 29, 2019 9:47:41 EM server.Server$ClientHandler run
+INFO: johan logged in
+juli 29, 2019 9:47:55 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 10:09:02 EM server.Server <init>
+INFO: server.Server@6121c9d6 running on port 2020
+juli 29, 2019 10:09:09 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=50768,localport=2020]
+juli 29, 2019 10:09:17 EM server.Server$ClientHandler run
+INFO: johan failed to log in
+juli 29, 2019 10:09:25 EM server.Server$ClientHandler run
+INFO: johan failed to log in
+juli 29, 2019 10:09:41 EM server.Server$ClientHandler run
+INFO: johan failed to log in
+juli 29, 2019 10:09:53 EM server.Server$ClientHandler run
+INFO: johan failed to log in
+juli 29, 2019 10:10:05 EM server.Server$ClientHandler run
+INFO: testUser1 logged in
+juli 29, 2019 10:10:21 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 10:11:11 EM server.Server <init>
+INFO: server.Server@3ecd23d9 running on port 2020
+juli 29, 2019 10:11:16 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=50770,localport=2020]
+juli 29, 2019 10:11:23 EM server.Server$ClientHandler run
+INFO: johan failed to log in
+juli 29, 2019 10:11:33 EM server.Server$ClientHandler run
+INFO: New user added: johan
+juli 29, 2019 10:11:51 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=50771,localport=2020]
+juli 29, 2019 10:11:59 EM server.Server$ClientHandler run
+INFO: testUser1 logged in
+juli 29, 2019 10:12:14 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 10:12:16 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=50775,localport=2020]
+juli 29, 2019 10:12:23 EM server.Server$ClientHandler run
+INFO: johan logged in
+juli 29, 2019 10:12:49 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 10:12:51 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 10:12:57 EM server.Server <init>
+INFO: server.Server@6121c9d6 running on port 2020
+juli 29, 2019 10:13:01 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=50776,localport=2020]
+juli 29, 2019 10:13:08 EM server.Server$ClientHandler run
+INFO: testUser1 failed to log in
+juli 29, 2019 10:13:18 EM server.Server$ClientHandler run
+INFO: testUser1 failed to log in
+juli 29, 2019 10:13:39 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 10:15:54 EM server.Server <init>
+INFO: server.Server@1060b431 running on port 2020
+juli 29, 2019 10:37:55 EM server.Server <init>
+INFO: server.Server@1060b431 running on port 2020
+juli 29, 2019 10:38:02 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=51337,localport=2020]
+juli 29, 2019 10:38:18 EM server.Server$ClientHandler run
+INFO: johan logged in
+juli 29, 2019 10:38:27 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=51338,localport=2020]
+juli 29, 2019 10:38:37 EM server.Server$ClientHandler run
+INFO: test1 failed to log in
+juli 29, 2019 10:38:47 EM server.Server$ClientHandler run
+INFO: New user added: test1
+juli 29, 2019 10:39:07 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=51344,localport=2020]
+juli 29, 2019 10:39:22 EM server.Server$ClientHandler run
+INFO: New user added: test2
+juli 29, 2019 10:39:29 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 10:39:30 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 10:39:36 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 10:41:52 EM server.Server <init>
+INFO: server.Server@11758f2a running on port 2020
+juli 29, 2019 10:42:09 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=51351,localport=2020]
+juli 29, 2019 10:42:24 EM server.Server$ClientHandler run
+INFO: test2 logged in
+juli 29, 2019 10:42:33 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=51353,localport=2020]
+juli 29, 2019 10:42:39 EM server.Server$ClientHandler run
+INFO: test1 logged in
+juli 29, 2019 10:43:07 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 10:43:10 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 10:43:28 EM server.Server <init>
+INFO: server.Server@11758f2a running on port 2020
+juli 29, 2019 10:46:47 EM server.Server <init>
+INFO: server.Server@11758f2a running on port 2020
+juli 29, 2019 10:52:47 EM server.Server <init>
+INFO: server.Server@11758f2a running on port 2020
+juli 29, 2019 10:55:15 EM server.Server <init>
+INFO: server.Server@4567f35d running on port 2020
+juli 29, 2019 10:56:39 EM server.Server <init>
+INFO: server.Server@11758f2a running on port 2020
+juli 29, 2019 11:06:10 EM server.Server <init>
+INFO: server.Server@11758f2a running on port 2020
+juli 29, 2019 11:06:41 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=51378,localport=2020]
+juli 29, 2019 11:06:49 EM server.Server$ClientHandler run
+INFO: johan logged in
+juli 29, 2019 11:07:00 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=51379,localport=2020]
+juli 29, 2019 11:07:06 EM server.Server$ClientHandler run
+INFO: test1 logged in
+juli 29, 2019 11:07:17 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=51380,localport=2020]
+juli 29, 2019 11:07:26 EM server.Server$ClientHandler run
+INFO: test2 logged in
+juli 29, 2019 11:07:37 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 11:07:40 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 11:07:45 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 11:17:48 EM server.Server <init>
+INFO: server.Server@11758f2a running on port 2020
+juli 29, 2019 11:17:55 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=51388,localport=2020]
+juli 29, 2019 11:18:06 EM server.Server$ClientHandler run
+INFO: johan logged in
+juli 29, 2019 11:18:33 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 11:19:38 EM server.Server <init>
+INFO: server.Server@5891e32e running on port 2020
+juli 29, 2019 11:19:42 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=51392,localport=2020]
+juli 29, 2019 11:19:48 EM server.Server$ClientHandler run
+INFO: johan logged in
+juli 29, 2019 11:19:59 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 11:23:11 EM server.Server <init>
+INFO: server.Server@11758f2a running on port 2020
+juli 29, 2019 11:23:15 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=51394,localport=2020]
+juli 29, 2019 11:23:21 EM server.Server$ClientHandler run
+INFO: johan logged in
+juli 29, 2019 11:23:38 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 11:25:14 EM server.Server <init>
+INFO: server.Server@11758f2a running on port 2020
+juli 29, 2019 11:25:18 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=51406,localport=2020]
+juli 29, 2019 11:25:24 EM server.Server$ClientHandler run
+INFO: johan logged in
+juli 29, 2019 11:25:30 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=51407,localport=2020]
+juli 29, 2019 11:25:47 EM server.Server$ClientHandler run
+INFO: test1 logged in
+juli 29, 2019 11:26:07 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 11:26:09 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 11:27:19 EM server.Server <init>
+INFO: server.Server@4fb0f2b9 running on port 2020
+juli 29, 2019 11:27:23 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=51411,localport=2020]
+juli 29, 2019 11:27:30 EM server.Server$ClientHandler run
+INFO: johan logged in
+juli 29, 2019 11:27:41 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=51412,localport=2020]
+juli 29, 2019 11:27:47 EM server.Server$ClientHandler run
+INFO: test1 logged in
+juli 29, 2019 11:28:02 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 11:28:03 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 11:29:46 EM server.Server <init>
+INFO: server.Server@11758f2a running on port 2020
+juli 29, 2019 11:29:51 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=51413,localport=2020]
+juli 29, 2019 11:29:59 EM server.Server$ClientHandler run
+INFO: johan logged in
+juli 29, 2019 11:30:05 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=51414,localport=2020]
+juli 29, 2019 11:30:10 EM server.Server$ClientHandler run
+INFO: test1 logged in
+juli 29, 2019 11:30:28 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 11:30:31 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 11:34:23 EM server.Server <init>
+INFO: server.Server@11758f2a running on port 2020
+juli 29, 2019 11:34:29 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=51420,localport=2020]
+juli 29, 2019 11:34:37 EM server.Server$ClientHandler run
+INFO: johan logged in
+juli 29, 2019 11:34:41 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=51421,localport=2020]
+juli 29, 2019 11:34:57 EM server.Server$ClientHandler run
+INFO: New user added: test3
+juli 29, 2019 11:35:07 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 11:35:11 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 11:38:46 EM server.Server <init>
+INFO: server.Server@11758f2a running on port 2020
+juli 29, 2019 11:38:49 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=51424,localport=2020]
+juli 29, 2019 11:38:55 EM server.Server$ClientHandler run
+INFO: johan logged in
+juli 29, 2019 11:39:03 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=51425,localport=2020]
+juli 29, 2019 11:39:25 EM server.Server$ClientHandler run
+INFO: test3 logged in
+juli 29, 2019 11:39:35 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=51426,localport=2020]
+juli 29, 2019 11:40:06 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 11:40:08 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 11:40:12 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 11:42:43 EM server.Server <init>
+INFO: server.Server@33723e30 running on port 2020
+juli 29, 2019 11:42:47 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=51431,localport=2020]
+juli 29, 2019 11:42:53 EM server.Server$ClientHandler run
+INFO: johan logged in
+juli 29, 2019 11:43:01 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=51432,localport=2020]
+juli 29, 2019 11:43:08 EM server.Server$ClientHandler run
+INFO: test3 logged in
+juli 29, 2019 11:43:14 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=51433,localport=2020]
+juli 29, 2019 11:48:06 EM server.Server <init>
+INFO: server.Server@12468a38 running on port 2020
+juli 29, 2019 11:48:11 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=51439,localport=2020]
+juli 29, 2019 11:48:18 EM server.Server$ClientHandler run
+INFO: johan logged in
+juli 29, 2019 11:48:21 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=51440,localport=2020]
+juli 29, 2019 11:48:27 EM server.Server$ClientHandler run
+INFO: test2 logged in
+juli 29, 2019 11:48:52 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 11:49:14 EM server.Server <init>
+INFO: server.Server@33723e30 running on port 2020
+juli 29, 2019 11:49:17 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=51442,localport=2020]
+juli 29, 2019 11:49:26 EM server.Server$ClientHandler run
+INFO: johan logged in
+juli 29, 2019 11:49:32 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=51443,localport=2020]
+juli 29, 2019 11:49:41 EM server.Server$ClientHandler run
+INFO: test2 logged in
+juli 29, 2019 11:49:55 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 11:49:56 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 11:50:09 EM server.Server <init>
+INFO: server.Server@12468a38 running on port 2020
+juli 29, 2019 11:50:14 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=51446,localport=2020]
+juli 29, 2019 11:50:22 EM server.Server$ClientHandler run
+INFO: johan logged in
+juli 29, 2019 11:50:26 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=51447,localport=2020]
+juli 29, 2019 11:50:33 EM server.Server$ClientHandler run
+INFO: test2 logged in
+juli 29, 2019 11:50:37 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 11:50:44 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 11:51:02 EM server.Server <init>
+INFO: server.Server@12468a38 running on port 2020
+juli 29, 2019 11:51:07 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=51453,localport=2020]
+juli 29, 2019 11:51:13 EM server.Server$ClientHandler run
+INFO: johan logged in
+juli 29, 2019 11:51:19 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=51454,localport=2020]
+juli 29, 2019 11:51:28 EM server.Server$ClientHandler run
+INFO: test2 logged in
+juli 29, 2019 11:51:32 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 29, 2019 11:51:36 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 30, 2019 8:53:38 FM server.Server <init>
+INFO: server.Server@eafc191 running on port 2020
+juli 30, 2019 8:53:53 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52029,localport=2020]
+juli 30, 2019 8:54:06 FM server.Server$ClientHandler run
+INFO: johan logged in
+juli 30, 2019 8:54:28 FM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 30, 2019 9:04:35 FM server.Server <init>
+INFO: server.Server@eafc191 running on port 2020
+juli 30, 2019 9:04:42 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52051,localport=2020]
+juli 30, 2019 9:04:52 FM server.Server$ClientHandler run
+INFO: johan logged in
+juli 30, 2019 9:04:57 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52052,localport=2020]
+juli 30, 2019 9:05:05 FM server.Server$ClientHandler run
+INFO: test1 logged in
+juli 30, 2019 9:05:20 FM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 30, 2019 9:05:21 FM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 30, 2019 9:09:00 FM server.Server <init>
+INFO: server.Server@eafc191 running on port 2020
+juli 30, 2019 9:09:07 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52056,localport=2020]
+juli 30, 2019 9:09:15 FM server.Server$ClientHandler run
+INFO: johan logged in
+juli 30, 2019 9:09:21 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52057,localport=2020]
+juli 30, 2019 9:09:28 FM server.Server$ClientHandler run
+INFO: test1 logged in
+juli 30, 2019 9:09:38 FM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 30, 2019 9:09:40 FM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 30, 2019 9:14:01 FM server.Server <init>
+INFO: server.Server@eafc191 running on port 2020
+juli 30, 2019 9:14:06 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52077,localport=2020]
+juli 30, 2019 9:14:21 FM server.Server$ClientHandler run
+INFO: johan logged in
+juli 30, 2019 9:14:28 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52078,localport=2020]
+juli 30, 2019 9:14:37 FM server.Server$ClientHandler run
+INFO: test1 logged in
+juli 30, 2019 9:14:48 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52079,localport=2020]
+juli 30, 2019 9:15:10 FM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 30, 2019 9:15:12 FM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 30, 2019 9:15:13 FM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 30, 2019 9:32:20 FM server.Server <init>
+INFO: server.Server@eafc191 running on port 2020
+juli 30, 2019 9:32:31 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52091,localport=2020]
+juli 30, 2019 9:32:40 FM server.Server$ClientHandler run
+INFO: johan logged in
+juli 30, 2019 9:32:44 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52092,localport=2020]
+juli 30, 2019 9:32:52 FM server.Server$ClientHandler run
+INFO: test1 logged in
+juli 30, 2019 9:33:09 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52093,localport=2020]
+juli 30, 2019 9:33:19 FM server.Server$ClientHandler run
+INFO: test2 logged in
+juli 30, 2019 9:33:27 FM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 30, 2019 9:33:28 FM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 30, 2019 9:33:31 FM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 30, 2019 9:35:29 FM server.Server <init>
+INFO: server.Server@eafc191 running on port 2020
+juli 30, 2019 9:35:36 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52097,localport=2020]
+juli 30, 2019 9:35:48 FM server.Server$ClientHandler run
+INFO: johan logged in
+juli 30, 2019 9:35:53 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52098,localport=2020]
+juli 30, 2019 9:36:05 FM server.Server$ClientHandler run
+INFO: New user added: test4
+juli 30, 2019 9:36:24 FM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 30, 2019 9:36:26 FM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 30, 2019 10:40:41 EM server.Server <init>
+INFO: server.Server@eafc191 running on port 2020
+juli 30, 2019 10:40:41 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52201,localport=2020]
+juli 30, 2019 10:40:54 EM server.Server$ClientHandler run
+INFO: johan logged in
+juli 30, 2019 10:41:01 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52202,localport=2020]
+juli 30, 2019 10:41:15 EM server.Server$ClientHandler run
+INFO: test1 logged in
+juli 30, 2019 10:41:23 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 30, 2019 10:41:25 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 30, 2019 11:24:03 EM server.Server <init>
+INFO: server.Server@eafc191 running on port 2020
+juli 30, 2019 11:24:12 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52203,localport=2020]
+juli 30, 2019 11:24:21 EM server.Server$ClientHandler run
+INFO: johan logged in
+juli 30, 2019 11:24:27 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52204,localport=2020]
+juli 30, 2019 11:24:35 EM server.Server$ClientHandler run
+INFO: test1 logged in
+juli 30, 2019 11:34:51 EM server.Server <init>
+INFO: server.Server@33723e30 running on port 2020
+juli 30, 2019 11:34:57 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52205,localport=2020]
+juli 30, 2019 11:35:05 EM server.Server$ClientHandler run
+INFO: johan logged in
+juli 30, 2019 11:35:11 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52206,localport=2020]
+juli 30, 2019 11:35:17 EM server.Server$ClientHandler run
+INFO: test1 logged in

@@ -15,6 +15,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 import user.User;
 
@@ -54,12 +55,16 @@ public class AllUsersGUI extends JPanel
 	private LinkedList<User> testUsers = new LinkedList<User>();
 
 	private ButtonListener btnListener = new ButtonListener();
-
+	
 	public AllUsersGUI()
 	{
 		initializeGUI();
 	}
 
+	public UsersGUI getUsersGUI() {
+		return friends;
+	}
+	
 	public void addUser(User user)
 	{
 			testUsers.add(new User(new ImageIcon(user.getImage().getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT)), user.getName()));
@@ -92,7 +97,7 @@ public class AllUsersGUI extends JPanel
 		onlineUsersPanel.setLayout(new BorderLayout());
 		onlineUsersPanel.add(onlineUsersLabel, BorderLayout.NORTH);
 		onlineUsersPanel.add(onlineUsers, BorderLayout.CENTER);
-
+		
 		friendsPanel.setLayout(new BorderLayout());
 		friendsPanel.setPreferredSize(new Dimension(200, 600));
 		friendsPanel.add(friendsLabel, BorderLayout.NORTH);
@@ -130,6 +135,10 @@ public class AllUsersGUI extends JPanel
 		new UsersGUI();
 	}
 
+	public void addNewUser(User user) {
+		onlineUsers.addNewUser(user);
+	}
+	
 	/**
 	 * Method for adding a list of friends to the friend list in the gui
 	 * 

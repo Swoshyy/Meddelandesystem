@@ -42,7 +42,7 @@ public class SaveGUI extends JPanel {
 	
 	private ButtonListener btnListener = new ButtonListener();
 	
-	private ArrayList<GUIListener> listeners = new ArrayList<GUIListener>(); 
+	private ArrayList<GUIListener> listeners = new ArrayList<>(); 
 	
 	
 	public SaveGUI() {
@@ -137,9 +137,10 @@ public class SaveGUI extends JPanel {
 	}
 	
 	
-	public static void main(String [] args) {
-		SaveGUI test = new SaveGUI();
-	}
+//	public static void main(String [] args) {
+//		SaveGUI test = new SaveGUI();
+//		test.addNewListener(new SavedUsers("files/savedUsersTest.dat"));
+//	}
 	
 
 }

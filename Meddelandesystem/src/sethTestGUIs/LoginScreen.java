@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import java.awt.EventQueue;
 
 import user.User;
 import client.ClientController;
@@ -44,23 +45,23 @@ public class LoginScreen
 	/**
 	 * Launch the application.
 	 */
-//	public static void main(String[] args)
-//	{
-//		EventQueue.invokeLater(new Runnable()
-//		{
-//			public void run()
-//			{
-//				try
-//				{
-//					LoginScreen window = new LoginScreen();
-//					window.frame.setVisible(true);
-//				} catch (Exception e)
-//				{
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
+	public static void main(String[] args)
+	{
+		EventQueue.invokeLater(new Runnable()
+		{
+			public void run()
+			{
+				try
+				{
+					LoginScreen window = new LoginScreen(new ClientController());
+					window.frame.setVisible(true);
+				} catch (Exception e)
+				{
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 
 	/**
 	 * Create the application.
@@ -81,7 +82,6 @@ public class LoginScreen
 		frame.setBounds(100, 100, 260, 360);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		frame.setVisible(true);
 		
 		textField = new JTextField();
 		textField.setFont(new Font("Georgia", Font.PLAIN, 12));
@@ -128,6 +128,8 @@ public class LoginScreen
 		
 		btnSignUp.addActionListener(btnListener);
 		btnLogin.addActionListener(btnListener);
+		
+		frame.setVisible(true);
 	}
 	
 	

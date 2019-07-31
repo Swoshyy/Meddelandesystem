@@ -22,7 +22,7 @@ public class Message implements Serializable
 		this.sender = sender;
 		this.reciever = reciever;
 		
-		if (reciever.getIsOnlione()==false) {
+		if (!reciever.getIsOnline()) {
 			
 			savedMessages.saveNewMessage(this);
 			

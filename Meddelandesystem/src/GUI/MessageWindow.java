@@ -61,7 +61,7 @@ public class MessageWindow {
 		this.user = user;
 //		userListGUI.addUser(user);
 		this.controller = controller;
-		controller.setUserListGUI(userListGUI);
+//		controller.setUserListGUI(userListGUI);
 		initialize();
 		frame.setVisible(true);
 	}
@@ -78,6 +78,10 @@ public class MessageWindow {
 	
 	public void addListOfUsers(LinkedList<User> users) {
 		userListGUI.addListOfOnlineUsers(users);
+	}
+	
+	public void addNewUser(User user) {
+		userListGUI.addNewUser(user);
 	}
 
 	/**
@@ -227,7 +231,8 @@ public class MessageWindow {
 		public void actionPerformed(ActionEvent e) {
 			if (e.getSource() == btnSend) {
 				System.out.println("Enter hit");
-				controller.sendMessage(new Message(tfInput.getText(), img));
+				controller.sendMessage(new Message(tfInput.getText(), // VÄLDIGT VÄLDIGT omständigt, skriv om
+						MessageWindow.this.user, userListGUI.getUsersGUI().getChosenUser() ));
 				tfInput.setText(null);
 				img = null;
 				System.out.println("Done entering");

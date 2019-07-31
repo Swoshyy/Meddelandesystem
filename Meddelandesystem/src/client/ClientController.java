@@ -30,6 +30,9 @@ public class ClientController
 		msgWindow.addListOfUsers(users);
 	}
 	
+	public void addNewUser(User user) {
+		msgWindow.addNewUser(user);
+	}
 	
 	public void displayMessage(Message message)
 	{
