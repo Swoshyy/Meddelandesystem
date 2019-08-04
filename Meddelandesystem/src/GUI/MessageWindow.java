@@ -34,6 +34,7 @@ import javax.swing.text.Document;
 
 import client.ClientController;
 import displayUsersTest.AllUsersGUI;
+import displayUsersTest.UsersGUI;
 import message.Message;
 import user.User;
 
@@ -50,7 +51,7 @@ public class MessageWindow {
 	private User user;
 	
 	private AllUsersGUI userListGUI = new AllUsersGUI();
-
+	private UsersGUI usersGUI;
 	// private TestSebbe imageChooser;
 	private ImageIcon img;
 
@@ -69,11 +70,6 @@ public class MessageWindow {
 	public MessageWindow() {
 		initialize();
 		frame.setVisible(true);
-	}
-	
-	public static void main(String[] args)
-	{
-		new MessageWindow();
 	}
 	
 	public void addListOfUsers(LinkedList<User> users) {
@@ -158,7 +154,14 @@ public class MessageWindow {
 
 		try {
 			Document doc = textPane.getDocument();
-			doc.insertString(doc.getLength(), message.getText() + "\n"+"\n", null);
+			if(message.getSender().getName().equals(user.getName())) {
+				doc.insertString(doc.getLength(), "To: " + message.getReceiver() + " - " 
+						+ message.getText() + "\n"+"\n", null);
+			} else {
+				doc.insertString(doc.getLength(), "From: " + message.getSender() + " - " 
+						+ message.getText() + "\n"+"\n", null);
+			}
+			
 		} catch (BadLocationException exc) {
 			exc.printStackTrace();
 		}
@@ -260,7 +263,8 @@ public class MessageWindow {
 
 		public void keyPressed(KeyEvent ee) {
 			if (ee.getKeyCode() == KeyEvent.VK_ENTER) {
-				controller.sendMessage(new Message(tfInput.getText(), img));
+				controller.sendMessage(new Message(tfInput.getText(), // VÄLDIGT VÄLDIGT omständigt, skriv om
+						MessageWindow.this.user, userListGUI.getUsersGUI().getChosenUser() ));
 				tfInput.setText(null);
 				img = null;
 			}
@@ -277,6 +281,11 @@ public class MessageWindow {
 	public void displayUser(User user2)
 	{
 		userListGUI.addUser(user2);
+	}
+	
+	public static void main(String[] args)
+	{
+		new MessageWindow();
 	}
 
 }

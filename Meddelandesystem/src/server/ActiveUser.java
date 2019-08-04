@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 import user.User;
 
-public class ActiveClient implements Serializable {
+public class ActiveUser implements Serializable {
 	/**
 	 * 
 	 */
@@ -14,7 +14,7 @@ public class ActiveClient implements Serializable {
 	private User user;
 
 	
-	public ActiveClient(ObjectOutputStream oos, User user) {
+	public ActiveUser(ObjectOutputStream oos, User user) {
 		this.oos = oos;
 		this.user = user;
 	}

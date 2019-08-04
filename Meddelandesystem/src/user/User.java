@@ -25,7 +25,7 @@ public class User implements Serializable {
 	
 //	private ObjectInputStream ois;
 //	private ObjectOutputStream oos;
-	private boolean isOnline;
+//	private boolean isOnline;
 	
 	
 	public User(ImageIcon image, String name, String password) {
@@ -65,7 +65,6 @@ public class User implements Serializable {
 	public int checkPassword(String name, String password) {
 		
 		if (this.name.equals(name) && this.password.equals(password)) {
-			setIsOnline(true);
 			return 1;
 		}
 		else {
@@ -90,11 +89,11 @@ public class User implements Serializable {
 //		return ois;
 //	}
 
-	public boolean getIsOnline() {
-		return isOnline;
-	}
-
-	public void setIsOnline(boolean value) {
-		isOnline = value;
-	}
+//	public boolean getIsOnline() {
+//		return isOnline;
+//	}
+//
+//	public void setIsOnline(boolean value) {
+//		isOnline = value;
+//	}
 }

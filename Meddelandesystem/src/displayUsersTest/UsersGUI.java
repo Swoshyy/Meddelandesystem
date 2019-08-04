@@ -70,7 +70,6 @@ public class UsersGUI extends JPanel
 	 */
 	public User getChosenUser()
 	{
-
 		return listOfUsers.getSelectedValue();
 
 	}

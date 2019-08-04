@@ -1,4 +1,4 @@
-package client;
+package login;
 
 import java.io.Serializable;
 
@@ -10,7 +10,7 @@ import user.User;
  *
  */
 
-public class LogInObject implements Serializable {
+public class LoginObject implements Serializable {
 	/**
 	 * 
 	 */
@@ -18,7 +18,7 @@ public class LogInObject implements Serializable {
 	private String name;
 	private String password;
 	
-	public LogInObject(String name, String password) {
+	public LoginObject(String name, String password) {
 		this.name = name;
 		this.password = password;
 	}

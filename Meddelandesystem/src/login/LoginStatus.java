@@ -1,4 +1,4 @@
-package server;
+package login;
 
 import java.io.Serializable;
 

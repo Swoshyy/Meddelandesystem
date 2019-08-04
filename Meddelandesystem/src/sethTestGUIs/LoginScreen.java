@@ -14,7 +14,7 @@ import java.awt.EventQueue;
 
 import user.User;
 import client.ClientController;
-import client.LogInObject;
+import login.LoginObject;
 
 /**
  * LoginScreen combined with the saveObjects class to 
@@ -150,10 +150,10 @@ public class LoginScreen
 
 			if(e.getSource() == btnLogin) {
 //				User testUser;
-				LogInObject hej;
+				LoginObject hej;
 				
 				
-					hej = new LogInObject(textField.getText(), new String(passwordField.getPassword()));
+					hej = new LoginObject(textField.getText(), new String(passwordField.getPassword()));
 //					hej = new LogInObject(testUser);
 					System.out.println(textField.getText());
 					System.out.println(new String(passwordField.getPassword()));

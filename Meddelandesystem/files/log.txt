@@ -1034,3 +1034,1021 @@ juli 30, 2019 11:35:11 EM server.Server$ClientHandler <init>
 INFO: New client connected: Socket[addr=/127.0.0.1,port=52206,localport=2020]
 juli 30, 2019 11:35:17 EM server.Server$ClientHandler run
 INFO: test1 logged in
+juli 31, 2019 9:36:03 FM server.Server <init>
+INFO: server.Server@33723e30 running on port 2020
+juli 31, 2019 9:36:25 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52597,localport=2020]
+juli 31, 2019 9:36:35 FM server.Server$ClientHandler run
+INFO: johan logged in
+juli 31, 2019 9:36:43 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52600,localport=2020]
+juli 31, 2019 9:36:56 FM server.Server$ClientHandler run
+INFO: test1 logged in
+juli 31, 2019 9:43:51 FM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+juli 31, 2019 9:48:43 FM server.Server <init>
+INFO: server.Server@eafc191 running on port 2020
+juli 31, 2019 9:48:53 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52695,localport=2020]
+juli 31, 2019 9:49:01 FM server.Server$ClientHandler run
+INFO: johan logged in
+juli 31, 2019 9:49:07 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52696,localport=2020]
+juli 31, 2019 9:49:15 FM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 01, 2019 5:56:55 EM server.Server <init>
+INFO: server.Server@33723e30 running on port 2020
+aug. 01, 2019 5:57:37 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52699,localport=2020]
+aug. 01, 2019 5:57:57 EM server.Server <init>
+INFO: server.Server@eafc191 running on port 2020
+aug. 01, 2019 5:58:04 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52700,localport=2020]
+aug. 01, 2019 5:58:12 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 01, 2019 5:58:18 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52701,localport=2020]
+aug. 01, 2019 5:58:25 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 01, 2019 5:59:35 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 5:59:38 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 6:01:18 EM server.Server <init>
+INFO: server.Server@eafc191 running on port 2020
+aug. 01, 2019 6:01:22 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52702,localport=2020]
+aug. 01, 2019 6:01:30 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 01, 2019 6:01:34 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52703,localport=2020]
+aug. 01, 2019 6:01:40 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 01, 2019 6:02:22 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 6:02:26 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 6:02:32 EM server.Server <init>
+INFO: server.Server@eafc191 running on port 2020
+aug. 01, 2019 6:02:37 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52704,localport=2020]
+aug. 01, 2019 6:02:46 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 01, 2019 6:02:50 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52705,localport=2020]
+aug. 01, 2019 6:02:56 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 01, 2019 6:03:22 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 6:03:23 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 6:12:29 EM server.Server <init>
+INFO: server.Server@eafc191 running on port 2020
+aug. 01, 2019 6:12:38 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52706,localport=2020]
+aug. 01, 2019 6:12:45 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 01, 2019 6:12:49 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52707,localport=2020]
+aug. 01, 2019 6:12:55 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 01, 2019 6:14:04 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 6:14:11 EM server.Server <init>
+INFO: server.Server@eafc191 running on port 2020
+aug. 01, 2019 6:14:20 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52710,localport=2020]
+aug. 01, 2019 6:14:27 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 01, 2019 6:14:33 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52713,localport=2020]
+aug. 01, 2019 6:14:39 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 01, 2019 6:15:06 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 6:15:26 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 6:20:57 EM server.Server <init>
+INFO: server.Server@eafc191 running on port 2020
+aug. 01, 2019 6:21:06 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52714,localport=2020]
+aug. 01, 2019 6:21:14 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 01, 2019 6:21:17 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52715,localport=2020]
+aug. 01, 2019 6:21:24 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 01, 2019 6:21:41 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 6:29:10 EM server.Server <init>
+INFO: server.Server@33723e30 running on port 2020
+aug. 01, 2019 6:29:10 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52716,localport=2020]
+aug. 01, 2019 6:29:19 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 01, 2019 6:29:23 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52717,localport=2020]
+aug. 01, 2019 6:29:32 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 01, 2019 6:29:41 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 6:29:52 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 6:33:26 EM server.Server <init>
+INFO: server.Server@eafc191 running on port 2020
+aug. 01, 2019 6:33:30 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52718,localport=2020]
+aug. 01, 2019 6:33:37 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 01, 2019 6:33:40 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52719,localport=2020]
+aug. 01, 2019 6:33:46 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 01, 2019 6:33:57 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 6:35:42 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 6:35:54 EM server.Server <init>
+INFO: server.Server@3e58a80e running on port 2020
+aug. 01, 2019 6:36:01 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52724,localport=2020]
+aug. 01, 2019 6:36:10 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 01, 2019 6:36:14 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52725,localport=2020]
+aug. 01, 2019 6:36:20 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 01, 2019 6:36:28 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 6:36:31 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 7:01:23 EM server.Server <init>
+INFO: server.Server@eafc191 running on port 2020
+aug. 01, 2019 7:01:37 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52726,localport=2020]
+aug. 01, 2019 7:01:44 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 01, 2019 7:01:48 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52727,localport=2020]
+aug. 01, 2019 7:01:54 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 01, 2019 7:02:23 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 7:02:24 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 7:02:51 EM server.Server <init>
+INFO: server.Server@2a798d51 running on port 2020
+aug. 01, 2019 7:02:56 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52730,localport=2020]
+aug. 01, 2019 7:03:05 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 01, 2019 7:03:08 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52731,localport=2020]
+aug. 01, 2019 7:03:16 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 01, 2019 7:03:35 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 7:03:53 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 7:05:50 EM server.Server <init>
+INFO: server.Server@6379eb running on port 2020
+aug. 01, 2019 7:05:56 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52734,localport=2020]
+aug. 01, 2019 7:06:03 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 01, 2019 7:06:07 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52735,localport=2020]
+aug. 01, 2019 7:06:13 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 01, 2019 7:06:37 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 7:07:12 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 7:07:22 EM server.Server <init>
+INFO: server.Server@6379eb running on port 2020
+aug. 01, 2019 7:07:26 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52738,localport=2020]
+aug. 01, 2019 7:07:33 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 01, 2019 7:07:36 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52739,localport=2020]
+aug. 01, 2019 7:07:43 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 01, 2019 7:09:14 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 7:09:16 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 7:14:34 EM server.Server <init>
+INFO: server.Server@eafc191 running on port 2020
+aug. 01, 2019 7:14:39 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52740,localport=2020]
+aug. 01, 2019 7:14:46 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 01, 2019 7:14:50 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52741,localport=2020]
+aug. 01, 2019 7:14:56 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 01, 2019 7:15:31 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52742,localport=2020]
+aug. 01, 2019 7:15:38 EM server.Server$ClientHandler run
+INFO: test2 logged in
+aug. 01, 2019 7:17:52 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 7:17:53 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 7:17:55 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 7:22:35 EM server.Server <init>
+INFO: server.Server@eafc191 running on port 2020
+aug. 01, 2019 7:22:39 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52743,localport=2020]
+aug. 01, 2019 7:22:46 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 01, 2019 7:22:52 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52744,localport=2020]
+aug. 01, 2019 7:22:58 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 01, 2019 7:23:17 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 7:23:18 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 10:17:15 EM server.Server <init>
+INFO: server.Server@eafc191 running on port 2020
+aug. 01, 2019 10:17:23 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52745,localport=2020]
+aug. 01, 2019 10:17:31 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 01, 2019 10:17:35 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52746,localport=2020]
+aug. 01, 2019 10:17:42 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 01, 2019 10:18:17 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 10:19:12 EM server.Server <init>
+INFO: server.Server@33723e30 running on port 2020
+aug. 01, 2019 10:19:16 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52747,localport=2020]
+aug. 01, 2019 10:19:23 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 01, 2019 10:19:26 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52748,localport=2020]
+aug. 01, 2019 10:19:33 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 01, 2019 10:19:56 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 10:19:59 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 10:22:32 EM server.Server <init>
+INFO: server.Server@eafc191 running on port 2020
+aug. 01, 2019 10:22:37 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52749,localport=2020]
+aug. 01, 2019 10:22:48 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 01, 2019 10:22:57 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52750,localport=2020]
+aug. 01, 2019 10:23:03 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 01, 2019 10:23:45 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 10:23:46 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 10:37:26 EM server.Server <init>
+INFO: server.Server@eafc191 running on port 2020
+aug. 01, 2019 10:37:32 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52751,localport=2020]
+aug. 01, 2019 10:37:39 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 01, 2019 10:37:43 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52752,localport=2020]
+aug. 01, 2019 10:37:53 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 01, 2019 10:38:15 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 10:38:16 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 10:44:53 EM server.Server <init>
+INFO: server.Server@33723e30 running on port 2020
+aug. 01, 2019 10:44:59 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52753,localport=2020]
+aug. 01, 2019 10:45:07 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 01, 2019 10:45:20 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 10:45:37 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52754,localport=2020]
+aug. 01, 2019 10:45:45 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 01, 2019 10:45:50 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 10:46:58 EM server.Server <init>
+INFO: server.Server@eafc191 running on port 2020
+aug. 01, 2019 10:47:04 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52755,localport=2020]
+aug. 01, 2019 10:47:12 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 01, 2019 10:47:24 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52756,localport=2020]
+aug. 01, 2019 10:47:31 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 01, 2019 10:47:42 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52757,localport=2020]
+aug. 01, 2019 10:47:54 EM server.Server$ClientHandler run
+INFO: test2 logged in
+aug. 01, 2019 10:48:00 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52758,localport=2020]
+aug. 01, 2019 10:48:08 EM server.Server$ClientHandler run
+INFO: test3 logged in
+aug. 01, 2019 10:48:11 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52759,localport=2020]
+aug. 01, 2019 10:48:19 EM server.Server$ClientHandler run
+INFO: test4 logged in
+aug. 01, 2019 10:48:30 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52760,localport=2020]
+aug. 01, 2019 10:48:38 EM server.Server$ClientHandler run
+INFO: test5 failed to log in
+aug. 01, 2019 10:48:49 EM server.Server$ClientHandler run
+INFO: New user added: test5
+aug. 01, 2019 10:49:43 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 10:49:43 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 10:49:46 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 10:49:48 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 10:49:55 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 10:49:57 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 10:51:25 EM server.Server <init>
+INFO: server.Server@eafc191 running on port 2020
+aug. 01, 2019 10:51:29 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52761,localport=2020]
+aug. 01, 2019 10:51:37 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 01, 2019 10:51:46 EM server.Server$ClientHandler run
+WARNING: java.net.SocketException: Connection reset
+aug. 01, 2019 11:04:37 EM server.Server <init>
+INFO: server.Server@33723e30 running on port 2020
+aug. 01, 2019 11:04:41 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52762,localport=2020]
+aug. 01, 2019 11:04:49 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 01, 2019 11:04:55 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52763,localport=2020]
+aug. 01, 2019 11:05:01 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 01, 2019 11:05:13 EM server.Server$ClientHandler run
+INFO: johan logged out
+aug. 01, 2019 11:05:13 EM server.Server$ClientHandler run
+INFO: Socket: Socket[addr=/127.0.0.1,port=52762,localport=2020] closed
+aug. 01, 2019 11:12:02 EM server.Server <init>
+INFO: server.Server@33723e30 running on port 2020
+aug. 01, 2019 11:12:08 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52764,localport=2020]
+aug. 01, 2019 11:12:16 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 01, 2019 11:12:20 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52765,localport=2020]
+aug. 01, 2019 11:12:26 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 01, 2019 11:12:39 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52766,localport=2020]
+aug. 01, 2019 11:12:47 EM server.Server$ClientHandler run
+INFO: test2 logged in
+aug. 01, 2019 11:12:58 EM server.Server$ClientHandler run
+INFO: test2 logged out
+aug. 01, 2019 11:12:58 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=52766,localport=2020] closed
+aug. 01, 2019 11:13:21 EM server.Server$ClientHandler run
+INFO: test1 logged out
+aug. 01, 2019 11:13:21 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=52765,localport=2020] closed
+aug. 01, 2019 11:13:26 EM server.Server$ClientHandler run
+INFO: johan logged out
+aug. 01, 2019 11:13:26 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=52764,localport=2020] closed
+aug. 01, 2019 11:20:57 EM server.Server <init>
+INFO: server.Server@33723e30 running on port 2020
+aug. 01, 2019 11:21:03 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52767,localport=2020]
+aug. 01, 2019 11:21:10 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 01, 2019 11:21:17 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52768,localport=2020]
+aug. 01, 2019 11:21:23 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 01, 2019 11:21:40 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52769,localport=2020]
+aug. 01, 2019 11:21:47 EM server.Server$ClientHandler run
+INFO: test2 logged in
+aug. 01, 2019 11:21:59 EM server.Server$ClientHandler run
+INFO: johan logged out
+aug. 01, 2019 11:21:59 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=52767,localport=2020] closed
+aug. 01, 2019 11:21:59 EM server.Server$ClientHandler run
+INFO: test1 logged out
+aug. 01, 2019 11:21:59 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=52768,localport=2020] closed
+aug. 01, 2019 11:22:00 EM server.Server$ClientHandler run
+INFO: test2 logged out
+aug. 01, 2019 11:22:00 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=52769,localport=2020] closed
+aug. 01, 2019 11:22:46 EM server.Server <init>
+INFO: server.Server@eafc191 running on port 2020
+aug. 01, 2019 11:22:51 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52770,localport=2020]
+aug. 01, 2019 11:22:58 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 01, 2019 11:23:02 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52771,localport=2020]
+aug. 01, 2019 11:23:09 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 01, 2019 11:23:22 EM server.Server$ClientHandler run
+INFO: johan logged out
+aug. 01, 2019 11:23:22 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=52770,localport=2020] closed
+aug. 01, 2019 11:23:22 EM server.Server$ClientHandler run
+INFO: test1 logged out
+aug. 01, 2019 11:23:22 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=52771,localport=2020] closed
+aug. 01, 2019 11:24:39 EM server.Server <init>
+INFO: server.Server@33723e30 running on port 2020
+aug. 01, 2019 11:24:44 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52774,localport=2020]
+aug. 01, 2019 11:24:52 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 01, 2019 11:24:55 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52775,localport=2020]
+aug. 01, 2019 11:25:02 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 01, 2019 11:25:10 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52776,localport=2020]
+aug. 01, 2019 11:25:18 EM server.Server$ClientHandler run
+INFO: test2 logged in
+aug. 01, 2019 11:26:02 EM server.Server$ClientHandler run
+INFO: test1 logged out
+aug. 01, 2019 11:26:02 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=52775,localport=2020] closed
+aug. 01, 2019 11:26:02 EM server.Server$ClientHandler run
+INFO: test2 logged out
+aug. 01, 2019 11:26:02 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=52776,localport=2020] closed
+aug. 01, 2019 11:26:02 EM server.Server$ClientHandler run
+INFO: johan logged out
+aug. 01, 2019 11:26:02 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=52774,localport=2020] closed
+aug. 02, 2019 11:18:54 EM server.Server <init>
+INFO: server.Server@1060b431 running on port 2020
+aug. 02, 2019 11:19:05 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52777,localport=2020]
+aug. 02, 2019 11:19:13 EM server.Server$ClientHandler run
+WARNING: client.LogInObject@46139ed0 could not be converted
+aug. 02, 2019 11:19:35 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=52777,localport=2020] closed
+aug. 02, 2019 11:41:25 EM server.Server <init>
+INFO: server.Server@553a3d88 running on port 2020
+aug. 02, 2019 11:41:32 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52778,localport=2020]
+aug. 02, 2019 11:44:15 EM server.Server <init>
+INFO: server.Server@553a3d88 running on port 2020
+aug. 02, 2019 11:44:19 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52780,localport=2020]
+aug. 02, 2019 11:44:26 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 02, 2019 11:44:31 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52781,localport=2020]
+aug. 02, 2019 11:44:36 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 02, 2019 11:45:01 EM server.Server$ClientHandler run
+INFO: test1 logged out
+aug. 02, 2019 11:45:01 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=52781,localport=2020] closed
+aug. 02, 2019 11:45:02 EM server.Server$ClientHandler run
+INFO: johan logged out
+aug. 02, 2019 11:45:02 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=52780,localport=2020] closed
+aug. 02, 2019 11:46:47 EM server.Server <init>
+INFO: server.Server@553a3d88 running on port 2020
+aug. 02, 2019 11:48:26 EM server.Server <init>
+INFO: server.Server@1060b431 running on port 2020
+aug. 02, 2019 11:50:23 EM server.Server <init>
+INFO: server.Server@1060b431 running on port 2020
+aug. 02, 2019 11:50:25 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52784,localport=2020]
+aug. 02, 2019 11:50:31 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 02, 2019 11:50:34 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52785,localport=2020]
+aug. 02, 2019 11:50:40 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 02, 2019 11:50:44 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52786,localport=2020]
+aug. 02, 2019 11:50:49 EM server.Server$ClientHandler run
+INFO: test2 logged in
+aug. 02, 2019 11:51:01 EM server.Server$ClientHandler run
+INFO: test2 logged out
+aug. 02, 2019 11:51:01 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=52786,localport=2020] closed
+aug. 02, 2019 11:51:02 EM server.Server$ClientHandler run
+INFO: test1 logged out
+aug. 02, 2019 11:51:02 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=52785,localport=2020] closed
+aug. 02, 2019 11:51:03 EM server.Server$ClientHandler run
+INFO: johan logged out
+aug. 02, 2019 11:51:03 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=52784,localport=2020] closed
+aug. 02, 2019 11:56:50 EM server.Server <init>
+INFO: server.Server@1060b431 running on port 2020
+aug. 02, 2019 11:56:55 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52787,localport=2020]
+aug. 02, 2019 11:57:01 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 02, 2019 11:57:04 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52788,localport=2020]
+aug. 02, 2019 11:57:09 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 02, 2019 11:57:42 EM server.Server$ClientHandler run
+INFO: test1 logged out
+aug. 02, 2019 11:57:42 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=52788,localport=2020] closed
+aug. 02, 2019 11:57:43 EM server.Server$ClientHandler run
+INFO: johan logged out
+aug. 02, 2019 11:57:43 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=52787,localport=2020] closed
+aug. 02, 2019 11:58:18 EM server.Server <init>
+INFO: server.Server@595b007d running on port 2020
+aug. 02, 2019 11:58:23 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52794,localport=2020]
+aug. 02, 2019 11:58:30 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 02, 2019 11:58:33 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52795,localport=2020]
+aug. 02, 2019 11:58:39 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 02, 2019 11:58:57 EM server.Server$ClientHandler run
+INFO: test1 logged out
+aug. 02, 2019 11:58:57 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=52795,localport=2020] closed
+aug. 02, 2019 11:58:58 EM server.Server$ClientHandler run
+INFO: johan logged out
+aug. 02, 2019 11:58:58 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=52794,localport=2020] closed
+aug. 02, 2019 11:59:27 EM server.Server <init>
+INFO: server.Server@595b007d running on port 2020
+aug. 02, 2019 11:59:33 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52798,localport=2020]
+aug. 02, 2019 11:59:40 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 02, 2019 11:59:43 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52799,localport=2020]
+aug. 02, 2019 11:59:48 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 03, 2019 12:13:17 FM server.Server <init>
+INFO: server.Server@1060b431 running on port 2020
+aug. 03, 2019 12:13:22 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52800,localport=2020]
+aug. 03, 2019 12:13:27 FM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 03, 2019 12:13:31 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=52801,localport=2020]
+aug. 03, 2019 12:13:36 FM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 03, 2019 12:14:01 FM server.Server$ClientHandler run
+INFO: test1 logged out
+aug. 03, 2019 12:14:01 FM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=52801,localport=2020] closed
+aug. 03, 2019 12:14:02 FM server.Server$ClientHandler run
+INFO: johan logged out
+aug. 03, 2019 12:14:02 FM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=52800,localport=2020] closed
+aug. 04, 2019 10:40:59 FM server.Server <init>
+INFO: server.Server@1060b431 running on port 2020
+aug. 04, 2019 10:41:14 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53055,localport=2020]
+aug. 04, 2019 10:41:23 FM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 04, 2019 10:41:32 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53058,localport=2020]
+aug. 04, 2019 10:41:39 FM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 04, 2019 10:41:46 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53065,localport=2020]
+aug. 04, 2019 10:41:56 FM server.Server$ClientHandler run
+INFO: test2 logged in
+aug. 04, 2019 10:42:50 FM server.Server$ClientHandler run
+INFO: johan logged out
+aug. 04, 2019 10:42:50 FM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53055,localport=2020] closed
+aug. 04, 2019 10:42:50 FM server.Server$ClientHandler run
+INFO: test1 logged out
+aug. 04, 2019 10:42:50 FM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53058,localport=2020] closed
+aug. 04, 2019 10:42:51 FM server.Server$ClientHandler run
+INFO: test2 logged out
+aug. 04, 2019 10:42:51 FM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53065,localport=2020] closed
+aug. 04, 2019 10:46:24 FM server.Server <init>
+INFO: server.Server@1060b431 running on port 2020
+aug. 04, 2019 10:46:35 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53142,localport=2020]
+aug. 04, 2019 10:46:43 FM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 04, 2019 10:46:49 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53148,localport=2020]
+aug. 04, 2019 10:46:55 FM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 04, 2019 10:47:02 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53152,localport=2020]
+aug. 04, 2019 10:47:08 FM server.Server$ClientHandler run
+INFO: test2 logged in
+aug. 04, 2019 10:47:15 FM server.Server$ClientHandler run
+INFO: johan logged out
+aug. 04, 2019 10:47:15 FM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53142,localport=2020] closed
+aug. 04, 2019 10:47:17 FM server.Server$ClientHandler run
+INFO: test2 logged out
+aug. 04, 2019 10:47:17 FM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53152,localport=2020] closed
+aug. 04, 2019 10:47:23 FM server.Server$ClientHandler run
+INFO: test1 logged out
+aug. 04, 2019 10:47:23 FM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53148,localport=2020] closed
+aug. 04, 2019 10:55:57 FM server.Server <init>
+INFO: server.Server@1060b431 running on port 2020
+aug. 04, 2019 10:56:11 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53281,localport=2020]
+aug. 04, 2019 10:56:19 FM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 04, 2019 10:56:25 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53284,localport=2020]
+aug. 04, 2019 10:56:32 FM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 04, 2019 10:56:58 FM server.Server$ClientHandler run
+INFO: test1 logged out
+aug. 04, 2019 10:56:58 FM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53284,localport=2020] closed
+aug. 04, 2019 10:56:59 FM server.Server$ClientHandler run
+INFO: johan logged out
+aug. 04, 2019 10:56:59 FM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53281,localport=2020] closed
+aug. 04, 2019 10:59:08 FM server.Server <init>
+INFO: server.Server@1060b431 running on port 2020
+aug. 04, 2019 10:59:16 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53324,localport=2020]
+aug. 04, 2019 10:59:30 FM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 04, 2019 11:09:06 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53339,localport=2020]
+aug. 04, 2019 11:09:17 FM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 04, 2019 11:12:51 FM server.Server$ClientHandler run
+INFO: johan logged out
+aug. 04, 2019 11:12:51 FM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53324,localport=2020] closed
+aug. 04, 2019 11:13:07 FM server.Server$ClientHandler run
+INFO: test1 logged out
+aug. 04, 2019 11:13:07 FM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53339,localport=2020] closed
+aug. 04, 2019 11:24:25 FM server.Server <init>
+INFO: server.Server@1060b431 running on port 2020
+aug. 04, 2019 11:24:37 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53481,localport=2020]
+aug. 04, 2019 11:24:46 FM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 04, 2019 11:24:54 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53483,localport=2020]
+aug. 04, 2019 11:25:01 FM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 04, 2019 11:25:13 FM server.Server$ClientHandler run
+INFO: johan logged out
+aug. 04, 2019 11:25:13 FM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53481,localport=2020] closed
+aug. 04, 2019 11:25:18 FM server.Server$ClientHandler run
+INFO: test1 logged out
+aug. 04, 2019 11:25:18 FM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53483,localport=2020] closed
+aug. 04, 2019 11:28:40 FM server.Server <init>
+INFO: server.Server@1060b431 running on port 2020
+aug. 04, 2019 11:28:47 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53488,localport=2020]
+aug. 04, 2019 11:28:58 FM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 04, 2019 11:29:04 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53489,localport=2020]
+aug. 04, 2019 11:29:11 FM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 04, 2019 11:29:17 FM server.Server$ClientHandler run
+INFO: johan logged out
+aug. 04, 2019 11:29:17 FM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53488,localport=2020] closed
+aug. 04, 2019 11:29:19 FM server.Server$ClientHandler run
+INFO: test1 logged out
+aug. 04, 2019 11:29:19 FM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53489,localport=2020] closed
+aug. 04, 2019 11:31:54 FM server.Server <init>
+INFO: server.Server@1060b431 running on port 2020
+aug. 04, 2019 11:32:01 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53496,localport=2020]
+aug. 04, 2019 11:32:11 FM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 04, 2019 11:32:16 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53497,localport=2020]
+aug. 04, 2019 11:32:22 FM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 04, 2019 11:32:41 FM server.Server$ClientHandler run
+INFO: test1 logged out
+aug. 04, 2019 11:32:41 FM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53497,localport=2020] closed
+aug. 04, 2019 11:32:43 FM server.Server$ClientHandler run
+INFO: johan logged out
+aug. 04, 2019 11:32:43 FM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53496,localport=2020] closed
+aug. 04, 2019 11:33:20 FM server.Server <init>
+INFO: server.Server@1060b431 running on port 2020
+aug. 04, 2019 11:33:27 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53512,localport=2020]
+aug. 04, 2019 11:33:36 FM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 04, 2019 11:33:43 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53531,localport=2020]
+aug. 04, 2019 11:33:49 FM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 04, 2019 11:34:17 FM server.Server$ClientHandler run
+INFO: johan logged out
+aug. 04, 2019 11:34:17 FM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53512,localport=2020] closed
+aug. 04, 2019 11:34:18 FM server.Server$ClientHandler run
+INFO: test1 logged out
+aug. 04, 2019 11:34:18 FM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53531,localport=2020] closed
+aug. 04, 2019 11:35:52 FM server.Server <init>
+INFO: server.Server@1060b431 running on port 2020
+aug. 04, 2019 11:35:59 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53605,localport=2020]
+aug. 04, 2019 11:36:08 FM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 04, 2019 11:36:12 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53606,localport=2020]
+aug. 04, 2019 11:36:19 FM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 04, 2019 11:36:27 FM server.Server$ClientHandler run
+INFO: johan logged out
+aug. 04, 2019 11:36:27 FM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53605,localport=2020] closed
+aug. 04, 2019 11:36:29 FM server.Server$ClientHandler run
+INFO: test1 logged out
+aug. 04, 2019 11:36:29 FM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53606,localport=2020] closed
+aug. 04, 2019 11:41:36 FM server.Server <init>
+INFO: server.Server@1060b431 running on port 2020
+aug. 04, 2019 11:41:47 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53643,localport=2020]
+aug. 04, 2019 11:41:55 FM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 04, 2019 11:41:59 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53644,localport=2020]
+aug. 04, 2019 11:42:05 FM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 04, 2019 11:42:10 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53645,localport=2020]
+aug. 04, 2019 11:42:17 FM server.Server$ClientHandler run
+INFO: test2 logged in
+aug. 04, 2019 11:43:59 FM server.Server$ClientHandler run
+INFO: test1 logged out
+aug. 04, 2019 11:43:59 FM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53644,localport=2020] closed
+aug. 04, 2019 11:44:00 FM server.Server$ClientHandler run
+INFO: johan logged out
+aug. 04, 2019 11:44:00 FM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53643,localport=2020] closed
+aug. 04, 2019 11:44:01 FM server.Server$ClientHandler run
+INFO: test2 logged out
+aug. 04, 2019 11:44:01 FM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53645,localport=2020] closed
+aug. 04, 2019 11:48:37 FM server.Server <init>
+INFO: server.Server@1060b431 running on port 2020
+aug. 04, 2019 11:48:42 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53679,localport=2020]
+aug. 04, 2019 11:48:50 FM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 04, 2019 11:48:54 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53680,localport=2020]
+aug. 04, 2019 11:49:00 FM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 04, 2019 11:49:09 FM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53681,localport=2020]
+aug. 04, 2019 11:49:15 FM server.Server$ClientHandler run
+INFO: test2 logged in
+aug. 04, 2019 11:49:25 FM server.Server$ClientHandler run
+INFO: johan logged out
+aug. 04, 2019 11:49:25 FM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53679,localport=2020] closed
+aug. 04, 2019 11:49:26 FM server.Server$ClientHandler run
+INFO: test1 logged out
+aug. 04, 2019 11:49:26 FM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53680,localport=2020] closed
+aug. 04, 2019 11:49:26 FM server.Server$ClientHandler run
+INFO: test2 logged out
+aug. 04, 2019 11:49:26 FM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53681,localport=2020] closed
+aug. 04, 2019 12:00:12 EM server.Server <init>
+INFO: server.Server@1060b431 running on port 2020
+aug. 04, 2019 12:00:20 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53691,localport=2020]
+aug. 04, 2019 12:00:27 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 04, 2019 12:00:31 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53692,localport=2020]
+aug. 04, 2019 12:00:37 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 04, 2019 12:00:44 EM server.Server$ClientHandler run
+INFO: johan logged out
+aug. 04, 2019 12:00:44 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53691,localport=2020] closed
+aug. 04, 2019 12:00:45 EM server.Server$ClientHandler run
+INFO: test1 logged out
+aug. 04, 2019 12:00:45 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53692,localport=2020] closed
+aug. 04, 2019 12:01:20 EM server.Server <init>
+INFO: server.Server@1060b431 running on port 2020
+aug. 04, 2019 12:01:24 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53693,localport=2020]
+aug. 04, 2019 12:01:33 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 04, 2019 12:01:40 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53694,localport=2020]
+aug. 04, 2019 12:01:46 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 04, 2019 12:02:12 EM server.Server$ClientHandler run
+INFO: test1 logged out
+aug. 04, 2019 12:02:12 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53694,localport=2020] closed
+aug. 04, 2019 12:02:13 EM server.Server$ClientHandler run
+INFO: johan logged out
+aug. 04, 2019 12:02:13 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53693,localport=2020] closed
+aug. 04, 2019 1:40:27 EM server.Server <init>
+INFO: server.Server@1060b431 running on port 2020
+aug. 04, 2019 2:28:40 EM server.Server <init>
+INFO: server.Server@1060b431 running on port 2020
+aug. 04, 2019 2:28:45 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53700,localport=2020]
+aug. 04, 2019 2:28:52 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 04, 2019 2:28:57 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53701,localport=2020]
+aug. 04, 2019 2:29:07 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 04, 2019 2:29:16 EM server.Server$ClientHandler run
+INFO: johan logged out
+aug. 04, 2019 2:29:16 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53701,localport=2020] closed
+aug. 04, 2019 2:29:20 EM server.Server$ClientHandler run
+INFO: johan logged out
+aug. 04, 2019 2:29:20 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53700,localport=2020] closed
+aug. 04, 2019 2:29:57 EM server.Server <init>
+INFO: server.Server@1060b431 running on port 2020
+aug. 04, 2019 2:30:03 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53702,localport=2020]
+aug. 04, 2019 2:30:10 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 04, 2019 2:30:15 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53703,localport=2020]
+aug. 04, 2019 2:30:23 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 04, 2019 2:30:42 EM server.Server$ClientHandler run
+INFO: test1 logged out
+aug. 04, 2019 2:30:42 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53703,localport=2020] closed
+aug. 04, 2019 2:30:45 EM server.Server$ClientHandler run
+INFO: johan logged out
+aug. 04, 2019 2:30:45 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53702,localport=2020] closed
+aug. 04, 2019 8:33:20 EM server.Server <init>
+INFO: server.Server@1060b431 running on port 2020
+aug. 04, 2019 8:33:27 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53705,localport=2020]
+aug. 04, 2019 8:33:32 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 04, 2019 8:33:46 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53706,localport=2020]
+aug. 04, 2019 8:33:51 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 04, 2019 8:34:04 EM server.Server$ClientHandler run
+INFO: test1 logged out
+aug. 04, 2019 8:34:04 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53706,localport=2020] closed
+aug. 04, 2019 8:34:08 EM server.Server$ClientHandler run
+INFO: johan logged out
+aug. 04, 2019 8:34:08 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53705,localport=2020] closed
+aug. 04, 2019 8:35:39 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53707,localport=2020]
+aug. 04, 2019 8:35:47 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 04, 2019 8:35:56 EM server.Server$ClientHandler run
+INFO: johan logged out
+aug. 04, 2019 8:35:56 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53707,localport=2020] closed
+aug. 04, 2019 8:36:04 EM server.Server <init>
+INFO: server.Server@1060b431 running on port 2020
+aug. 04, 2019 8:36:12 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53708,localport=2020]
+aug. 04, 2019 8:36:18 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 04, 2019 8:36:22 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53709,localport=2020]
+aug. 04, 2019 8:36:30 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 04, 2019 8:39:38 EM server.Server$ClientHandler run
+INFO: test1 logged out
+aug. 04, 2019 8:39:38 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53709,localport=2020] closed
+aug. 04, 2019 8:39:39 EM server.Server$ClientHandler run
+INFO: johan logged out
+aug. 04, 2019 8:39:39 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53708,localport=2020] closed
+aug. 04, 2019 8:39:55 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53712,localport=2020]
+aug. 04, 2019 8:40:22 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 04, 2019 8:40:32 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53715,localport=2020]
+aug. 04, 2019 8:40:41 EM server.Server$ClientHandler run
+INFO: test2 logged in
+aug. 04, 2019 8:41:00 EM server.Server$ClientHandler run
+INFO: test2 logged out
+aug. 04, 2019 8:41:00 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53715,localport=2020] closed
+aug. 04, 2019 8:41:02 EM server.Server$ClientHandler run
+INFO: johan logged out
+aug. 04, 2019 8:41:02 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53712,localport=2020] closed
+aug. 04, 2019 8:41:43 EM server.Server <init>
+INFO: server.Server@6c64cb25 running on port 2020
+aug. 04, 2019 8:41:49 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53720,localport=2020]
+aug. 04, 2019 8:41:56 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 04, 2019 8:42:00 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53723,localport=2020]
+aug. 04, 2019 8:42:06 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 04, 2019 8:42:52 EM server.Server <init>
+INFO: server.Server@6c64cb25 running on port 2020
+aug. 04, 2019 8:43:03 EM server.Server <init>
+INFO: server.Server@6c64cb25 running on port 2020
+aug. 04, 2019 8:43:07 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53728,localport=2020]
+aug. 04, 2019 8:43:15 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 04, 2019 8:43:18 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53729,localport=2020]
+aug. 04, 2019 8:43:24 EM server.Server$ClientHandler run
+INFO: test4 logged in
+aug. 04, 2019 8:48:12 EM server.Server <init>
+INFO: server.Server@1060b431 running on port 2020
+aug. 04, 2019 8:48:19 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53730,localport=2020]
+aug. 04, 2019 8:48:25 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 04, 2019 8:48:30 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53731,localport=2020]
+aug. 04, 2019 8:48:36 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 04, 2019 8:48:44 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53732,localport=2020]
+aug. 04, 2019 8:48:52 EM server.Server$ClientHandler run
+INFO: test3 logged in
+aug. 04, 2019 8:49:06 EM server.Server$ClientHandler run
+INFO: test1 logged out
+aug. 04, 2019 8:49:06 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53731,localport=2020] closed
+aug. 04, 2019 8:49:07 EM server.Server$ClientHandler run
+INFO: johan logged out
+aug. 04, 2019 8:49:07 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53730,localport=2020] closed
+aug. 04, 2019 8:49:08 EM server.Server$ClientHandler run
+INFO: test3 logged out
+aug. 04, 2019 8:49:08 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53732,localport=2020] closed
+aug. 04, 2019 8:52:27 EM server.Server <init>
+INFO: server.Server@612fc6eb running on port 2020
+aug. 04, 2019 8:52:36 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53733,localport=2020]
+aug. 04, 2019 8:52:42 EM server.Server$ClientHandler run
+INFO: johan logged in
+aug. 04, 2019 8:52:46 EM server.Server$ClientHandler <init>
+INFO: New client connected: Socket[addr=/127.0.0.1,port=53734,localport=2020]
+aug. 04, 2019 8:52:52 EM server.Server$ClientHandler run
+INFO: test1 logged in
+aug. 04, 2019 8:54:08 EM server.Server$ClientHandler run
+INFO: johan logged out
+aug. 04, 2019 8:54:08 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53733,localport=2020] closed
+aug. 04, 2019 8:54:10 EM server.Server$ClientHandler run
+INFO: test1 logged out
+aug. 04, 2019 8:54:10 EM server.Server$ClientHandler run
+INFO: Socket[addr=/127.0.0.1,port=53734,localport=2020] closed

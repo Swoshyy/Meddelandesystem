@@ -4,10 +4,11 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
@@ -17,7 +18,8 @@ import java.util.logging.SimpleFormatter;
 import javax.swing.SwingUtilities;
 
 import GUI.ServerHistory;
-import client.ClientConnection;
+import login.LoginObject;
+import login.LoginStatus;
 import message.Message;
 import saveUsers.SavedUsers;
 import user.User;
@@ -26,46 +28,112 @@ public class ServerController
 {
 	private final String logFile = "files/log.txt";
 	private Server server;
-	private LinkedList<ClientConnection> clients = new LinkedList<>();
-	private ArrayList<User> connectedUsers = new ArrayList<>();
-	private ServerHistory gui;
+	private ServerHistory gui; 
+	private LinkedList<ActiveUser> activeUsers = new LinkedList<>();
+	private SavedUsers savedUsers = new SavedUsers("files/SavedUsers.dat");
 	
 	public void registerServer(Server inServer)
 	{
 		this.server = inServer; 
 	}
+	
+	public LoginStatus validateLogin(LoginObject login) {
+		LoginStatus status = new LoginStatus();
+		String name = login.getName();
+		String password = login.getPassword();
+		
+		if (savedUsers.logInUser(name, password) == 1) {
+			status.setLoginSucessfull(1);
+			status.setUser(savedUsers.getUser(name));
+//			activeUsers.add(new ActiveUser(oos, this.user));
+//			connectedClients.add(new ActiveClient(oos, status.getLoggedInUser()));
+			
+//			new WriteMessage(status, oos); // För att skicka statusen av inloggningen till clienten
+//			writeUserList(status);							
+//			new WriteMessage(connectedClients, oos); // För att uppdatera lista med användare�
 
-	public void newClient(ClientConnection cc)
-	{
-		clients.add(cc);
+		}
+		return status;
 	}
-
-	public LinkedList<ClientConnection> getClientList()
-	{
-		return clients;
+	
+	public void addUser(ObjectOutputStream oos, User user) {
+		activeUsers.add(new ActiveUser(oos, user));
+		for(ActiveUser active : activeUsers) {
+			System.out.println(active.getUser().getName());
+		}
+		
 	}
+	
+	public LinkedList<User> getUserList() {
+		LinkedList<User> userList = new LinkedList<>();
+		for(ActiveUser activeUser : activeUsers) {
+			userList.add(activeUser.getUser());
+		}
+		return userList;
+	}
+	
+	public void createNewUser(Object obj) {
+		User user = (User) obj;
+		LoginStatus status = new LoginStatus();
+//		status = new LoginStatus();
+		
+		if (savedUsers.controlUser(user) == 0) {
+//			logger.log(Level.INFO, "New user added: " + user.getName());
+			savedUsers.saveNewUser(user);
+			status.setLoginSucessfull(1);
+			status.setUser(user);
+//			this.user = user;
+//			activeUsers.add(new ActiveUser(oos, this.user));
+//			connectedClients.add(new ActiveClient(oos, status.getLoggedInUser()));
+//			oos.writeObject(status);
+//			oos.flush();
+//			new WriteMessage(status, oos);
+//			writeUserList(status);		
+//			new WriteMessage(connectedClients, oos);
+		} else {
+			System.out.println("Användare finns redan");
+		}
+	}
+	
+//	public void newClient(ClientConnection cc)
+//	{
+//		clients.add(cc);
+//	}
 
-	public void newMessage(Message message, SavedUsers users) // Lagra SavedUsers m.m. i controller ist�llet
-	{
-		for(User user : users.getUsers())
+//	public LinkedList<ClientConnection> getClientList()
+//	{
+//		return clients;
+//	}
+
+	public void newMessage(Message message) throws IOException {
+		ObjectOutputStream oos;
+		String receiver = message.getReceiver().getName();
+		String sender = message.getSender().getName();
+		for(ActiveUser user : activeUsers)
 		{	
-			if(message.getReceiver().equals(user)) // Kastar NullPointerException!
-			{
-				server.sendMessage(message, user);
+			if(receiver.equals(user.getUser().getName()) 
+					|| sender.equals(user.getUser().getName())) {
+				oos = user.getOuputStream();
+				try {
+					oos.writeObject(message);
+					oos.flush();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
 		}
 	}
 
-	public void addNewUser(User user)
-	{
-		connectedUsers.add(user);
-		writeUsers();
-	}
+//	public void addNewUser(User user)
+//	{
+//		connectedUsers.add(user);
+//		writeUsers();
+//	}
 	
-	public void writeUsers()
-	{
-		server.writeUsers(connectedUsers);
-	}
+//	public void writeUsers()
+//	{
+//		server.writeUsers(connectedUsers);
+//	}
 
 	public void setServerGUI() {
 		SwingUtilities.invokeLater(new  Runnable() {
@@ -82,17 +150,15 @@ public class ServerController
 			logger.addHandler(fileHandler);
 			logger.setLevel(Level.INFO);
 		} catch (SecurityException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
 	public void checkDate(String from, String to) {
 		DateTimeFormatter inputFormat = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-		DateTimeFormatter logFormat = DateTimeFormatter.ofPattern("MMMM d, yyyy");
+		DateTimeFormatter logFormat = DateTimeFormatter.ofPattern("MMM d, yyyy");
 		try {
 			BufferedReader logReader = new BufferedReader(new FileReader(logFile));
 			String[] parts;

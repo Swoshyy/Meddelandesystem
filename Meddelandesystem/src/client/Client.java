@@ -3,24 +3,19 @@ package client;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.net.InetAddress;
 import java.net.Socket;
 import java.util.LinkedList;
-
-import javax.swing.SwingUtilities;
 
 import GUI.MessageWindow;
 import message.Message;
 import message.MessageQueue;
-import server.ActiveClient;
-import server.LoginStatus;
+import login.LoginStatus;
 import sethTestGUIs.LoginScreen;
 import user.User;
 
 public class Client {
 	private Socket socket;
 	private String address;
-//	private InetAddress address;
 	private int port;
 
 	private ObjectOutputStream oos;
@@ -31,10 +26,7 @@ public class Client {
 	private MessageReader msgReader;
 	private User clientUser;
 
-//	private LoginScreen loginScreen;
-
 	public Client(String inAddress, int inPort, ClientController inController)
-//	public Client(InetAddress inAddress, int inPort, ClientController inController)
 	{
 		this.address = inAddress;
 		this.port = inPort;
@@ -85,22 +77,17 @@ public class Client {
 
 		public void write() {
 			try {
-//				while(true)
-//				{
 				oos.writeObject(sendObject);
 				oos.flush();
-				System.out.println("Objekt skickat till server");
-//				}
 			} catch (IOException e) {
+				e.printStackTrace();
 				try {
 					socket.close();
 				} catch (IOException e1) {
 					e1.printStackTrace();
 				}
-//				e.printStackTrace();
 			}
 		}
-
 	}
 
 	private class MessageReader extends Thread {
@@ -126,12 +113,11 @@ public class Client {
 							clientUser = status.getLoggedInUser();
 							System.out.println("Inloggning lyckad");
 							messageWindow = new MessageWindow(controller, clientUser);
-//							controller.setGUI(messageWindow);
 //							controller.setMessageGUI(messageWindow);
 							controller.setGUI(messageWindow);
-
+							oos.writeObject(status);
+							oos.flush();
 //							RequestList getListOfUsers = new RequestList(1);
-							sendObject("getActiveUserList");
 						} else if (status.getLoginStatus() == 0) {
 							System.out.println("Felaktigt användarnamn och/eller lösenord");
 						}
@@ -139,19 +125,18 @@ public class Client {
 					}
 
 					else if (object instanceof LinkedList<?>) {
+						@SuppressWarnings("unchecked")
 						LinkedList<User> users = (LinkedList<User>) object;
-						LinkedList<User> activeUsers = new LinkedList<>();
 						for (User user : users) {
-							if (user.getIsOnline()) {
-								activeUsers.add(user);
+							if(!user.getName().equals(clientUser.getName())) {
+								controller.addNewUser(user);
 							}
 						}
-						controller.addListOfUsers(activeUsers);
 
 					} else if (object instanceof User) {
 						User newLoggedInUser = (User)object;
 						controller.addNewUser(newLoggedInUser);
-					}
+					} 
 
 					else {
 						System.out.println("objekt kan inte typkonverteras");

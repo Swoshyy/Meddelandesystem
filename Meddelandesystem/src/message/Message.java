@@ -22,14 +22,6 @@ public class Message implements Serializable
 		this.sender = sender;
 		this.reciever = reciever;
 		
-		if (!reciever.getIsOnline()) {
-			
-			savedMessages.saveNewMessage(this);
-			
-		}
-		else {
-			//Skicka meddelande som vanligt
-		}
 	}
 
 	public Message(ImageIcon inImage)

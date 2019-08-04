@@ -62,7 +62,7 @@ public class AllUsersGUI extends JPanel
 	}
 
 	public UsersGUI getUsersGUI() {
-		return friends;
+		return onlineUsers;
 	}
 	
 	public void addUser(User user)
@@ -132,7 +132,7 @@ public class AllUsersGUI extends JPanel
 	public void addListOfOnlineUsers(LinkedList<User> userList)
 	{
 		onlineUsers.addListOfUsers(userList);
-		new UsersGUI();
+//		new UsersGUI();
 	}
 
 	public void addNewUser(User user) {

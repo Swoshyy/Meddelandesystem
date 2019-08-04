@@ -46,9 +46,6 @@ public class SavedUsers implements Serializable {
 					hasNext = false;
 				}
 			}
-			for(User user : savedUsers) {
-				user.setIsOnline(false);
-			}
 			
 		} catch (FileNotFoundException e1) {
 			e1.printStackTrace();
@@ -215,6 +212,7 @@ public class SavedUsers implements Serializable {
 	/**
 	 * Remove later, just for testing
 	 */
+	@SuppressWarnings("unchecked")
 	public void checkSavedUsers() {
 		boolean notEmpty = true;
 
