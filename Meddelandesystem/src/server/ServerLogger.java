@@ -22,7 +22,7 @@ public class ServerLogger {
 	private final String logFile = "files/log.txt";
 //	private static FileHandler fileHandler;
 	private DateTimeFormatter inputFormat = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-	private DateTimeFormatter logFormat = DateTimeFormatter.ofPattern("MMMM d, yyyy");
+	private DateTimeFormatter logFormat = DateTimeFormatter.ofPattern("MMM d, yyyy");
 	private ServerHistory gui;
 	
 	public ServerLogger() {

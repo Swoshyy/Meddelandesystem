@@ -29,13 +29,27 @@ public class ServerController
 		return clients;
 	}
 
-	public void newMessage(Message message)
+	public void newMessage(Message message) {
+		String receiver = message.getReceiver().getName();
+		String sender = message.getSender().getName();
+		String currentUser;
+		
+		for(int i=0; i<clients.size(); i++) {
+			currentUser = clients.get(i).getUser().getName();
+			if(currentUser.equals(receiver) || currentUser.equals(sender))
+			{
+				server.sendMessage(message, clients.get(i).getOos());
+			}
+		}
+	}
+	
+	public void newObject(Object obj)
 	{
 		for(int i=0; i<clients.size(); i++)
 		{	
 			if(clients.get(i) != null)
 			{
-				server.sendMessage(message, clients.get(i).getOos());
+				server.sendMessage(obj, clients.get(i).getOos());
 			}
 		}
 	}

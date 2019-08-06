@@ -90,8 +90,8 @@ public class SignUpScreen
 	
 	private void addAcceptedImageFilters() {
 		userImage.setFileFilter(filter);
-		userImage.addChoosableFileFilter(new FileNameExtensionFilter(null, "jpg"));
-		userImage.addChoosableFileFilter(new FileNameExtensionFilter(null, "png"));
+		userImage.addChoosableFileFilter(new FileNameExtensionFilter("Images", "jpg", "png"));
+//		userImage.addChoosableFileFilter(new FileNameExtensionFilter(null, "png"));S
 	}
 	
 	private void initialize()

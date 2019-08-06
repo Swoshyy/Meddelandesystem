@@ -140,6 +140,14 @@ public class AllUsersGUI extends JPanel
 		friends.addListOfUsers(userList);
 	}
 
+	public UsersGUI getOnlineUsersGUI() {
+		return onlineUsers;
+	}
+	
+	public UsersGUI getFriendsGUI() {
+		return friends;
+	}
+	
 	/**
 	 * Inner class for button clicks
 	 * 

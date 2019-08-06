@@ -19,12 +19,12 @@ public class ClientController
 	public void newClient(Client inClient)
 	{
 		this.client = inClient; 
-//		logInScreen = new LoginScreen(this);
+		logInScreen = new LoginScreen(this);
 	}
 	
-//	public void newLoginScreen(LoginScreen logInScreen) {
-//		this.logInScreen = logInScreen;
-//	}
+	public void newLoginScreen(LoginScreen logInScreen) {
+		this.logInScreen = logInScreen;
+	}
 	
 	public void addListOfUsers(LinkedList<User> users) {
 		msgWindow.addListOfUsers(users);

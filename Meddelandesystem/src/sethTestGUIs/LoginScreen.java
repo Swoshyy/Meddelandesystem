@@ -70,6 +70,8 @@ public class LoginScreen
 		this.clientController = clientController;
 		initialize();
 	}
+	
+	
 
 	/**
 	 * Initialize the contents of the frame.
@@ -81,7 +83,6 @@ public class LoginScreen
 		frame.setBounds(100, 100, 260, 360);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		frame.setVisible(true);
 		
 		textField = new JTextField();
 		textField.setFont(new Font("Georgia", Font.PLAIN, 12));
@@ -128,6 +129,7 @@ public class LoginScreen
 		
 		btnSignUp.addActionListener(btnListener);
 		btnLogin.addActionListener(btnListener);
+		frame.setVisible(true);
 	}
 	
 	
@@ -148,15 +150,15 @@ public class LoginScreen
 
 			if(e.getSource() == btnLogin) {
 //				User testUser;
-				LogInObject hej;
+				LogInObject logInObj;
 				
 				
-					hej = new LogInObject(textField.getText(), new String(passwordField.getPassword()));
+					logInObj = new LogInObject(textField.getText(), new String(passwordField.getPassword()));
 //					hej = new LogInObject(testUser);
 					System.out.println(textField.getText());
 					System.out.println(new String(passwordField.getPassword()));
-					if(hej != null) {
-						clientController.sendMessage(hej);
+					if(logInObj != null) {
+						clientController.sendMessage(logInObj);
 					}
 				
 				

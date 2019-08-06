@@ -61,20 +61,26 @@ public class MessageWindow {
 		this.user = user;
 //		userListGUI.addUser(user);
 		this.controller = controller;
-		controller.setUserListGUI(userListGUI);
+//		controller.setUserListGUI(userListGUI);
 		initialize();
 		frame.setVisible(true);
 	}
 	
-	public MessageWindow() {
+	public MessageWindow(ClientController controller) {
+		this.controller = controller;
 		initialize();
 		frame.setVisible(true);
 	}
 	
-	public static void main(String[] args)
-	{
-		new MessageWindow();
-	}
+//	public MessageWindow() {
+//		initialize();
+//		frame.setVisible(true);
+//	}
+	
+//	public static void main(String[] args)
+//	{
+//		new MessageWindow();
+//	}
 	
 	public void addListOfUsers(LinkedList<User> users) {
 		userListGUI.addListOfOnlineUsers(users);
@@ -154,7 +160,14 @@ public class MessageWindow {
 
 		try {
 			Document doc = textPane.getDocument();
-			doc.insertString(doc.getLength(), message.getText() + "\n"+"\n", null);
+			if(user.getName().equals(message.getSender().getName())) {
+				doc.insertString(doc.getLength(), "To: " + message.getReceiver() + 
+						" - " + message.getText() + "\n"+"\n", null);
+			} else {
+				doc.insertString(doc.getLength(), "From: " + message.getSender() + 
+						" - " + message.getText() + "\n"+"\n", null);
+			}
+			
 		} catch (BadLocationException exc) {
 			exc.printStackTrace();
 		}
@@ -227,7 +240,8 @@ public class MessageWindow {
 		public void actionPerformed(ActionEvent e) {
 			if (e.getSource() == btnSend) {
 				System.out.println("Enter hit");
-				controller.sendMessage(new Message(tfInput.getText(), img));
+				controller.sendMessage(new Message(tfInput.getText(), img, user, 
+						userListGUI.getOnlineUsersGUI().getChosenUser()));
 				tfInput.setText(null);
 				img = null;
 				System.out.println("Done entering");
@@ -255,7 +269,8 @@ public class MessageWindow {
 
 		public void keyPressed(KeyEvent ee) {
 			if (ee.getKeyCode() == KeyEvent.VK_ENTER) {
-				controller.sendMessage(new Message(tfInput.getText(), img));
+				controller.sendMessage(new Message(tfInput.getText(), img, user, 
+						userListGUI.getOnlineUsersGUI().getChosenUser()));
 				tfInput.setText(null);
 				img = null;
 			}
@@ -271,6 +286,7 @@ public class MessageWindow {
 
 	public void displayUser(User user2)
 	{
+		System.out.println("userListGUI = " + userListGUI);
 		userListGUI.addUser(user2);
 	}
 

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import client.ClientConnection;
 import client.LogInObject;
+import client.RequestList;
 import message.Message;
 import saveUsers.SavedUsers;
 //import server.Server.WriteMessage;
@@ -27,10 +28,24 @@ public class Server {
 		this.controller = inController;
 		try {
 			serverSocket = new ServerSocket(inPort);
+//<<<<<<< HEAD
+//		} catch (IOException e) {
+//			logger.severe(e.toString());
+//			e.printStackTrace();
+//		}
+//=======
+//<<<<<<< HEAD
 		} catch (IOException e) {
 			logger.severe(e.toString());
+//=======
+			System.out.println("Server startad på port " + inPort);
+//		} 
+//		catch (IOException e)
+//		{
+//>>>>>>> 26359d9d4384031ef69191661cdec5e9c18d579c
 			e.printStackTrace();
 		}
+//>>>>>>> 7bd0256f38320ba09988145aad4ffd8659310384
 		controller.registerServer(this);
 		new ClientListener(inPort);
 		logger.info(this.toString() + " running on port " + inPort);
@@ -77,9 +92,9 @@ public class Server {
 			try {
 				ois = new ObjectInputStream(socket.getInputStream());
 				oos = new ObjectOutputStream(socket.getOutputStream());
-				controller.newClient(new ClientConnection(oos, socket));
+//				controller.newClient(new ClientConnection(oos, socket));
 				userWriter = new UserWriter(oos);
-				logger.info("Client added: oos=" + oos.toString());
+				logger.info("Client added: " + socket.toString());
 			} catch (IOException e) {
 				logger.warning(e.toString());
 				e.printStackTrace();
@@ -93,16 +108,22 @@ public class Server {
 				Message message;
 				Object obj;
 				while (true) {
-					// message = (Message) ois.readObject();
+					
 					obj = ois.readObject();
 					if (obj instanceof Message) {
 						message = (Message) obj;
 						controller.newMessage(message);
-					} else if (obj instanceof User) {
-						controller.addNewUser((User) obj);
-						logger.info("User " + obj.toString() + " added"); 
-						// skriv user?
-					}
+					} 
+//					else if (obj instanceof LoginStatus){
+//						LoginStatus status = (LoginStatus)obj;
+//						updateUserList(status, this);
+//					} 
+//					else if (obj instanceof User) {
+//					
+//						controller.addNewUser((User) obj);
+//						logger.info("User " + obj.toString() + " added"); 
+//						// skriv user?
+//					}
 
 					else if (obj == null) {
 						logger.warning("Object sent from " + this.toString() + " = null");
@@ -116,18 +137,20 @@ public class Server {
 						LogInObject logInUser = (LogInObject) obj;
 						LoginStatus status = new LoginStatus();
 				
-//						User haj = logInUser.getUser();
 
 						if (savedUsers.logInUser(logInUser.getName(), logInUser.getPassword()) == 1) {
 							logger.info(logInUser.getName() + " logged in");
 							System.out.println("inloggning lyckad");
 							status.setLoginSucessfull(1);
 							status.setUser(savedUsers.getUser());
+							controller.newClient(new ClientConnection(oos, socket, savedUsers.getUser()));
 							connectedClients.add(new ActiveClient(oos, status.getLoggedInUser()));
-							// Alla klienters listor behöver uppdateras här
-							new WriteMessage(status, oos); // För att skicka statusen av inloggningen till clienten
-															// (lyckad/ej lyckad inloggning)
-							new WriteMessage(connectedClients, oos); // För att uppdatera lista med användare
+//							new WriteMessage(status, oos);
+							
+							oos.writeObject(status);
+							oos.flush();
+							writeUserList(this);
+							updateUserList(status, this);
 						} else {
 							logger.info(logInUser.getName() + " failed to log in");
 							System.out.println("inloggning ej godkänd");
@@ -148,13 +171,33 @@ public class Server {
 							savedUsers.saveNewUser(user);
 							status.setLoginSucessfull(1);
 							status.setUser(user);
+							controller.newClient(new ClientConnection(oos, socket, status.getLoggedInUser()));
 							connectedClients.add(new ActiveClient(oos, status.getLoggedInUser()));
-							new WriteMessage(status, oos);
-//							new WriteMessage(connectedClients, oos);
+							oos.writeObject(status);
+							oos.flush();
+							writeUserList(this);
+							updateUserList(status, this);
+//							new WriteMessage(status, oos);
 						} else {
 							System.out.println("Användare finns redan");
 						}
 
+					}
+					
+					else if(obj instanceof RequestList) {
+						RequestList sendList = (RequestList) obj;
+						
+						System.out.println("Nu ska lista skickas till alla klienter?");
+						if(sendList.getStatus() == 1) {
+//							new WriteMessage(connectedClients, oos);
+//							controller.newObject(sendList);
+							
+//							Om Detta körs fastnar koden och det går inte att skicka meddelanden?
+//							UserListHolder tempList = new UserListHolder();
+//							tempList.setList(controller.getClientList());
+//							controller.newObject(tempList);
+						}
+						
 					}
 
 					else {
@@ -177,9 +220,28 @@ public class Server {
 		}
 	}
 
-	public void sendMessage(Message inMessage, ObjectOutputStream inOos) {
+
+	public void sendMessage(Object inMessage, ObjectOutputStream inOos) {
 		new WriteMessage(inMessage, inOos);
 
+	}
+	
+	private void writeUserList(ClientHandler ch) throws IOException {
+		for(ActiveClient client : connectedClients) {
+			if(!client.getOuputStream().equals(ch.oos)){
+				ch.oos.writeObject(client.getUser());
+				ch.oos.flush();
+			}
+		}
+	}
+	
+	private void updateUserList(LoginStatus status, ClientHandler ch) throws IOException{
+		for(ActiveClient client : connectedClients) {
+			if(!client.getOuputStream().equals(ch.oos)) {
+				client.getOuputStream().writeObject(status.getLoggedInUser());
+				client.getOuputStream().flush();
+			}
+		}
 	}
 
 	private class WriteMessage extends Thread {

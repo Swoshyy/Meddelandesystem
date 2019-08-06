@@ -7,11 +7,15 @@ import user.User;
 
 public class Message implements Serializable
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String text;
 	private ImageIcon image;
 	private User reciever;
 	private User sender;
-	// Lägg till motagarlista
+	// Lï¿½gg till motagarlista
 	
 	private SavedMessages savedMessages = new SavedMessages("files/savedMessages.txt");
 
@@ -37,10 +41,12 @@ public class Message implements Serializable
 		this.image = inImage;
 	}
 
-	public Message(String inText, ImageIcon inImage)
+	public Message(String inText, ImageIcon inImage, User sender, User receiver)
 	{
 		this.text = inText;
 		this.image = inImage;
+		this.sender = sender;
+		this.reciever = receiver;
 	}
 	
 	public String getText()
