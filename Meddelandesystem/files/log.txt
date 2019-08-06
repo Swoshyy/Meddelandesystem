@@ -504,3 +504,27 @@ aug. 06, 2019 9:23:51 EM server.ServerLogger info
 INFO: server.Server@5119fb47 running on port 2020
 aug. 06, 2019 9:23:58 EM server.ServerLogger info
 INFO: Client added: Socket[addr=/127.0.0.1,port=54850,localport=2020]
+aug. 06, 2019 9:24:07 EM server.ServerLogger info
+INFO: johan logged in
+aug. 06, 2019 9:24:13 EM server.ServerLogger info
+INFO: Client added: Socket[addr=/127.0.0.1,port=54851,localport=2020]
+aug. 06, 2019 9:24:21 EM server.ServerLogger info
+INFO: test1 logged in
+aug. 06, 2019 9:24:28 EM server.ServerLogger info
+INFO: Client added: Socket[addr=/127.0.0.1,port=54852,localport=2020]
+aug. 06, 2019 9:24:35 EM server.ServerLogger info
+INFO: test2 logged in
+aug. 06, 2019 9:24:45 EM server.ServerLogger info
+INFO: tjena sent from test2 to johan
+aug. 06, 2019 9:24:45 EM server.ServerLogger info
+INFO: tjena sent from test2 to johan
+aug. 06, 2019 9:25:07 EM server.ServerLogger info
+INFO: hehej sent from johan to test2
+aug. 06, 2019 9:25:07 EM server.ServerLogger info
+INFO: hehej sent from johan to test2
+aug. 06, 2019 9:25:20 EM server.ServerLogger severe
+SEVERE: java.net.SocketException: Connection reset
+aug. 06, 2019 9:25:21 EM server.ServerLogger severe
+SEVERE: java.net.SocketException: Connection reset
+aug. 06, 2019 9:25:22 EM server.ServerLogger severe
+SEVERE: java.net.SocketException: Connection reset
